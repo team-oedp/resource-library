@@ -7,7 +7,7 @@
  
 What is it?
 
-A data sharing agreement (DSA) is a legal contract that outlines how data will be shared and used between different parties. DSAs describe how the data will be shared, how it should be used, who it can be shared with, and any restrictions that apply to the data. This helps protect the subjects of the data as well as the people involved in the agreement. 
+A [[Data Sharing\|Data Sharing]] agreement (DSA) is a legal contract that outlines how data will be shared and used between different parties. DSAs describe how the data will be shared, how it should be used, who it can be shared with, and any restrictions that apply to the data. This helps protect the subjects of the data as well as the people involved in the agreement. 
 
   
 
