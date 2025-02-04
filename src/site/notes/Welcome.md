@@ -2,14 +2,15 @@
 {"dg-publish":true,"permalink":"/welcome/","tags":["data-governance","gardenEntry"]}
 ---
 
-# Header
+# Header here
+
+Hi Emelia
+## Maybe a subheader
+
+Ooontz ooontz ooontz...drop the bass.
 
 
-## Subheader
 
+We can also have 🤩 - emojis
 
-### Hi
-
-
-🤩 - emojis
-[[Data Access\|Data Access]] - link to another page
+And this is how we link to another page: [[Data Access\|Data Access]] 
