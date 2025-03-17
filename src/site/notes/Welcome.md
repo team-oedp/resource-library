@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/welcome/","tags":["data-governance","gardenEntry"]}
+{"dg-publish":true,"permalink":"/welcome/","tags":["data-governance","gardenEntry","gardenEntry","gardenEntry","gardenEntry"]}
 ---
 
 # Header here
@@ -13,4 +13,4 @@ Ooontz ooontz ooontz...drop the bass.
 
 We can also have 🤩 - emojis
 
-And this is how we link to another page: [[Data Access\|Data Access]] 
+And this is how we link to another page: [[Decoders/Data Access\|Data Access]] 
