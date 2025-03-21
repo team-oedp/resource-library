@@ -1,16 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/welcome/","tags":["data-governance","gardenEntry","gardenEntry","gardenEntry","gardenEntry"]}
+{"dg-publish":true,"permalink":"/welcome/","tags":["data-governance","gardenEntry"]}
 ---
 
 # Header here
 
-Hi Emelia
+Hi!
 ## Maybe a subheader
-
-Ooontz ooontz ooontz...drop the bass.
 
 
 
 We can also have 🤩 - emojis
 
 And this is how we link to another page: [[Decoders/Data Access\|Data Access]] 
+
+
+New setup - test
