@@ -12,4 +12,9 @@
 Linking to another page: put the page name between double brackets. For example [[Decoders/Data Access\|Data Access]] is wrapped in "[[page name\|page name]]" 
 
 
-New setup - test
+Data cards example
+
+```datacards
+TABLE author FROM "Decoders"
+SORT title DESC
+```
