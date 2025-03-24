@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/welcome/","tags":["data-governance","gardenEntry"]}
+{"dg-publish":true,"permalink":"/welcome/","tags":["data-governance","gardenEntry","gardenEntry"]}
 ---
 
 # H1
