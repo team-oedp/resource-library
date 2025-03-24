@@ -2,16 +2,14 @@
 {"dg-publish":true,"permalink":"/welcome/","tags":["data-governance","gardenEntry"]}
 ---
 
-# Header here
+# H1
+## H2
+### H3
+#### H4
 
-Hi!
-## Maybe a subheader
+ 🤩 - emojis
 
-
-
-We can also have 🤩 - emojis
-
-And this is how we link to another page: [[Decoders/Data Access\|Data Access]] 
+Linking to another page: put the page name between double brackets. For example [[Decoders/Data Access\|Data Access]] is wrapped in "[[page name\|page name]]" 
 
 
 New setup - test
