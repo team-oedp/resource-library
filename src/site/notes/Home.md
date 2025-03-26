@@ -12,7 +12,7 @@
 Linking to another page: put the page name between double brackets. For example [[Decoders/Data Access\|Data Access]] is wrapped in "[[page name\|page name]]" 
 
 
-Data cards example
+Card View
 
 | File                                                                                                 | author  |
 | ---------------------------------------------------------------------------------------------------- | ------- |
