@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/about-the-plays/"}
+{"dg-publish":true,"permalink":"/plays/about-the-plays/","pinned":true}
 ---
 
 
