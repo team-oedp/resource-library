@@ -17,17 +17,17 @@ Card View - I'm still fighting with this
 | [[Decoders/Data Governance\|Data Governance]]                                                     | Aaron   |
 | [[Decoders/Data Access\|Data Access]]                                                             | Leticia |
 | [[Decoders/Data Governance Models\|Data Governance Models]]                                       | Leticia |
-| [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     | Leticia |
 | [[Decoders/Data Ownership\|Data Ownership]]                                                       | Leticia |
+| [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     | Leticia |
 | [[Decoders/Data Sharing Agreements\|Data Sharing Agreements]]                                     | Leticia |
-| [[Decoders/Data Quality Assurance\|Data Quality Assurance]]                                       | Leticia |
-| [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] | Aaron   |
 | [[Decoders/Data Sharing\|Data Sharing]]                                                           | Emelia  |
+| [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] | Aaron   |
 | [[Decoders/Indigenous Data Sovereignty\|Indigenous Data Sovereignty]]                             | Aaron   |
-| [[Decoders/Environmental Data\|Environmental Data]]                                               | Emelia  |
-| [[Decoders/Open Data\|Open Data]]                                                                 | Emelia  |
-| [[Decoders/Open Source\|Open Source]]                                                             | Emelia  |
 | [[Decoders/Metadata\|Metadata]]                                                                   | Emelia  |
+| [[Decoders/Open Source\|Open Source]]                                                             | Emelia  |
+| [[Decoders/Open Data\|Open Data]]                                                                 | Emelia  |
+| [[Decoders/Data Quality Assurance\|Data Quality Assurance]]                                       | Leticia |
+| [[Decoders/Environmental Data\|Environmental Data]]                                               | Emelia  |
 
 { .block-language-dataview}
 
