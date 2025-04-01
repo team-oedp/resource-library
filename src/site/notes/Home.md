@@ -9,10 +9,6 @@
 
 Regular text [^1]
 
-
-```
-
-
 Card View - I'm still fighting with this
 
 | File                                                                                                 | author  |
