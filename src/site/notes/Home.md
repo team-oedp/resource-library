@@ -11,23 +11,23 @@ Regular text [^1]
 
 Card View - I'm still fighting with this
 
-| File                                                                                                 | author  |
-| ---------------------------------------------------------------------------------------------------- | ------- |
-| [[Decoders/About the Decoders\|About the Decoders]]                                               | Emelia  |
-| [[Decoders/Data Governance\|Data Governance]]                                                     | Aaron   |
-| [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     | Leticia |
-| [[Decoders/Data Ownership\|Data Ownership]]                                                       | Leticia |
-| [[Decoders/Data Access\|Data Access]]                                                             | Leticia |
-| [[Decoders/Data Governance Models\|Data Governance Models]]                                       | Leticia |
-| [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] | Aaron   |
-| [[Decoders/Data Sharing\|Data Sharing]]                                                           | Emelia  |
-| [[Decoders/Indigenous Data Sovereignty\|Indigenous Data Sovereignty]]                             | Aaron   |
-| [[Decoders/Metadata\|Metadata]]                                                                   | Emelia  |
-| [[Decoders/Data Quality Assurance\|Data Quality Assurance]]                                       | Leticia |
-| [[Decoders/Open Data\|Open Data]]                                                                 | Emelia  |
-| [[Decoders/Open Source\|Open Source]]                                                             | Emelia  |
-| [[Decoders/Data Sharing Agreements\|Data Sharing Agreements]]                                     | Leticia |
-| [[Decoders/Environmental Data\|Environmental Data]]                                               | Emelia  |
+| File                                                                                                 |
+| ---------------------------------------------------------------------------------------------------- |
+| [[Decoders/About the Decoders\|About the Decoders]]                                               |
+| [[Decoders/Data Governance\|Data Governance]]                                                     |
+| [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     |
+| [[Decoders/Data Ownership\|Data Ownership]]                                                       |
+| [[Decoders/Data Access\|Data Access]]                                                             |
+| [[Decoders/Data Governance Models\|Data Governance Models]]                                       |
+| [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] |
+| [[Decoders/Data Sharing\|Data Sharing]]                                                           |
+| [[Decoders/Indigenous Data Sovereignty\|Indigenous Data Sovereignty]]                             |
+| [[Decoders/Metadata\|Metadata]]                                                                   |
+| [[Decoders/Data Quality Assurance\|Data Quality Assurance]]                                       |
+| [[Decoders/Open Data\|Open Data]]                                                                 |
+| [[Decoders/Open Source\|Open Source]]                                                             |
+| [[Decoders/Data Sharing Agreements\|Data Sharing Agreements]]                                     |
+| [[Decoders/Environmental Data\|Environmental Data]]                                               |
 
 { .block-language-dataview}
 
