@@ -9,25 +9,14 @@
 
 Regular text [^1]
 
-Card View - I'm still fighting with this
+Card View of the Case Studies folder
 
-| File                                                                                                 |
-| ---------------------------------------------------------------------------------------------------- |
-| [[Decoders/About the Decoders\|About the Decoders]]                                               |
-| [[Decoders/Data Governance\|Data Governance]]                                                     |
-| [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     |
-| [[Decoders/Data Ownership\|Data Ownership]]                                                       |
-| [[Decoders/Data Access\|Data Access]]                                                             |
-| [[Decoders/Data Governance Models\|Data Governance Models]]                                       |
-| [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] |
-| [[Decoders/Data Sharing\|Data Sharing]]                                                           |
-| [[Decoders/Indigenous Data Sovereignty\|Indigenous Data Sovereignty]]                             |
-| [[Decoders/Metadata\|Metadata]]                                                                   |
-| [[Decoders/Data Quality Assurance\|Data Quality Assurance]]                                       |
-| [[Decoders/Open Data\|Open Data]]                                                                 |
-| [[Decoders/Open Source\|Open Source]]                                                             |
-| [[Decoders/Data Sharing Agreements\|Data Sharing Agreements]]                                     |
-| [[Decoders/Environmental Data\|Environmental Data]]                                               |
+| File                                                               |
+| ------------------------------------------------------------------ |
+| [[Case Studies/About the Case Studies\|About the Case Studies]] |
+| [[Case Studies/CHARRS\|CHARRS]]                                 |
+| [[Case Studies/CoAct\|CoAct]]                                   |
+| [[Case Studies/Self-Help Enterprises\|Self-Help Enterprises]]   |
 
 { .block-language-dataview}
 
