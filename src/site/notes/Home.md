@@ -11,12 +11,12 @@ Regular text with a footnote [^1]
 
 Card View of the Case Studies folder
 
-| File                                                               | Title | image                                                                 | author |
-| ------------------------------------------------------------------ | ----- | --------------------------------------------------------------------- | ------ |
-| [[Case Studies/About the Case Studies\|About the Case Studies]] | \-    | ![[Pasted image 20250402211818.png\|Pasted image 20250402211818.png]] | Emelia |
-| [[Case Studies/CHARRS\|CHARRS]]                                 | \-    | \-                                                                    | Emelia |
-| [[Case Studies/CoAct\|CoAct]]                                   | \-    | \-                                                                    | Emelia |
-| [[Case Studies/Self-Help Enterprises\|Self-Help Enterprises]]   | \-    | \-                                                                    | Emelia |
+| File                                                               |
+| ------------------------------------------------------------------ |
+| [[Case Studies/About the Case Studies\|About the Case Studies]] |
+| [[Case Studies/CHARRS\|CHARRS]]                                 |
+| [[Case Studies/CoAct\|CoAct]]                                   |
+| [[Case Studies/Self-Help Enterprises\|Self-Help Enterprises]]   |
 
 { .block-language-dataview}
 
