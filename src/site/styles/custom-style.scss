@@ -1,13 +1,14 @@
 body {
-    /***
-      ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
-      IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
-   ***/
-    //  background-color: white;
-    //  .content {
-    //   font-size: 14px;
-    //  }
-    //  h1 {
-    //   color: black;
-    //  }
+  .table-100 table th:first-child,
+  .table-100 table td:first-child,
+  .table-100 .dataview.table-view-table th:first-child,
+  .table-100 .dataview.table-view-table td:first-child,
+  .table-100 .markdown-source-view.mod-cm6 td:first-child,
+  .table-100 .markdown-source-view.mod-cm6 th:first-child {
+    padding-left: 20px !important; }
+  .table-100 table th:last-child,
+  .table-100 table td:last-child,
+  .table-100 .dataview.table-view-table th:last-child,
+  .table-100 .dataview.table-view-table td:last-child {
+    padding-right: 20px; }
 }
