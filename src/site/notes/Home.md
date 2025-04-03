@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/home/","pinned":true,"tags":["data-governance","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry"]}
+{"dg-publish":true,"permalink":"/home/","pinned":true,"tags":["data-governance","gardenEntry"]}
 ---
 
 # H1
@@ -15,19 +15,19 @@ Card View - I'm still fighting with this
 | ---------------------------------------------------------------------------------------------------- | ------- |
 | [[Decoders/About the Decoders\|About the Decoders]]                                               | Emelia  |
 | [[Decoders/Data Governance\|Data Governance]]                                                     | Aaron   |
+| [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     | Leticia |
+| [[Decoders/Data Ownership\|Data Ownership]]                                                       | Leticia |
 | [[Decoders/Data Access\|Data Access]]                                                             | Leticia |
 | [[Decoders/Data Governance Models\|Data Governance Models]]                                       | Leticia |
-| [[Decoders/Data Ownership\|Data Ownership]]                                                       | Leticia |
-| [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     | Leticia |
 | [[Decoders/Data Sharing Agreements\|Data Sharing Agreements]]                                     | Leticia |
-| [[Decoders/Data Sharing\|Data Sharing]]                                                           | Emelia  |
 | [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] | Aaron   |
+| [[Decoders/Data Sharing\|Data Sharing]]                                                           | Emelia  |
 | [[Decoders/Indigenous Data Sovereignty\|Indigenous Data Sovereignty]]                             | Aaron   |
-| [[Decoders/Metadata\|Metadata]]                                                                   | Emelia  |
-| [[Decoders/Open Source\|Open Source]]                                                             | Emelia  |
-| [[Decoders/Open Data\|Open Data]]                                                                 | Emelia  |
 | [[Decoders/Data Quality Assurance\|Data Quality Assurance]]                                       | Leticia |
 | [[Decoders/Environmental Data\|Environmental Data]]                                               | Emelia  |
+| [[Decoders/Open Data\|Open Data]]                                                                 | Emelia  |
+| [[Decoders/Metadata\|Metadata]]                                                                   | Emelia  |
+| [[Decoders/Open Source\|Open Source]]                                                             | Emelia  |
 
 { .block-language-dataview}
 
