@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/home/","pinned":true,"tags":["data-governance","gardenEntry"], "cssClasses" "cards":}
+{"dg-publish":true,"permalink":"/home/","pinned":true,"tags":["data-governance","gardenEntry"], "cssClasses": "cards":}
 ---
 
 # H1
