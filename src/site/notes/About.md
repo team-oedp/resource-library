@@ -2,6 +2,9 @@
 {"dg-publish":true,"permalink":"/about/","tags":["data-governance"]}
 ---
 
+
+
+
 # H1
 ## H2
 ### H3
@@ -18,15 +21,15 @@ Data cards example
 | ---------------------------------------------------------------------------------------------------- | ------- |
 | [[Decoders/About the Decoders\|About the Decoders]]                                               | Emelia  |
 | [[Decoders/Data Governance\|Data Governance]]                                                     | Aaron   |
+| [[Decoders/Data Ownership\|Data Ownership]]                                                       | Leticia |
+| [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     | Leticia |
 | [[Decoders/Data Access\|Data Access]]                                                             | Leticia |
 | [[Decoders/Data Governance Models\|Data Governance Models]]                                       | Leticia |
-| [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     | Leticia |
-| [[Decoders/Data Ownership\|Data Ownership]]                                                       | Leticia |
-| [[Decoders/Data Sharing\|Data Sharing]]                                                           | Emelia  |
 | [[Decoders/Data Quality Assurance\|Data Quality Assurance]]                                       | Leticia |
-| [[Decoders/Data Sharing Agreements\|Data Sharing Agreements]]                                     | Leticia |
+| [[Decoders/Data Sharing\|Data Sharing]]                                                           | Emelia  |
 | [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] | Aaron   |
 | [[Decoders/Indigenous Data Sovereignty\|Indigenous Data Sovereignty]]                             | Aaron   |
+| [[Decoders/Data Sharing Agreements\|Data Sharing Agreements]]                                     | Leticia |
 | [[Decoders/Environmental Data\|Environmental Data]]                                               | Emelia  |
 | [[Decoders/Open Data\|Open Data]]                                                                 | Emelia  |
 | [[Decoders/Metadata\|Metadata]]                                                                   | Emelia  |
