@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-16-develop-a-readymade-workflow-for-employing-and-maintaining-data-sharing-agreements/"}
+{"author":"Emelia","category":["relational"],"tags":null,"dg-publish":true,"permalink":"/plays/play-16-develop-a-readymade-workflow-for-employing-and-maintaining-data-sharing-agreements/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Data sharing agreements are contracts. They don't build relationships, but rather maintain existing relationships.** 

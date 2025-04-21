@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-17-regularly-review-platforms-to-ensure-that-data-sharing-agreements-are-being-upheld/"}
+{"author":"Cathy","category":["technical"],"tags":null,"dg-publish":true,"permalink":"/plays/play-17-regularly-review-platforms-to-ensure-that-data-sharing-agreements-are-being-upheld/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Data sharing agreements are contracts. They don't build relationships, but rather maintain existing relationships.** 

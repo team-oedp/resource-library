@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-sharing-agreements/"}
+{"author":"Leticia","category":["legal"],"dg-publish":true,"permalink":"/decoders/data-sharing-agreements/","dgPassFrontmatter":true}
 ---
 
 

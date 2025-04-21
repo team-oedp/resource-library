@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-4-create-and-distribute-communication-products-that-socialize-the-criticality-of-relational-and-technical-dynamics-within-environmental-data-governance/"}
+{"author":"Emelia","category":[],"tags":null,"dg-publish":true,"permalink":"/plays/play-4-create-and-distribute-communication-products-that-socialize-the-criticality-of-relational-and-technical-dynamics-within-environmental-data-governance/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: A strong connection between social, legal, and technical components is key to cohesive data governance.**

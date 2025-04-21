@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/indigenous-data-sovereignty/"}
+{"author":"Aaron","category":["relational"],"dg-publish":true,"permalink":"/decoders/indigenous-data-sovereignty/","dgPassFrontmatter":true}
 ---
 
 [[Decoders/Data Ownership\|Data Ownership]]

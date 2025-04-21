@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-access/"}
+{"author":"Leticia","category":["social"],"dg-publish":true,"permalink":"/decoders/data-access/","dgPassFrontmatter":true}
 ---
 
 

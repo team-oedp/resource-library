@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-visualization-and-graphic-narratives/"}
+{"author":"Aaron","category":["relational","technical"],"dg-publish":true,"permalink":"/decoders/data-visualization-and-graphic-narratives/","dgPassFrontmatter":true}
 ---
 
 [[Decoders/Data Access\|Data Access]]

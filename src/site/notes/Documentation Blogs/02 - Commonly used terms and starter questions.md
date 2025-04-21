@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/documentation-blogs/02-commonly-used-terms-and-starter-questions/"}
+{"author":"Emelia","category":[],"tags":null,"dg-publish":true,"permalink":"/documentation-blogs/02-commonly-used-terms-and-starter-questions/","dgPassFrontmatter":true}
 ---
 
 

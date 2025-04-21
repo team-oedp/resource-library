@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-9-create-a-privacy-policy-template/"}
+{"author":"Emelia","category":null,"tags":null,"dg-publish":true,"permalink":"/plays/play-9-create-a-privacy-policy-template/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Risk exists, but deliberately designed data governance can create pathways for opening up data in responsible ways.**

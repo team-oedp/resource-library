@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-governance-models/"}
+{"author":"Leticia","category":["relational"],"dg-publish":true,"permalink":"/decoders/data-governance-models/","dgPassFrontmatter":true}
 ---
 
 

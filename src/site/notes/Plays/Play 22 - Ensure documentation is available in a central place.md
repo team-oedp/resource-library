@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-22-ensure-documentation-is-available-in-a-central-place/"}
+{"author":"Cathy","category":["technical"],"tags":null,"dg-publish":true,"permalink":"/plays/play-22-ensure-documentation-is-available-in-a-central-place/","dgPassFrontmatter":true}
 ---
 
 ##### **** Documentation underlies effective collaborative data governance and institutional knowledge.****

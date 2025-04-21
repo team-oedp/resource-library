@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-15-explore-the-role-of-public-institutions-and-civil-society-actors-in-supporting-data-infrastructures-in-communities/"}
+{"author":"Emelia","category":null,"tags":null,"dg-publish":true,"permalink":"/plays/play-15-explore-the-role-of-public-institutions-and-civil-society-actors-in-supporting-data-infrastructures-in-communities/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Data ownership in practice has material requirements—somewhere to house the data and someone to maintain it.**

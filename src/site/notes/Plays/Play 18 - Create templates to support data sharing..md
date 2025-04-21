@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-18-create-templates-to-support-data-sharing/"}
+{"author":"Emelia","category":null,"tags":null,"dg-publish":true,"permalink":"/plays/play-18-create-templates-to-support-data-sharing/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Data sharing agreements are contracts. They don't build relationships, but rather maintain existing relationships.** 

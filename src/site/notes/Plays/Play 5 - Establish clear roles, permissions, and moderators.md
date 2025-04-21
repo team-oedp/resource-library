@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-5-establish-clear-roles-permissions-and-moderators/"}
+{"author":"Emelia","category":["relational"],"tags":null,"dg-publish":true,"permalink":"/plays/play-5-establish-clear-roles-permissions-and-moderators/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Risk exists, but deliberately designed data governance can create pathways for opening up data in responsible ways.**

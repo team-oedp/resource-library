@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-23-develop-processes-for-maintaining-documentation/"}
+{"author":"Cathy","category":["technical"],"tags":null,"dg-publish":true,"permalink":"/plays/play-23-develop-processes-for-maintaining-documentation/","dgPassFrontmatter":true}
 ---
 
 ##### **Documentation underlies effective collaborative data governance and institutional knowledge.****

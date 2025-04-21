@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-ownership/"}
+{"author":"Leticia","category":["relational"],"dg-publish":true,"permalink":"/decoders/data-ownership/","dgPassFrontmatter":true}
 ---
 
 [[Decoders/Data Governance\|Data Governance]]

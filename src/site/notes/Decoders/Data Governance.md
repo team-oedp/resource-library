@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-governance/","tags":["data-governance"]}
+{"tags":["data-governance"],"author":"Aaron","category":["starter"],"dg-publish":true,"permalink":"/decoders/data-governance/","dgPassFrontmatter":true}
 ---
 
 [[Decoders/Data Governance Models\|Data Governance Models]]

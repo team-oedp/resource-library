@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-11-define-necessary-technical-features-review-platforms-assess-against-required-features-and-the-risks-for-technical-overuse/"}
+{"author":"Cathy","category":["technical"],"tags":null,"dg-publish":true,"permalink":"/plays/play-11-define-necessary-technical-features-review-platforms-assess-against-required-features-and-the-risks-for-technical-overuse/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: The technical design of a data system can, and should, reflect the data user’s needs to unlock the value of the data.** 

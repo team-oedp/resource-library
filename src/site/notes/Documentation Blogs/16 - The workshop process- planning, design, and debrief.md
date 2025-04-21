@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/documentation-blogs/16-the-workshop-process-planning-design-and-debrief/"}
+{"author":"Emelia Williams","category":null,"tags":null,"dg-publish":true,"permalink":"/documentation-blogs/16-the-workshop-process-planning-design-and-debrief/","dgPassFrontmatter":true}
 ---
 
 _This is the thirteenth post for the Community Data Hubs (CDH) Documentation series. This series documents the thought and working trajectories within the process of creating the building blocks of our CDH model and OEDP’s broader data stewardship work. This blog will document our work with our three community partners as we workshopped their environmental data governance questions and challenges, and sought lessons to inform the CDH prototype._ 

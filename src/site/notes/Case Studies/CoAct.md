@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/case-studies/co-act/"}
+{"author":"Emelia","category":null,"tags":null,"dg-publish":true,"permalink":"/case-studies/co-act/","dgPassFrontmatter":true}
 ---
 
 [CoAct](https://coactproject.eu/what-is-coact/) is a project team that includes El Centro de Investigaciones para la Transformación, or the Research Centre for Transformation, at the National University of San Martin (CENIT) and Fundación Ambiente y Recursos Naturales (FARN), or [Environment and Natural Resources Foundation](https://farn.org.ar/), in English. Together, they created and now actively maintain the social citizen science tool [¿Qué pasa, Riachuelo? (QPR)](https://mapaqpr.farn.org.ar/page/about). This tool collects and displays data on water quality, as well as the uses and perceptions of natural areas in the Matanza-Riachuelo basin.  CoAct uses participatory research and citizen social science practices[^1] to integrate these stakeholders into the project at different stages, whether during design or result interpretation.[^2] CENIT and FARN aim to promote synergies between scientists and academic researchers working in the basin, communities and organizations interested in environmental education, and decision makers in the region. The research group investigates three key themes: natural areas, relocation and redevelopment, and water quality.

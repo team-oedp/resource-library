@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/environmental-data/"}
+{"author":"Emelia","category":["starter"],"tags":null,"dg-publish":true,"permalink":"/decoders/environmental-data/","dgPassFrontmatter":true}
 ---
 
 [[Decoders/Data Governance\|Data Governance]]

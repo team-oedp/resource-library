@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-quality-assurance/"}
+{"author":"Leticia","category":["technical"],"dg-publish":true,"permalink":"/decoders/data-quality-assurance/","dgPassFrontmatter":true}
 ---
 
 [[Decoders/Data Governance\|Data Governance]]

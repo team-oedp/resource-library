@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-8-create-templates-for-roles-and-permissions-documentation/"}
+{"author":"Emelia","category":null,"tags":null,"dg-publish":true,"permalink":"/plays/play-8-create-templates-for-roles-and-permissions-documentation/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Risk exists, but deliberately designed data governance can create pathways for opening up data in responsible ways.**

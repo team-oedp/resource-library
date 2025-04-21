@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-12-create-templates-to-support-metadata-usage/"}
+{"author":"Emelia","category":null,"tags":null,"dg-publish":true,"permalink":"/plays/play-12-create-templates-to-support-metadata-usage/","dgPassFrontmatter":true}
 ---
 
 

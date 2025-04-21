@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-10-create-how-to-guides-for-discussing-risk-and-developing-mitigation-strategies/"}
+{"author":"Emelia","category":null,"tags":null,"dg-publish":true,"permalink":"/plays/play-10-create-how-to-guides-for-discussing-risk-and-developing-mitigation-strategies/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Risk exists, but deliberately designed data governance can create pathways for opening up data in responsible ways.**

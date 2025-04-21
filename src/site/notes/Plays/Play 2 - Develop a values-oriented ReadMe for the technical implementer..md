@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-2-develop-a-values-oriented-read-me-for-the-technical-implementer/"}
+{"author":"Cathy","category":["technical"],"tags":null,"dg-publish":true,"permalink":"/plays/play-2-develop-a-values-oriented-read-me-for-the-technical-implementer/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Data values statements can create a basis for decision-making and team cohesion.** 

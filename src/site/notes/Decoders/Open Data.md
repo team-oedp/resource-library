@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/open-data/","tags":["data-governance"]}
+{"author":"Emelia","category":["starter"],"tags":["data-governance"],"dg-publish":true,"permalink":"/decoders/open-data/","dgPassFrontmatter":true}
 ---
 
 

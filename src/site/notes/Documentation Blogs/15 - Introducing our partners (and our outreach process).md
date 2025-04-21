@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/documentation-blogs/15-introducing-our-partners-and-our-outreach-process/"}
+{"author":"Emelia Williams","category":null,"tags":null,"dg-publish":true,"permalink":"/documentation-blogs/15-introducing-our-partners-and-our-outreach-process/","dgPassFrontmatter":true}
 ---
 
 _This is the twelfth post for the Community Data Hubs (CDH) Documentation series. This series documents the thought and working trajectories within the process of creating the building blocks of our CDH model and OEDP’s broader data stewardship work. This blog and the ones that follow will document our work with our three community partners as we workshop their environmental data governance questions, challenges, and find new opportunities within the CDH prototype._

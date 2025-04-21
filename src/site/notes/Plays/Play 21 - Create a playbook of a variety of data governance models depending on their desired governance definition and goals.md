@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-21-create-a-playbook-of-a-variety-of-data-governance-models-depending-on-their-desired-governance-definition-and-goals/"}
+{"author":"Emelia","category":null,"tags":null,"dg-publish":true,"permalink":"/plays/play-21-create-a-playbook-of-a-variety-of-data-governance-models-depending-on-their-desired-governance-definition-and-goals/","dgPassFrontmatter":true}
 ---
 
 ##### **Because data governance can be understood and employed in many different ways, it is essential to define what data governance looks like within your project team.** 

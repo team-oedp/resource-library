@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-privacy-and-security/"}
+{"author":"Leticia","category":["relational"],"dg-publish":true,"permalink":"/decoders/data-privacy-and-security/","dgPassFrontmatter":true}
 ---
 
 [[Decoders/Data Sharing\|Data Sharing]]

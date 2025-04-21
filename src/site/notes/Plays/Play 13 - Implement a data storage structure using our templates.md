@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-13-implement-a-data-storage-structure-using-our-templates/"}
+{"author":"Cathy","category":null,"tags":null,"dg-publish":true,"permalink":"/plays/play-13-implement-a-data-storage-structure-using-our-templates/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: **Data ownership in practice has material requirements—somewhere to house the data and someone to maintain it.**

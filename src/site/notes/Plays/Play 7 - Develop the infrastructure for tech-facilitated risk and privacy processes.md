@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-7-develop-the-infrastructure-for-tech-facilitated-risk-and-privacy-processes/"}
+{"author":"Cathy","category":["technical"],"tags":null,"dg-publish":true,"permalink":"/plays/play-7-develop-the-infrastructure-for-tech-facilitated-risk-and-privacy-processes/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Risk exists, but deliberately designed data governance can create pathways for opening up data in responsible ways.**

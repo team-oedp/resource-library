@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-19-facilitate-conversations-on-defining-data-governance-for-your-project/"}
+{"author":"Emelia","category":["relational"],"tags":null,"dg-publish":true,"permalink":"/plays/play-19-facilitate-conversations-on-defining-data-governance-for-your-project/","dgPassFrontmatter":true}
 ---
 
 ##### **Because data governance can be understood and employed in many different ways, it is essential to define what data governance looks like within your project team.** 

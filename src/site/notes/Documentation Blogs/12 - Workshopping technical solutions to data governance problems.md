@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/documentation-blogs/12-workshopping-technical-solutions-to-data-governance-problems/"}
+{"author":"John Favini","category":null,"tags":null,"dg-publish":true,"permalink":"/documentation-blogs/12-workshopping-technical-solutions-to-data-governance-problems/","dgPassFrontmatter":true}
 ---
 
 This blog documents one of OEDP’s two Environmental Data Labs, held on September 13, 2023. OEDP hosted these labs as part of our broader data stewardship work and with the intention of refining our emerging model for [Community Data Hubs](https://oedp-datastewardship.pubpub.org/) (CDH). Whereas the other lab centered on legal challenges surrounding environmental data stewardship, this lab hones in on _technical_ aspects of data governance, highlighting common problems and identifying potential solutions. 

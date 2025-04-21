@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-14-choose-a-hosting-provider-to-store-and-backup-the-data-consider-alternatives-to-traditional-hosting/"}
+{"author":"Cathy","category":["technical"],"tags":null,"dg-publish":true,"permalink":"/plays/play-14-choose-a-hosting-provider-to-store-and-backup-the-data-consider-alternatives-to-traditional-hosting/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Data ownership in practice has material requirements—somewhere to house the data and someone to maintain it.**

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-20-ensure-tools-can-adhere-to-the-project-definition-of-data-governance/"}
+{"author":"Cathy","category":["technical"],"tags":null,"dg-publish":true,"permalink":"/plays/play-20-ensure-tools-can-adhere-to-the-project-definition-of-data-governance/","dgPassFrontmatter":true}
 ---
 
 ##### **Because data governance can be understood and employed in many different ways, it is essential to define what data governance looks like within your project team.** 

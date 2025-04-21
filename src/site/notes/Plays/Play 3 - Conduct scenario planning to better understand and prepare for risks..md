@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-3-conduct-scenario-planning-to-better-understand-and-prepare-for-risks/"}
+{"author":"Cathy","category":["technical"],"tags":null,"dg-publish":true,"permalink":"/plays/play-3-conduct-scenario-planning-to-better-understand-and-prepare-for-risks/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: A strong connection between social, legal, and technical components is key to cohesive data governance.** 

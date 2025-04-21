@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-sharing/"}
+{"author":"Emelia","category":["relational"],"dg-publish":true,"permalink":"/decoders/data-sharing/","dgPassFrontmatter":true}
 ---
 
 [[Decoders/Data Sharing Agreements\|Data Sharing Agreements]]

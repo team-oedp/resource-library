@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-24-conduct-research-through-informational-interviews-to-create-user-personas-or-a-community-audit/"}
+{"author":"Emelia","category":["relational"],"tags":null,"dg-publish":true,"permalink":"/plays/play-24-conduct-research-through-informational-interviews-to-create-user-personas-or-a-community-audit/","dgPassFrontmatter":true}
 ---
 
 ##### **Truly participatory data governance requires deep understanding of each user, including their values, incentives, and capacity.**

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/plays/play-1-build-and-use-data-values-statements/"}
+{"author":"Emelia","category":["relational"],"tags":null,"dg-publish":true,"permalink":"/plays/play-1-build-and-use-data-values-statements/","dgPassFrontmatter":true}
 ---
 
 ##### **Takeaway: Data values statements can create a basis for decision-making and team cohesion.** 

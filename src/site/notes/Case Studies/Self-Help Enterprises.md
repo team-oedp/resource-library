@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/case-studies/self-help-enterprises/"}
+{"author":"Emelia","category":[],"tags":null,"dg-publish":true,"permalink":"/case-studies/self-help-enterprises/","dgPassFrontmatter":true}
 ---
 
 
