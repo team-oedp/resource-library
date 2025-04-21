@@ -1,5 +1,5 @@
 ---
-{"tags":["data-governance","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry"],"dg-publish":true,"dg-pinned":true,"dg-home":true,"cssclasses":["cards"],"permalink":"/home/","pinned":true,"contentClasses":"cards","dgPassFrontmatter":true}
+{"tags":["data-governance","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry"],"dg-publish":true,"dg-pinned":true,"dg-home":true,"cssclasses":["cards"],"permalink":"/home/","pinned":true,"contentClasses":"cards","dgPassFrontmatter":true}
 ---
 
 # H1
