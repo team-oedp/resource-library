@@ -95,7 +95,7 @@ These conversations led directly into another on optional accountability check-i
 
 We ended the debrief with a reflection on what they were most excited to pursue or continue thinking about from this workshop and collaboration. After the debrief, I sent a post-workshop survey to capture what could be improved upon, how and if attitudes toward talking and working with data governance had changed, and if expectations were met.  
 
-To read the entire case study documenting our collaboration with CHARRS and WAWA, see [[Case Studies/CHARRS\|CHARRS]].
+To read the entire case study documenting our collaboration with CHARRS and WAWA, see [[CHARRS\|CHARRS]].
 
 **Next steps**
 The next step for the project is to draft the [playbook](https://oedp-datastewardship.pubpub.org/pub/qzqxm80c#nz0n73qugkz), a resource that will synthesize each partner’s workshop and process in greater detail, and delineate any trends and patterns. We’ll also make the resources and templates made during the process available for other group’s usage, and consider the original concept of the Community Data Hubs model in light of these workshops and findings. We are considering how we should package this information, and what communication outputs would be most impactful outside of the larger playbook. We’re excited to begin the playbook creation phase of this project, including a review period for the community partners and advisory group. 
