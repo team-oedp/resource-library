@@ -8,6 +8,19 @@ const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
+const pluginPDFEmbed = require('eleventy-plugin-pdfembed');
+
+module.exports = (eleventyConfig) => {
+
+	// more stuff here
+
+	eleventyConfig.addPlugin(pluginPDFEmbed, {
+		key: '9d454a1e63cf47d8834c7161160ebc41'
+	});
+
+
+}
+
 const { headerToId, namedHeadingsFilter } = require("./src/helpers/utils");
 const {
   userMarkdownSetup,
