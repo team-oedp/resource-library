@@ -19,7 +19,6 @@ Data cards example
 
 | File                                                                                                 | author  |
 | ---------------------------------------------------------------------------------------------------- | ------- |
-| [[Decoders/About the Decoders\|About the Decoders]]                                               | Emelia  |
 | [[Decoders/Data Governance\|Data Governance]]                                                     | Aaron   |
 | [[Decoders/Data Access\|Data Access]]                                                             | Leticia |
 | [[Decoders/Data Governance Models\|Data Governance Models]]                                       | Leticia |
@@ -34,5 +33,6 @@ Data cards example
 | [[Decoders/Open Source\|Open Source]]                                                             | Emelia  |
 | [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] | Aaron   |
 | [[Decoders/Environmental Data\|Environmental Data]]                                               | Emelia  |
+| [[Decoders/About the Decoders\|About the Decoders]]                                               | Emelia  |
 
 { .block-language-dataview}
