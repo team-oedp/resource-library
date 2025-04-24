@@ -1,5 +1,5 @@
 ---
-{"tags":null,"dg-publish":true,"permalink":"/tools-and-templates/data-use-and-sharing-agreement-questions/","dgPassFrontmatter":true}
+{"author":"Kate Wing","tags":["usage","dataco-ownership","accountability","research","datamanagement"],"dg-publish":true,"permalink":"/tools-and-templates/data-use-and-sharing-agreement-questions/","dgPassFrontmatter":true}
 ---
 
 
@@ -83,4 +83,3 @@ For example, when talking with a new partner, asking about topics like:
 
 This can be a way to confirm how CHARRS’ values will be supported with actions during the partnership.
 
-**

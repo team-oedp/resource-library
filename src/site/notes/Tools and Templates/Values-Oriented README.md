@@ -1,5 +1,5 @@
 ---
-{"tags":null,"dg-publish":true,"permalink":"/tools-and-templates/values-oriented-readme/","dgPassFrontmatter":true}
+{"author":"Cathy Richards","tags":["documentation","trust","transparency"],"dg-publish":true,"permalink":"/tools-and-templates/values-oriented-readme/","dgPassFrontmatter":true}
 ---
 
 
@@ -22,7 +22,7 @@ Clearly articulate boundaries to prevent misunderstandings and protect program i
 Describe the behaviors, practices, and outcomes your program expects from technologists. (e.g., privacy and security practices to adhere to, #documentation requirements, accessibility needs).
 
 ## Implementation Instructions
-*Include detailed information that technologists can use to implement their work (e.g., specify which users can have access to which datasets).*
+Include detailed information that technologists can use to implement their work (e.g., specify which users can have access to which datasets).
 
 
 **Metadata**
