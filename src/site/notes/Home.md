@@ -1,5 +1,5 @@
 ---
-{"tags":["data-governance","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry"],"dg-publish":true,"dg-pinned":true,"dg-home":true,"cssclasses":["cards"],"permalink":"/home/","pinned":true,"contentClasses":"cards","dgPassFrontmatter":true}
+{"tags":["data-governance","gardenEntry"],"dg-publish":true,"dg-pinned":true,"dg-home":true,"cssclasses":["cards"],"permalink":"/home/","pinned":true,"contentClasses":"cards","dgPassFrontmatter":true}
 ---
 
 # H1
@@ -14,9 +14,9 @@ Card View of the Case Studies folder
 | File                                                               |
 | ------------------------------------------------------------------ |
 | [[Case Studies/About the Case Studies\|About the Case Studies]] |
+| [[Case Studies/CHARRS\|CHARRS]]                                 |
 | [[Case Studies/CoAct\|CoAct]]                                   |
 | [[Case Studies/Self-Help Enterprises\|Self-Help Enterprises]]   |
-| [[Case Studies/CHARRS\|CHARRS]]                                 |
 
 { .block-language-dataview}
 

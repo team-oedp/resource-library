@@ -25,14 +25,14 @@ Data cards example
 | [[Decoders/Data Governance Models\|Data Governance Models]]                                       | Leticia |
 | [[Decoders/Data Privacy & Security\|Data Privacy & Security]]                                     | Leticia |
 | [[Decoders/Data Ownership\|Data Ownership]]                                                       | Leticia |
-| [[Decoders/Data Quality Assurance\|Data Quality Assurance]]                                       | Leticia |
 | [[Decoders/Data Sharing Agreements\|Data Sharing Agreements]]                                     | Leticia |
-| [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] | Aaron   |
-| [[Decoders/Metadata\|Metadata]]                                                                   | Emelia  |
+| [[Decoders/Data Quality Assurance\|Data Quality Assurance]]                                       | Leticia |
 | [[Decoders/Indigenous Data Sovereignty\|Indigenous Data Sovereignty]]                             | Aaron   |
+| [[Decoders/Metadata\|Metadata]]                                                                   | Emelia  |
 | [[Decoders/Data Sharing\|Data Sharing]]                                                           | Emelia  |
-| [[Decoders/Environmental Data\|Environmental Data]]                                               | Emelia  |
 | [[Decoders/Open Data\|Open Data]]                                                                 | Emelia  |
 | [[Decoders/Open Source\|Open Source]]                                                             | Emelia  |
+| [[Decoders/Data Visualization and Graphic Narratives\|Data Visualization and Graphic Narratives]] | Aaron   |
+| [[Decoders/Environmental Data\|Environmental Data]]                                               | Emelia  |
 
 { .block-language-dataview}
