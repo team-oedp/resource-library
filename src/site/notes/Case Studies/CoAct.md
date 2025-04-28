@@ -1,6 +1,9 @@
 ---
-{"author":"Emelia","category":null,"tags":["mapping","communityscience","waterquality","naturedata","usage","documentation","management","capacity","risk","legal","Argentina"],"dg-publish":true,"permalink":"/case-studies/co-act/","dgPassFrontmatter":true}
+{"author":"Emelia Williams","category":null,"tags":["mapping","communityscience","waterquality","naturedata","usage","documentation","management","capacity","risk","legal","Argentina"],"dg-publish":true,"permalink":"/case-studies/co-act/","dgPassFrontmatter":true}
 ---
+
+![[CoAct-Place-2.png\|CoAct-Place-2.png]]
+
 
 [CoAct](https://coactproject.eu/what-is-coact/) is a project team that includes El Centro de Investigaciones para la Transformación, or the Research Centre for Transformation, at the National University of San Martin (CENIT) and Fundación Ambiente y Recursos Naturales (FARN), or [Environment and Natural Resources Foundation](https://farn.org.ar/), in English. Together, they created and now actively maintain the social citizen science tool [¿Qué pasa, Riachuelo? (QPR)](https://mapaqpr.farn.org.ar/page/about). This tool collects and displays data on #waterquality, as well as the uses and perceptions of natural areas in the Matanza-Riachuelo basin.  CoAct uses participatory research and citizen social science practices[^1] to integrate these stakeholders into the project at different stages, whether during design or result interpretation.[^2] CENIT and FARN aim to promote synergies between scientists and academic researchers working in the basin, communities and organizations interested in environmental education, and decision makers in the region. The research group investigates three key themes: natural areas, relocation and redevelopment, and water quality.
 
@@ -16,6 +19,7 @@ The CoAct project collects observational water quality data and data about natur
 - Data about relocation and redevelopment: Relocation and reurbanization processes are a part of ACUMAR plans, and with QPR, communities can monitor different aspects of the process and share their experiences of participation in government programs.[^12]
 - Data about water quality: QPR facilitates community participation in generating information about observable variables on water quality that complements existing public data. This supports sanitation policy, and allows people to “observe the river, assess its biocultural importance, and monitor variables associated with water quality to support decision-making.”[^13]
 
+![CoAct2data.png](/img/user/Photos%20for%20Resource%20Library/CoAct2data.png)
 
 ### **Challenges**
 CENIT and FARN described several challenges surrounding the usage, sharing, and general governance of these data during the CoAct project. The team wanted to translate the technicalities of data governance to non-academic stakeholders in the project, including the citizen scientists using the QPR tool and local and regional government decision makers. They were interested in understanding how to create the simplest way of translating the governance framework so that the public could understand and get involved. In this vein, the team was interested in exploring how to reach agreements between stakeholders with different interests or values. Considering that public policy in Argentina has been subject to drastic switches in orientation, CENIT and FARN were also interested in creating data governance structures that would not only have strong decision-making frameworks, but also be flexible enough to withstand changing conditions.[^14]
@@ -49,9 +53,13 @@ The first module reflected CoAct’s desire to 1) engage with community actors t
 - Data #management systems and how they apply rules determined by the group
 - Forms and processes for adding and managing data
 
-It was evident that a data governance framework for CoAct should explicitly outline decision-making and rule-making processes, the maintenance activities of data management, and how the technical infrastructure could support social and data governance. Most members in attendance had a pivotal role in setting up these rules or systems, but lacked a bird’s-eye view of documentation that could show how the relational and technical pieces come together. This conversation is detailed further in Figure 9.
+It was evident that a data governance framework for CoAct should explicitly outline decision-making and rule-making processes, the maintenance activities of data management, and how the technical infrastructure could support social and data governance. Most members in attendance had a pivotal role in setting up these rules or systems, but lacked a bird’s-eye view of documentation that could show how the relational and technical pieces come together. This conversation is detailed further below, in Figure 9.
+
+![Fig-9.jpg](/img/user/Photos%20for%20Resource%20Library/Fig-9.jpg)
 
 Building on this session, we led a conversation around who was significantly involved in the project, who was involved occasionally, who CoAct might want to bring into the work in the future, and who was considered a community actor. This session surfaced details on the project’s partnerships, and which groups might be prioritized for engagement. An important specification arose during the conversation: CoAct should determine who needed to know about data governance, and who needed to participate in data governance, as this would inform CoAct’s plans to engage them. The CoAct team identified teachers, environmental leaders at the provincial level, and community libraries as the primary actors for participation in governance; meanwhile, educational inspectors or administrators and students might not participate in the governance but should be kept informed of processes. For a comprehensive view of all current and future actors, see Figure 10. 
+
+![Fig-10.jpg](/img/user/Photos%20for%20Resource%20Library/Fig-10.jpg)
 
 We asked five questions for each priority actor group: 
 - What are their goals within the project?
@@ -62,6 +70,7 @@ We asked five questions for each priority actor group: 
 
 The answers to these questions painted a fuller picture of each actor to ultimately inform the design of effective engagement strategies. Each of these aspects would influence who, how, and why someone might want to be involved. Furthermore, designing one singular approach to engagement might appeal to one of these actors, but miss the mark for others; it would run the #risk of both giving someone too little information or overwhelming them with too much; or offer benefits that don’t align with an actor’s desires, or involve them in a process that feels risky, either politically or legally. This would be critical in scenarios that are politically fraught, like the current situation in the Matanza-Riachuelo river basin. To see the brainstormed responses for teachers, as an example, see Figure 11.
 
+![[Fig-11.jpg\|Fig-11.jpg]]
 
 ##### **Takeaway 7: Because data governance can be understood and employed in many different ways, it is essential to define what your data governance framework looks like within your project team.**
 As facilitators, we hesitated to present a conclusive definition to our partners because data governance, and correspondingly, data governance frameworks,[^17] can look differently to different communities and depends on the context and priorities of a project and team. Still, within each community or project, a commonly held understanding can support putting a data governance framework into practice. Data governance is often an emergent topic for communities working with data, who have been utilizing data governance practices or processes, but not yet using this terminology. Defining data governance with a project team can be a simple conversation among those involved. They can begin by asking what each person’s definition or idea of data governance is, and then identifying the commonalities and differences, and piecing together a definition describing the team’s interpretation of the term. This can facilitate the further alignment of priority data governance practices and processes, constituting the beginning of a framework.

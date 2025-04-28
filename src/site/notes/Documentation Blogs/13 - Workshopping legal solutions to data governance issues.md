@@ -17,7 +17,8 @@ The brainstorming activity was designed with the following premise: _You are try
 
 See the full conglomeration of virtual sticky notes below. 
 
-![](https://resize-v3.pubpub.org/eyJidWNrZXQiOiJhc3NldHMucHVicHViLm9yZyIsImtleSI6ImFxMHlhNXl6L0NvcHkgb2YgRW52aXJvbm1lbnRhbCBEYXRhIExhYiAtIExlZ2FsIFNlc3Npb25fRHJhZnQgLSBGcmFtZSAxLTYxNzA0ODQyNzI0ODQ5LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODAwLCJmaXQiOiJpbnNpZGUiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOnRydWV9fX0=)
+
+![legal 1.jpeg](/img/user/Photos%20for%20Resource%20Library/legal%201.jpeg)
 
 _Fig 1. Sticky notes from Environmental Data Lab brainstorming session_
 
@@ -59,7 +60,7 @@ In this conversation, the participants honed in on questions such as:
 
 See a selection of sticky notes from the Chicago breakout below.
 
-![](https://resize-v3.pubpub.org/eyJidWNrZXQiOiJhc3NldHMucHVicHViLm9yZyIsImtleSI6ImNuM2FsdmVuL0Vudmlyb25tZW50YWwgRGF0YSBMYWIgLSBMZWdhbCBTZXNzaW9uX0RyYWZ0ICgyKS03MTcwNDg0MzAxNjgxMy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19)
+![legal2.jpeg](/img/user/Photos%20for%20Resource%20Library/legal2.jpeg)
 
 _Fig 2. Sticky notes from the Environmental Data Lab question generation activity_ 
 
@@ -68,9 +69,13 @@ In the third activity, the same groups moved onto a “choose your own adventure
 
 The group discussing the Salton Sea data scenario focused largely on the question: What kind of data products are most compelling to policymakers and what does the community need in order to share underlying data? Participants then asked: What data products do neighbors and farmers need in order to speak with various stakeholders such as researchers, government, or other farmers? Answers to these questions led to different legal mechanisms that could be used for different audiences: when sharing data with other community members, data sharing agreements or trust arrangements could be utilized, whereas a different kind of contractual agreement (e.g., conditional use agreement), might be necessary for sharing beyond their community.
 
-![](https://resize-v3.pubpub.org/eyJidWNrZXQiOiJhc3NldHMucHVicHViLm9yZyIsImtleSI6Im02cnRzaHZtL0NvcHkgb2YgRW52aXJvbm1lbnRhbCBEYXRhIExhYiAtIExlZ2FsIFNlc3Npb25fRHJhZnQtNzE3MDQ4NDMxMzkzOTUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4MDAsImZpdCI6Imluc2lkZSIsIndpdGhvdXRFbmxhcmdlbWVudCI6dHJ1ZX19fQ==)
 
+
+
+![[legal3.jpeg\|legal3.jpeg]]
 _Fig 3. Sticky notes from the Environmental Data Lab choose-your-own adventure activity_ 
+
+
 The group discussing the Chicago data scenario focused on two related questions: With whom would you like to share public right-of-way data? And with whom would you like to share photos of personal property? While time only allowed for participants to focus on the first question, they similarly divided the answers to the question based on the intended audience: researchers, policymakers, other communities, and the private sector. _**A recurring question for many participants was when and where a contract was needed, or if data sharing agreements were enough for preventing harm.**_ Additionally, for each audience, there was discussion on the level to which data needed to be pre-processed before sharing, and how data stewards could cater the data product to the intended audience. 
 
 **Insights and questions to revisit during the CDH Co-Design Process:**

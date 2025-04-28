@@ -2,7 +2,9 @@
 {"tags":["gardenEntry"],"dg-publish":true,"dg-home":true,"dg-pinned":true,"cssclasses":["img-grid","cards"],"permalink":"/home/","pinned":true,"contentClasses":"img-grid cards","dgPassFrontmatter":true}
 ---
 
-# The Resource Library for Community Data is a virtual learning space to find resources, templates, and guidance for using and sharing environmental data safely, equitably, and effectively.
+# The Resource Library for Community Data is a virtual learning space to find resources, templates, and guidance for environmental data governance. 
+
+![1_Data-Governance.jpg](/img/user/Photos%20for%20Resource%20Library/1_Data-Governance.jpg)
 
 
 This Library is designed for community environmental and climate data users, collectors, managers, stewards, and organizations. That includes:
@@ -21,4 +23,4 @@ The **knowledge graph** on the right shows the connections between the different
 This Resource Library is maintained and created by the [Open Environmental Data Project.](https://www.openenvironmentaldata.org/)
 
 
-![[logo-darkback-jpg-01 (1).jpg\|logo-darkback-jpg-01 (1).jpg]]
+![logo-darkback-jpg-01 (1).jpg](/img/user/Photos%20for%20Resource%20Library/logo-darkback-jpg-01%20(1).jpg)

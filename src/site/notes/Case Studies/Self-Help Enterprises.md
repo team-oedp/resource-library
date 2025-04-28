@@ -1,8 +1,8 @@
 ---
-{"author":"Emelia","category":null,"tags":["waterquality","California","agriculture","dataco-ownership","collection","usage","management","dataproducts","risk","Misuse"],"dg-publish":true,"permalink":"/case-studies/self-help-enterprises/","dgPassFrontmatter":true}
+{"author":"Emelia Williams","category":null,"tags":["waterquality","California","agriculture","dataco-ownership","collection","usage","management","dataproducts","risk","Misuse"],"dg-publish":true,"permalink":"/case-studies/self-help-enterprises/","dgPassFrontmatter":true}
 ---
 
-
+![[Self-Help-Place-3.png\|Self-Help-Place-3.png]]
 Self-Help Enterprises ([SHE](https://www.selfhelpenterprises.org/)) is a community development organization located in Visalia, California, whose mission is to work together with low-income families in the Central Valley to build and sustain healthy homes and communities. We worked specifically with their [Emergency Services team](https://www.selfhelpenterprises.org/programs/emergency-services/), who collect and use data sourced from domestic well assessments at private properties. They use these data to identify issues related to water contamination and water access and determine who might be in need of resources such as interim water access, well replacement, or filtration systems. While this is SHE’s primary data usage, they also use the data to understand more about the groundwater supply and contamination levels in order to predict how households will be affected by agriculture and natural disasters, such as severe drought. Water supplied by most domestic wells is not regulated by government agencies in California, so the data being collected is critical for current and future planning.
 
 
@@ -18,8 +18,7 @@ SHE collects, uses, and manages many different types of data, including:
 - Standing water level (depth to groundwater) data and well depth from wells during site assessments, measured at a specific point in time
 - Real time groundwater levels post-new well drilling
 - Isotope testing to track the levels and movement of contamination
-
-
+![Copy of Untitled (5 x 2 in).png](/img/user/Photos%20for%20Resource%20Library/Copy%20of%20Untitled%20(5%20x%202%20in).png)
 ### **Challenges**
 Self-Help Enterprises described several challenges surrounding the #usage, sharing, and general governance of these data. They feel that there is a disconnect between government and private homeowners: homeowners don’t want their water usage being monitored by the government, yet the data that is being collected to understand the environmental conditions of communities can inform policy and funding decisions. SHE acts as a middleman, with the goal of using this data to provide services to community members and share data in a protected and controlled manner with relevant government agencies. By utilizing safe data sharing practices, SHE’s goal is to build #trust between their organization and the communities they serve, while supporting government agencies in building trust with constituents themselves.
 
@@ -44,7 +43,10 @@ The team chose these goals with some long-term outcomes in mind, including stewa
 We designed the workshop to cover three modules: 1) creating foundational documents to support organizational culture for data sharing, 2) a data sharing agreement building exercise, and 3) supporting data products. We had a half-day in-person workshop to run through these modules, in which twelve members of the SHE team participated.
 
 #### **Module One: Creating foundational documents to support organizational culture for data sharing**
-The first module reflected SHE’s need to create organizational language related to its values and practices on how it shares data. This language could be referenced in the future when entering into partnership with a new data sharing party, collecting a new type of data, or creating a new tool or policy. We facilitated a conversation that brainstormed and surfaced the team’s values on data usage and sharing, with the goal of setting up a “How We Share Data” document for internal and external use. We pulled together organizational values from their mission and the planning session, and asked participants to add other aspects from their established workflows and organizational working culture. See Figures 1 and 2 for the notes we documented from the session.  
+The first module reflected SHE’s need to create organizational language related to its values and practices on how it shares data. This language could be referenced in the future when entering into partnership with a new data sharing party, collecting a new type of data, or creating a new tool or policy. We facilitated a conversation that brainstormed and surfaced the team’s values on data usage and sharing, with the goal of setting up a “How We Share Data” document for internal and external use. We pulled together organizational values from their mission and the planning session, and asked participants to add other aspects from their established workflows and organizational working culture. See Figures 1 and 2, below, for the notes we documented from the session.  
+
+![[Fig-1-2.jpg\|Fig-1-2.jpg]]
+
 
 The team generated a robust list of values that are derived from their practices and that actively inform their approach to their work. Some of the values reflected their overall ethos and understanding of what their region experiences in their environment, with participants underscoring the maxim that water is essential to life, and that they try to get to root causes to address multiple issues, rather than just treat the symptoms of a problem. These values reflected the team’s positionality as a trusted liaison between communities, and government agencies, and how they navigated these relationships with deliberation and care. 
   
@@ -52,7 +54,9 @@ Building on those values, we posed two additional questions for their How We Sha
 
 
 > [!Tool + How-to Guide]
-> For a more detailed exploration of building a data values statement with your team, see our template: XXXXX and the accompanying how-to guide: **[[Zine - Our Data, Our Values\|Zine - Our Data, Our Values]] - A How-To Guide for Creating Data Values Statements**.
+> For a more detailed exploration of building a data values statement with your team, see our template: [[Tools and Templates/Data Values Statement Template\|Data Values Statement Template]], and the accompanying how-to guide: [[Zine - Our Data, Our Values\|Zine - Our Data, Our Values]] - A How-To Guide for Creating Data Values Statements.
+
+![[Fig-3.jpg\|Fig-3.jpg]]
 
 
 ##### **Takeaway 1: Data values statements are vital to create a basis for decision-making and team cohesion.**
@@ -64,17 +68,24 @@ A data values statement can serve as an explicit call to bring ethics into organ
 #### **Module Two: Building a data co-ownership agreement**
 In the second module, we focused on building out a data co-ownership agreement template to bolster current workflows at SHE. The Emergency Services team’s participation agreement does not currently include any questions related to data sharing. As such, the goal of this session was to draft 1) the structure of a data co-ownership document for participants in the well site monitoring program, and 2) create a list of considerations for data sharing for another program of their choosing.
 
-We opened the discussion by asking team members about the agreements they’d like to make with participants as co-owners of their site data, and we posed questions to spark ideation. These questions are listed in Figure 4, and include queries about access, condition of deletion, sharing, and usage. This conversation highlighted what the team valued most in collaborations with program participants, including consent and transparency. For example, there are certain reporting requirements imposed by agencies and funders that the team feels participants need to know up front.
+We opened the discussion by asking team members about the agreements they’d like to make with participants as co-owners of their site data, and we posed questions to spark ideation. These questions are listed below, in Figure 4, and include queries about access, condition of deletion, sharing, and usage. This conversation highlighted what the team valued most in collaborations with program participants, including consent and transparency. For example, there are certain reporting requirements imposed by agencies and funders that the team feels participants need to know up front.
 
 
 > [!NOTE] Tool
-> To view and utilize a data co-ownership agreement template, see our tool: XXXXX and the accompanying co-ownership how-to guide: **[[Zine - Our Data, Our Rules\|Zine - Our Data, Our Rules]] - A How-To Guide for Environmental Data Co-Ownership.** 
+> To view and utilize a data co-ownership agreement template, see our tool: [[Tools and Templates/Data Co-Ownership Template\|Data Co-Ownership Template]] and the accompanying co-ownership how-to guide: **[[Zine - Our Data, Our Rules\|Zine - Our Data, Our Rules]] - A How-To Guide for Environmental Data Co-Ownership.** 
 ****
 
-We then analyzed data sharing considerations for SHE’s [Tank and Hauled Water Program](https://www.selfhelpenterprises.org/programs/emergency-services/water-sustainability/). This program temporarily supplies water to participants whose wells are dry. We mapped the general flow of data and information shared between participants, delivery vendors, funders, and SHE. We diagrammed a detailed data ecosystem, and, after the workshop, formalized the ecosystem graphically, including possibilities for how and where a customer portal could be used to support two-way data exchange. We also listed questions and considerations for each stakeholder, including discussion topics for contracts, data sharing, and funding agreements. Notes from this work are documented in Figure 5 and 6. 
+
+![[Fig-4.jpg\|Fig-4.jpg]]
+
+
+We then analyzed data sharing considerations for SHE’s [Tank and Hauled Water Program](https://www.selfhelpenterprises.org/programs/emergency-services/water-sustainability/). This program temporarily supplies water to participants whose wells are dry. We mapped the general flow of data and information shared between participants, delivery vendors, funders, and SHE. We diagrammed a detailed data ecosystem, and, after the workshop, formalized the ecosystem graphically, including possibilities for how and where a customer portal could be used to support two-way data exchange. We also listed questions and considerations for each stakeholder, including discussion topics for contracts, data sharing, and funding agreements. Notes from this work are documented below, in Figure 5 and 6. 
 
 > [!Tool]
-> This data ecosystem and accompanying information can be found as Self-Help Enterprises Hauled Water Data Mapping in the Tools and Templates folder. 
+> This data ecosystem and accompanying information can be found as [[Tools and Templates/Self-Help Enterprises Hauled Water Data Mapping\|Self-Help Enterprises Hauled Water Data Mapping]] in the Tools and Templates folder. 
+
+![[Fig-5.jpg\|Fig-5.jpg]]
+![[Fig-6.jpg\|Fig-6.jpg]]
 
 
 ##### **Takeaway 2: A strong connection between social, legal, and technical components is key to cohesive data governance.** 

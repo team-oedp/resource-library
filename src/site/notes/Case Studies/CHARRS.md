@@ -1,6 +1,8 @@
 ---
-{"author":"Emelia","category":null,"tags":["airquality","Georgia","interoperability","rolesandpermissions","dataproducts","waterquality","extractivism","researchpractices"],"dg-publish":true,"permalink":"/case-studies/charrs/","dgPassFrontmatter":true}
+{"author":"Emelia Williams","category":null,"tags":["airquality","Georgia","interoperability","rolesandpermissions","dataproducts","waterquality","extractivism","researchpractices"],"dg-publish":true,"permalink":"/case-studies/charrs/","dgPassFrontmatter":true}
 ---
+
+![[CHARRS-Place-1 1.png\|CHARRS-Place-1 1.png]]
 
 Located in Atlanta, Georgia, Community Health Aligning Revitalization Resilience & Sustainability ([CHARRS](https://www.charrs.org/)) is an organization that examines the social determinants of health and their impact on African American and other underserved communities in order to implement solutions to the inequities and injustices associated with them. CHAARS is currently collecting hyper-local #airquality data using reference and handheld monitors. The organization is developing and involved with multiple projects, including [PROJECT REMOVE](https://www.charrs.org/projects-2) and [AQEarth](https://tools.niehs.nih.gov/portfolio/index.cfm/portfolio/grantDetail/grant_number/R44ES024031), across which they seek to expand data accessibility to EJ nonprofits and community members. CHARRS invited Dr. Na’Taki Osbourne-Jelks from the West Atlanta Watershed Alliance ([WAWA](https://www.selfhelpenterprises.org/)) to participate in our collaboration. Dr. Osbourne-Jelks is “working to improve the quality of life within the West Atlanta Watershed by protecting, preserving and restoring the community’s natural resources."[^1] WAWA represents African American neighborhoods in West Atlanta that are most inundated with environmental stressors and least represented at environmental decision-making tables.
 
@@ -16,7 +18,7 @@ CHARRS collects, uses, and manages many different types of data, including:
 - Black carbon data (in collaboration with Dr. Christina Fuller from the University of Georgia)
 - Survey data from West Atlanta residents who attended meetings (as part of Project REMOVE and AQEarth)
 - Data about people who bring items to repair and what is being repaired (alongside the Atlanta Repair Cafe)
-
+![CHARRSRL.png](/img/user/Photos%20for%20Resource%20Library/CHARRSRL.png)
 ### **Challenges**
 CHARRS has several challenges surrounding the usage, sharing, and general governance of its data. The data CHARRS collects are safely secured, stored in CSV and XLS files, but currently closed to the public, and the datasets lack deeper analysis and context. CHARRS wants to be able to provide access to aspects of the data while ensuring that the data doesn’t identify specific people or locations. CHARRS has strong relationships with local universities and other EJ organizations in the region, so it wants to safely share data with relevant collaborators, but lacks the [[Decoders/Data Sharing\|data sharing]] and use agreements that might ease this sharing. During our collaboration, CHARRS had one full-time employee, thus had limited capacity to develop these resources.
 
@@ -43,9 +45,9 @@ We designed the workshop to cover three modules: 1) future sharing and data fram
 #### Module One: Future sharing
 The first module identified some possible design features of a central repository that would enable CHARRS to share and co-manage data with other regional EJ organizations. Through facilitated brainstorming exercises, we identified the potential types of data, stakeholders, roles and permissions, and technical features that could support its preferred sharing methods and governance approaches.
 
-The potential data types included data both currently managed by CHARRS and WAWA, as well as more expansive types of climate, environmental, and health data, including brownfield data,[^7] heat island data, and information about local emergency and risk planning. They are interested in understanding environmental and health issues holistically, and these additional datasets would support further analysis and programming. See a full list of data types below.
+The potential data types included data both currently managed by CHARRS and WAWA, as well as more expansive types of climate, environmental, and health data, including brownfield data,[^7] heat island data, and information about local emergency and risk planning. They are interested in understanding environmental and health issues holistically, and these additional datasets would support further analysis and programming. See a full list of data types below in Figure 7.
 
-[insert data types photo here]
+![Fig-7.jpg](/img/user/Photos%20for%20Resource%20Library/Fig-7.jpg)
 
 Potential stakeholders included state EJ groups, students enrolled in primary and secondary education, Atlanta city councilmembers, community residents, and state elected officials. Stakeholder roles and permissions would depend on 1) what they would want to use data for, 2) what data they would contribute, and 3) what level of data literacy and capacity for data management they had. Our conversations around these questions made explicit some opportunities and limitations for certain groups, and also built an understanding of what types of data could be shared—and how—within this system, i.e., who would get access to all of the data, a limited portion of the data, or data products.
 
@@ -92,11 +94,15 @@ Throughout this exercise, we emphasized that [[Decoders/Data Sharing Agreements\
 
 
 ### **Synthesis and closing**
-As we closed the workshop, CHARRS had many technical data science management questions that we couldn’t answer in this session alone. We generated a list of these questions (see Figure 8), many of which other communities in this collaboration had asked, as well. Some notable themes that came up include how to create appropriately scoped data analysis and visualization tools, what kind of agreements or policies can ensure data ownership, and how to build digital infrastructures and governance systems that can adapt to changing conditions and secure data in perpetuity.
+As we closed the workshop, CHARRS had many technical data science management questions that we couldn’t answer in this session alone. We generated a list of these questions (see below, Figure 8), many of which other communities in this collaboration had asked, as well. Some notable themes that came up include how to create appropriately scoped data analysis and visualization tools, what kind of agreements or policies can ensure data ownership, and how to build digital infrastructures and governance systems that can adapt to changing conditions and secure data in perpetuity.
 
+![[Fig-8.jpg\|Fig-8.jpg]]
 
 ### **Resources created, next steps, and outcomes**
-After the workshop, we created a synthesis of next steps for CHARRS to consider and a worksheet of questions and considerations around [[Decoders/Data Sharing\|data sharing]]. This worksheet included considerations about data owners’ roles and responsibilities, a table with potential scenarios around who could use what and how they could use it, and other conditions CHARRS could place in a data use agreement or attach to data and data products. This resource is included in the [Appendix](https://docs.google.com/document/d/1CbNUyczCF5N8j4scna2uY9Y8jSRJWhbhG4H1TULtc8I/edit?tab=t.ltsayx3cgu98) (Resource 4) for others to adapt and reuse.
+After the workshop, we created a synthesis of next steps for CHARRS to consider and a worksheet of questions and considerations around [[Decoders/Data Sharing\|data sharing]]. This worksheet included considerations about data owners’ roles and responsibilities, a table with potential scenarios around who could use what and how they could use it, and other conditions CHARRS could place in a data use agreement or attach to data and data products. 
+
+> [!Tool]
+> This worksheet is available in our Tools and Templates folder, see [[Tools and Templates/Data Use and Sharing Agreement Questions\|Data Use and Sharing Agreement Questions]].
 
 After the official collaboration culminated, CHARRS, in partnership with OEDP, submitted an application for the [EPA’s Community Change grant program](https://www.epa.gov/system/files/documents/2024-03/overview-of-the-community-change-grants-program.pdf), and integrated data governance workshops with the broader community into the application. With each community partner, we held check-ins at the three and six month marks after our official collaboration ended. In our check-in meetings, Gwen Smith reported that she had used the data sharing guidance derived from our workshops to support decision making when approached by a researcher who was interested in applying for a grant regarding local air quality monitoring.
 

@@ -25,8 +25,7 @@ We are excited to partner with the following organizations for our 2024 Communit
 ## _**Research Centre for Transformation / CoAct**_ 
 [The Research Centre for Transformation at the University of San Martin](https://fund-cenit.org.ar/) (UNSAM) works in collaboration with the [Environment and Natural Resources Foundation](https://farn.org.ar/) (FARN) to maintain the [¿Qué pasa, Riachuelo? (QPR) social citizen science tool](https://mapaqpr.farn.org.ar/page/about) as a coordinated project called CoAct. This tool collects and displays data on water quality and the uses and perceptions of natural areas in the Matanza-Riachuelo basin. These organizations aim to promote synergies between scientists and academic researchers working in the basin, communities and organizations interested in environmental education, and decision makers in the region.
 
-![](https://resize-v3.pubpub.org/eyJidWNrZXQiOiJhc3NldHMucHVicHViLm9yZyIsImtleSI6InN4dGwwenVyL1FQUk1hcC0wMTcwOTEzNzcwNzA5Mi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgwMCwiZml0IjoiaW5zaWRlIiwid2l0aG91dEVubGFyZ2VtZW50Ijp0cnVlfX19)
-
+![Screenshot 2024-01-30 at 15.20.49.png](/img/user/Photos%20for%20Resource%20Library/Screenshot%202024-01-30%20at%2015.20.49.png)
 _Fig 1. A screenshot of the QPR map that displays observational water quality data across the Matanza-Riachuelo basin._
 
 In the design workshop, OEDP will work with partners from UNSAM and FARN to examine one or several  of the following issues: (1) how to translate data governance complexities to non-academic stakeholders, (2) how to create simple ways of building and translating a governance structure so that the public can be involved, (3) how to create governance structures that are flexible to different roles and changes over time, and (4) how you reach agreements between stakeholders with different values and goals. 

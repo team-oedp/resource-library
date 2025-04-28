@@ -2,12 +2,15 @@
 {"author":null,"category":null,"tags":null,"dg-publish":true,"permalink":"/case-studies/about-the-case-studies/","dgPassFrontmatter":true}
 ---
 
-**
-
 In 2024, the Open Environmental Data Project (OEDP) launched an open call for participation in a workshopping space for community partners to work through environmental data governance questions and challenges. We partnered with three communities that were collecting environmental data, each situated in a distinct social and environmental context, and conducted workshops to identify and co-design governance solutions. Emelia Williams (OEDP) worked alongside Kate Wing ([Intertidal Agency](https://www.intertidalagency.org/)) to design and facilitate planning meetings, workshops, resources, and debriefs with each community partner.
 
-The following three case studies delve into the collaborations we had with our community partners: Self-Help Enterprises in California’s Central Valley, Community Health Aligning Revitalization Resilience and Sustainability (CHARRS) in Atlanta, Georgia, and CoAct in Buenos Aires, Argentina. See below for a breakdown of each case study:
+The following three case studies delve into the collaborations we had with our community partners: Self-Help Enterprises in California’s Central Valley, Community Health Aligning Revitalization Resilience and Sustainability (CHARRS) in Atlanta, Georgia, and CoAct in Buenos Aires, Argentina. 
 
+
+![[case study map 2.png\|case study map 2.png]]
+
+
+### See below for a breakdown of each case study:
 
 |                        |                                                                                                                                                                        |                                                                                                                                                                            |                                                                                                                                                                                                                                             |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -18,5 +21,3 @@ The following three case studies delve into the collaborations we had with our c
 | *Challenges/Goals*       | - Building trust with communities<br><br>- Standardizing co-ownership with participants<br><br>- Sharing data responsibly with government, researchers, and the public | - Opening up data access safely and effectively<br><br>- Sharing data responsibly with government, researchers, and the public<br><br>- Interoperability and data analysis | - Communicating data governance with non-academic partners and the public<br><br>- Reaching agreement between diverse stakeholders<br><br>- Bolstering their data governance framework to withstand changing political or social conditions |
 
   
-**
-[add map image]
