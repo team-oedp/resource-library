@@ -1,5 +1,5 @@
 ---
-{"tags":["gardenEntry"],"dg-publish":true,"dg-home":true,"dg-pinned":true,"cssclasses":[],"permalink":"/full-report/","pinned":true,"contentClasses":"","dgPassFrontmatter":true}
+{"tags":null,"dg-publish":true,"dg-home":false,"dg-pinned":false,"cssclasses":null,"permalink":"/full-report/","dgPassFrontmatter":true}
 ---
 
 

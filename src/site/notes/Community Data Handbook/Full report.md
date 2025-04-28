@@ -1,5 +1,5 @@
 ---
-{"tags":["gardenEntry"],"dg-publish":true,"dg-home":true,"dg-pinned":true,"cssclasses":[],"permalink":"/community-data-handbook/full-report/","pinned":true,"contentClasses":"","dgPassFrontmatter":true}
+{"tags":null,"dg-publish":true,"dg-home":false,"dg-pinned":false,"cssclasses":null,"permalink":"/community-data-handbook/full-report/","dgPassFrontmatter":true}
 ---
 
 The Community Data Playbook is a compilation of case studies and strategies related to environmental data governance. It is the result of OEDP’s collaboration with three community partners that are collecting environmental data. In 2024, we conducted workshops to identify and co-design governance solutions, and from the partnerships, we developed “plays,” or modular strategies and opportunities that data stewards can use to employ better data governance. 
