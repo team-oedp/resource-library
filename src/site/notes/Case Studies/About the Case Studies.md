@@ -7,7 +7,7 @@ In 2024, the Open Environmental Data Project (OEDP) launched an open call for pa
 The following three case studies delve into the collaborations we had with our community partners: Self-Help Enterprises in California’s Central Valley, Community Health Aligning Revitalization Resilience and Sustainability (CHARRS) in Atlanta, Georgia, and CoAct in Buenos Aires, Argentina. 
 
 
-![[case study map 2.png\|case study map 2.png]]
+![case study map.png](/img/user/Photos%20for%20Resource%20Library/case%20study%20map.png)
 
 
 ### See below for a breakdown of each case study:
