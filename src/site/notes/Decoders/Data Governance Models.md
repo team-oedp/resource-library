@@ -51,7 +51,7 @@ Well-designed data governance models promote #accessibility, #trust, and #usabil
   
 
 ### **Mentioned and additional resources:
-**
+
 - For an introduction to the importance of data governance models and examples, including data trusts, guilds, and collaboratives, see [Data Governance Models and the Environmental Context: Part 1](https://www.openenvironmentaldata.org/research-series/data-governance-models-and-the-environmental-context-part-1).
 - To understand the differences between individualized control models and shared control models, see [Equitable Data Governance Models for the Participatory Sciences](https://onlinelibrary.wiley.com/doi/full/10.1029/2022CSJ000025).
 - To review the benefits and challenges of four models—data sharing pools, data cooperatives, public data trusts and personal data sovereignty—see [Emerging models of data governance in the age of datafication](https://journals.sagepub.com/doi/full/10.1177/2053951720948087).
