@@ -41,7 +41,7 @@ _Understanding the social aspect of any data project can often reveal the incent
 - What resources do you have for designing and executing a particular legal mechanism? (e.g., people with legal or technical expertise, skill sets, computing power, financial resources)?
 
 **Accessibility**
-_ #Accessibility is a broad category that includes how open or closed the data is, the formats in which they are available, and potential conditional uses. It is critical to understand who should have access to the data, and in what capacities, to establish the appropriate legal mechanism that shares, protects, or stores data._ 
+ #Accessibility is a broad category that includes how open or closed the data is, the formats in which they are available, and potential conditional uses. It is critical to understand who should have access to the data, and in what capacities, to establish the appropriate legal mechanism that shares, protects, or stores data._ 
 
 - What are the conditions of #access (e.g., do you have to contribute data to be able to access the dataset?)
 - In which formats and through what interfaces will the data be available?

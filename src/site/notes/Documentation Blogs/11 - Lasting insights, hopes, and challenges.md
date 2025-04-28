@@ -27,6 +27,6 @@ The conversation ended with group members discussing what **potential challenges
 
 This meeting signaled the conclusion of our biweekly Advisory Group sessions. We’re excited to carry our learnings from these conversations into the next step of the CDH process, which will start with an open call for prospective partners.
 
-_Resources mentioned:_
+**Resources mentioned:**
 - [The Undercommons](https://www.minorcompositions.info/wp-content/uploads/2013/04/undercommons-web.pdf), by Fred Moten and Stefano Harney, explores the concept of the university as an exploitative space.
 - [The Maintainers](https://themaintainers.org/), a global research network interested in concepts of maintenance, infrastructure, and repair. They were mentioned as an organization that addresses the challenges surrounding maintenance and community initiatives.

@@ -6,7 +6,7 @@
 Just as an organization’s mission and values guide their purpose and align a team’s actions, a set of data values can provide a strategic direction for an organization that relies on using and sharing data to fulfill its goals. Internally, it creates a foundation for how to create data workflows, products, and infrastructures. Externally, these documents can serve as guides to set others’ expectations and convey organizational commitments.   
 
 > [!Tool + How-to Guide]
-> For a more detailed exploration of building a data values statement with your team, see our template: [[Tools and Templates/Data Values Statement Template\|Data Values Statement Template]], and the accompanying how-to guide: [[Zine - Our Data, Our Values\|Zine - Our Data, Our Values]] - A How-To Guide for Creating Data Values Statements.
+> For a more detailed exploration of building a data values statement with your team, see our template: [[Tools and Templates/Data Values Statement Template\|Data Values Statement Template]], and the accompanying how-to guide: [[How-To Guides & Zines/Zine - Our Data, Our Values\|Zine - Our Data, Our Values]] - A How-To Guide for Creating Data Values Statements.
 
 
 

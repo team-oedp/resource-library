@@ -6,8 +6,11 @@
 > [!NOTE]
 > For a copy of the Data Co-Ownership Template that you can make a copy of and use, [view here on Google Docs](https://docs.google.com/document/d/1VcqY6UISSBo4GeuUtNspfvYP4XZ7gyMxn-46cfAe51Y/edit?usp=sharing). 
 
- 
-*Note that this is not a template for a legal document, but designed to be used more like a memorandum of understanding. 
+
+> [!NOTE]
+> This is not a template for a legal document, but designed to be used more like a memorandum of understanding. 
+
+
 
 **→ Start with a statement that declares who owns the data, and if that is dependent on who collects it.**  
 

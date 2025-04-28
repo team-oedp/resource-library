@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia","category":null,"tags":["datamanagement","Alaska","management","storage","usage","collection"],"dg-publish":true,"permalink":"/documentation-blogs/03-time-horizons-expectations-and-determining-minimum-viable-interventions/","dgPassFrontmatter":true}
+{"author":"Emelia Williams","category":null,"tags":["datamanagement","Alaska","management","storage","usage","collection"],"dg-publish":true,"permalink":"/documentation-blogs/03-time-horizons-expectations-and-determining-minimum-viable-interventions/","dgPassFrontmatter":true}
 ---
 
 _This is the third post for the Community Data Hubs Documentation series. This series will document the thought and conversation trajectories within the process of creating the building blocks of our Community Data Hubs model and OEDP’s broader data stewardship work. The first of these blogs will document the progress of the Community Data Hubs Advisory Group, which is working alongside OEDP to tackle conceptual questions related to the model, including social and technical infrastructures, stewardship, and community data._
@@ -20,10 +20,10 @@ This was mainly a logistical question for the group, but it sparked some key con
 
 Time was also a recurring theme: it matters how communities collect data _now_ for how they might use it now, as well as in the future. Our Advisory Group encouraged us to envision how to have community conversations around how current data collection will support potential future uses. The question of changing expectations over time—and the need to address those expectations—also came up, since the data’s value might be different on different time horizons, i.e., a piece of data might be collected in 2023, but used as evidence or research in 2025 to demonstrate change or cause for action. 
 
-
+> 
 > _**“Be the ancestor of your future data self.”**_
-
-_- from an Advisory member, building off [Lowndes et al](https://openscapes.github.io/supercharge-research/). 2019 and [Wilson et al](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510). 2017]_
+> 
+> from an Advisory member, building off [Lowndes et al](https://openscapes.github.io/supercharge-research/). 2019 and [Wilson et al](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510). 2017
 
 
 _What kind of data uses will the CDH model be working with—i.e., data meant for integration into regulatory processes or for increasing data awareness?_ 

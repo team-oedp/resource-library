@@ -6,6 +6,8 @@
 > [!NOTE]
 >  For a copy of the template of a Privacy Policy that you can make a copy of and adapt for your organization, [view here on Google Docs](https://docs.google.com/document/d/1Y407vzUl_J_2vP0FGJjXvFBanqEgRoKrQmmo7N5yAK8/edit?usp=sharing). 
 
+
+
 ## Privacy Policy
 
 ### Information We Collect
@@ -57,4 +59,3 @@
 - Change
 - Change
 - Change
-**

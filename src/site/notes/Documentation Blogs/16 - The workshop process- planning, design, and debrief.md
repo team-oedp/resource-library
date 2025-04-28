@@ -6,7 +6,7 @@ _This is the thirteenth post for the Community Data Hubs (CDH) Documentation ser
 
 We have just wrapped up our series of design workshops with our community partners and are excited to share what we’ve learned! This post documents the planning meetings, design workshops, and debrief meetings we had with each partner. This process ran from February to July 2024 and constituted the bulk of hands-on collaboration with our partners. A full synthesis of each collaboration with community partners will be detailed in an upcoming playbook. Kate Wing, a former Advisory Group member and Executive Director of Intertidal Agency supported with facilitation and strategy. This documentation serves to record the process of each meeting with notes on what went well and what could be improved on if others replicate this model.   
 
-**Preparation and coordinating the planning meetings**
+### **Preparation and coordinating the planning meetings**
 To prepare for the project collaboration, we circulated [a welcome document](https://docs.google.com/document/d/1jCQsl0AMLytkHd7LdGrJgLX9-9o-ZEjqobSu6g_1yMQ/edit?usp=sharing), as well as a request to input responses into a data landscape document. These responses were supplemented by insights from our introductory meetings and the partners’ Expressions of Interest, which gave us a general sense of the technical and social aspects of each case’s data use. Each data landscape document responded to the following questions:
 
 - Project questions
@@ -42,7 +42,7 @@ In reviewing the data landscape, we verbalized each question and response with t
   
 This dialogue helped us understand how we could support CENIT and FARN, as well as what we needed to learn in order to facilitate a design workshop that could reach, or set up a pathway to reach, at least a few target successes. We were able to identify two to three goals for each partner in each category. The Epic Success category usually encompasses impact that will happen down the line from any workshop outputs, but is important to document and reflect on as the goals for the collaboration were deliberated. To read the entire case study documenting our collaboration with CENIT and FARN, see [[Case Studies/CoAct\|CoAct]].
 
-**Design workshops**
+### **Design workshops**
 These workshops were designed based on the goals for each partner, and included at least three modules over three to four hours. OEDP created the modules based on the goals from the planning workshop, and sought review from community partners before designing the facilitation plan. The modules re-stated the goal, posed a question that re-oriented that goal to the workshop, and listed a potential activity that could get us closer to that goal in the workshop. Here is an example of one of the modules for [Self-Help Enterprises](https://oedp-datastewardship.pubpub.org/pub/lnbl7214#self-help-enterprises):
 
 > **Module One: Creating foundational documents to support organizational culture for data sharing** 
@@ -76,7 +76,7 @@ Some aspects of the workshops could be improved upon from a processual standpoin
 
 To read the entire case study documenting our collaboration with Self-Help Enterprises see [[Case Studies/Self-Help Enterprises\|Self-Help Enterprises]].
 
-**Debriefs**
+### **Debriefs**
 One-hour, virtual debrief calls were scheduled after the design workshops. They were designed to synthesize the workshop’s outcomes and opportunities, and see what is left to do to reach success, or a path to success, according to the success spectrum. Following each workshop, we created synthesis documents that mapped out each module: what we heard, how that informs the next steps for the community partner, and how we can support. With two of the partners, we created resources to support future work, including a Data Use and Sharing Agreement Question worksheet and templates for data sharing and ownership documents. 
 
 ![Synthesis example.png](/img/user/Photos%20for%20Resource%20Library/Synthesis%20example.png)
@@ -94,5 +94,5 @@ We ended the debrief with a reflection on what they were most excited to pursue 
 
 To read the entire case study documenting our collaboration with CHARRS and WAWA, see [[Case Studies/CHARRS\|CHARRS]].
 
-**Next steps**
+### **Next steps**
 The next step for the project is to draft the [playbook](https://oedp-datastewardship.pubpub.org/pub/qzqxm80c#nz0n73qugkz), a resource that will synthesize each partner’s workshop and process in greater detail, and delineate any trends and patterns. We’ll also make the resources and templates made during the process available for other group’s usage, and consider the original concept of the Community Data Hubs model in light of these workshops and findings. We are considering how we should package this information, and what communication outputs would be most impactful outside of the larger playbook. We’re excited to begin the playbook creation phase of this project, including a review period for the community partners and advisory group. 

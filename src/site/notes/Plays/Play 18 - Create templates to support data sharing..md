@@ -7,7 +7,7 @@ Intermediary organizations can create customizable templates to support [[Decode
 
 
 > [!How-To Guide]
-> OEDP created guidance for environmental data sharing, see our zine [[Zine - The Data We Own\|Zine - The Data We Own]] to think critically and prepare for discussions about data sharing agreements.
+> OEDP created guidance for environmental data sharing, see our zine [[How-To Guides & Zines/Zine - The Data We Own\|Zine - The Data We Own]] to think critically and prepare for discussions about data sharing agreements.
 
 
 
