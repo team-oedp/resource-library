@@ -72,7 +72,7 @@ The group discussing the Salton Sea data scenario focused largely on the questio
 
 
 
-![[legal3.jpeg\|legal3.jpeg]]
+![legal3.jpeg](/img/user/Photos%20for%20Resource%20Library/legal3.jpeg)
 _Fig 3. Sticky notes from the Environmental Data Lab choose-your-own adventure activity_ 
 
 
