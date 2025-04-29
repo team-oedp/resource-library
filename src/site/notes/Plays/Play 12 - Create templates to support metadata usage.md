@@ -16,4 +16,4 @@
 *Takeaway:* The technical design of a data system can, and should, reflect the data user’s needs to unlock the value of the data. 
 The technical aspects of data management can often be the most difficult to tailor to stewards’ needs. Data storage requires a level of digital literacy above the average person’s, digital infrastructure can be expensive, and customized systems or features require even more funding. Open source solutions may be available, but less findable or usable to the average user. Oftentimes, environmental data stewards are left with clunky or unnecessary technical systems that don’t correspond with their data sharing or use needs. Recognizing this difficulty and misalignment, we’ve outlined methods to determine the highest priority needs in a technical model and make decisions accordingly, as well as an opportunity for intermediary organizations to support interoperability of any technical data system.
 
-*Source:* Community Data Playbook ([[Full report\|Full report]])
+*Source:* Community Data Playbook ([[Community Data Playbook/Full report\|Full report]])

@@ -36,4 +36,4 @@ Scenario planning can help organizations anticipate potential risks associated w
 *Takeaway:* A strong connection between social, legal, and technical components is key to cohesive data governance. 
 This is an overarching takeaway that underscores all plays in this playbook. Each of these plays works to build that cohesive bond between relational and technical infrastructure, and can be employed according to the levels of capacity, interest, and need of the community generating environmental data. 
 
-*Source:* Community Data Playbook ([[Full report\|Full report]])
+*Source:* Community Data Playbook ([[Community Data Playbook/Full report\|Full report]])

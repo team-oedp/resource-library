@@ -16,7 +16,7 @@ The plays in this section are modular strategies to support better environmental
 
 Each play has different considerations around time, money, and resources; some plays might be more appropriate than others for your specific context. But like a coach on the sidelines, a data steward or intermediary organization can reference the plays, and utilize them depending on what's needed to get the ball down the field. 
 
-The first 24 plays were developed as part of the Community Data Playbook ([[Full report\|Full report]]), but the list is updated quarterly based on new research, learnings, and collaborations. 
+The first 24 plays were developed as part of the Community Data Playbook ([[Community Data Playbook/Full report\|Full report]]), but the list is updated quarterly based on new research, learnings, and collaborations. 
 
 OEDP has already put some of these plays into practice, while other plays are strategies we plan to pursue in the near future. **We’re open to collaboration, so if you’re interested in learning more about these strategies, utilizing a play, or collaborating to test out a play, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSd2yk7rCum5FtBwtQwE9UXBAB9f8CGt0TJeextkVN57cyIGHg/viewform?usp=dialog) and someone from the OEDP team will be in touch.**
 

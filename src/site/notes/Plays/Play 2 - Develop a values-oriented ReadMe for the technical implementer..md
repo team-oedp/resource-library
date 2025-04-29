@@ -20,4 +20,4 @@ A values-oriented README serves as a guide and grounding document for technologi
 *Takeaway:* Data values statements can create a basis for decision-making and team cohesion. 
 Data values statements are documents that describe how and why an organization or project uses data. They describe the purpose of the data use, and what the organization will or won’t do with the data it collects or uses. While data values statements are relatively new in the realm of data governance, they provide a normative space where data stewards can not only reach consensus on priorities but also provide a standard of what to expect in their collaborations.
 
-*Source:* Community Data Playbook ([[Full report\|Full report]])
+*Source:* Community Data Playbook ([[Community Data Playbook/Full report\|Full report]])

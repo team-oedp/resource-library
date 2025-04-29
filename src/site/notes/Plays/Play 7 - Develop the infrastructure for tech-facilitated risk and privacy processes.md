@@ -31,4 +31,4 @@ Create a system that facilitates the management of data-related risks and privac
 *Takeaway:* Risk emerges in different ways when [[Decoders/Data Sharing\|data sharing]]. 
 Data #misuse runs the gamut from truly harmful—misaligned actors can selectively choose data points to communicate harmful or untrue narratives—to merely inconsiderate—people could use data without acknowledging the original source. The risks of sharing data can rarely be fully eliminated, but there are practices and tools that can mitigate against potential threat.
 
-*Source:* Community Data Playbook ([[Full report\|Full report]])
+*Source:* Community Data Playbook ([[Community Data Playbook/Full report\|Full report]])

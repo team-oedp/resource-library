@@ -17,6 +17,6 @@ Ensure that users can easily find the information they need in a centralized loc
 *Takeaway:*  Documentation underlies effective collaborative data governance and institutional knowledge.
 #Documentation about an organization’s data can include information on provenance, [[Decoders/Metadata\|metadata]] and other contextual information, how decisions are made, the methodology behind [[collection\|collection]], and data [[access\|access]] and use conditions. These types of documentation ensure that data can be understood and utilized by any user. Many organizations have an understanding of these aspects, but haven’t made them explicit or published them alongside the data itself. Documentation allows for stewards’ or organizational knowledge to be safeguarded and transparent for the public, and also provides an avenue to examine how these aspects have changed over time.
 
-*Source:* Community Data Playbook ([[Full report\|Full report]])
+*Source:* Community Data Playbook ([[Community Data Playbook/Full report\|Full report]])
 
 
