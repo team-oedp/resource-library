@@ -2,7 +2,7 @@
 {"author":"Leticia Marques","category":["relational"],"tags":["#risk","surveillance","dataencryption","transparency","#rolesandpermissions","#sensitivedata","#dataproducts"],"dg-publish":true,"permalink":"/decoders/data-privacy-and-security/","dgPassFrontmatter":true}
 ---
 
-### **What is it?
+### **What is it?**
 
 Data privacy and security refers to the policies and practices in place to protect private or sensitive information. This might include, for example, [personally identifiable information](https://www.techtarget.com/searchsecurity/definition/personally-identifiable-information-PII) (PII), or any information that can be used to identify an individual. It could also include information about individuals’ movement that could be tracked if using handheld air quality monitors. To address risks associated with sensitive data, clear methods for safeguarding sensitive data need to be created. 
 
