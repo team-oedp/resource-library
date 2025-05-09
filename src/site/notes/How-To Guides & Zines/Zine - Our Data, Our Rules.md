@@ -1,5 +1,5 @@
 ---
-{"author":"Leticia Marques","category":null,"tags":["dataco-ownership"],"dg-publish":true,"permalink":"/how-to-guides-and-zines/zine-our-data-our-rules/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/how-to-guides-and-zines/zine-our-data-our-rules/","tags":["dataco-ownership"]}
 ---
 
 This zine is a how-to guide for environmental data co-ownership; we aim to help your organization and partnering organizations understand how to navigate data co-ownership and begin drafting a data co-ownership agreement to outline the goals and expectations for your data.

@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["sensitivedata","risk","trust","Misuse","anonymization","dataencryption","collaboration"],"dg-publish":true,"permalink":"/plays/play-03-conduct-scenario-planning-to-better-understand-and-prepare-for-risks/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-03-conduct-scenario-planning-to-better-understand-and-prepare-for-risks/","tags":["sensitivedata","risk","trust","Misuse","anonymization","dataencryption","collaboration"]}
 ---
 
 ### **Technical Play for Data Stewards: Conduct scenario planning to better understand and prepare for risks.**

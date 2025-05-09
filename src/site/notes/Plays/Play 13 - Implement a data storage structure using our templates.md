@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["knowledge","storage","rolesandpermissions"],"dg-publish":true,"permalink":"/plays/play-13-implement-a-data-storage-structure-using-our-templates/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-13-implement-a-data-storage-structure-using-our-templates/","tags":["knowledge","storage","rolesandpermissions"]}
 ---
 
 ### **Technical play for data stewards: Implement a data #storage structure using our templates.** 

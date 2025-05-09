@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["risk","collection","sensitivedata","rolesandpermissions"],"dg-publish":true,"permalink":"/plays/play-07-develop-the-infrastructure-for-tech-facilitated-risk-and-privacy-processes/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-07-develop-the-infrastructure-for-tech-facilitated-risk-and-privacy-processes/","tags":["risk","collection","sensitivedata","rolesandpermissions"]}
 ---
 
 ### **Technical play for data stewards: Develop the infrastructure for tech-facilitated risk and privacy processes.** 

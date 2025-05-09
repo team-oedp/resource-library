@@ -1,5 +1,5 @@
 ---
-{"author":"Leticia Marques and Emelia Williams","category":["technical"],"tags":["documentation","datacollection","#usability","climatedata","FAIR","CARE","findability","collection","transparency"],"dg-publish":true,"permalink":"/decoders/metadata/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/metadata/","tags":["documentation","datacollection","#usability","climatedata","FAIR","CARE","findability","collection","transparency"]}
 ---
 
 ### **What is it?**

@@ -1,5 +1,5 @@
 ---
-{"author":"Kate Wing","tags":["mapping","waterdata","documentation"],"dg-publish":true,"permalink":"/tools-and-templates/self-help-enterprises-hauled-water-data-mapping/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/tools-and-templates/self-help-enterprises-hauled-water-data-mapping/","tags":["mapping","waterdata","documentation"]}
 ---
 
 

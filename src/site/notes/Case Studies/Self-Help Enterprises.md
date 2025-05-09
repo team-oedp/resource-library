@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":["waterquality","California","agriculture","dataco-ownership","collection","usage","management","dataproducts","risk","Misuse"],"dg-publish":true,"permalink":"/case-studies/self-help-enterprises/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/case-studies/self-help-enterprises/","tags":["waterquality","California","agriculture","dataco-ownership","collection","usage","management","dataproducts","risk","Misuse"]}
 ---
 
 ![Self-Help-Place-3.png](/img/user/Photos%20for%20Resource%20Library/Self-Help-Place-3.png)

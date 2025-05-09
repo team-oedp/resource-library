@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["usage","collection","capacity"],"dg-publish":true,"permalink":"/plays/play-11-define-necessary-technical-features-review-platforms-assess-against-required-features-and-the-risks-for-technical-overuse/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-11-define-necessary-technical-features-review-platforms-assess-against-required-features-and-the-risks-for-technical-overuse/","tags":["usage","collection","capacity"]}
 ---
 
 ### **Technical play for data stewards: Define necessary technical features for tool selection.**

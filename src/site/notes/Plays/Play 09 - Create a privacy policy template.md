@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["support"],"tags":["collection","risk","misuse","collaboration","sensitivedata"],"dg-publish":true,"permalink":"/plays/play-09-create-a-privacy-policy-template/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-09-create-a-privacy-policy-template/","tags":["collection","risk","misuse","collaboration","sensitivedata"]}
 ---
 
 ### **Support play for intermediary organizations: Create a privacy policy template.**

@@ -1,5 +1,5 @@
 ---
-{"author":null,"category":null,"tags":null,"dg-publish":true,"permalink":"/case-studies/about-the-case-studies/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/case-studies/about-the-case-studies/"}
 ---
 
 In 2024, the Open Environmental Data Project (OEDP) launched an open call for participation in a workshopping space for community partners to work through environmental data governance questions and challenges. We partnered with three communities that were collecting environmental data, each situated in a distinct social and environmental context, and conducted workshops to identify and co-design governance solutions. Emelia Williams (OEDP) worked alongside Kate Wing ([Intertidal Agency](https://www.intertidalagency.org/)) to design and facilitate planning meetings, workshops, resources, and debriefs with each community partner.

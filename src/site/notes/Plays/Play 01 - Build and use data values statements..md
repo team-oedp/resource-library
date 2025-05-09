@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["relational"],"tags":["dataproducts","#documentation","usability","transparency","trust","collaboration"],"dg-publish":true,"permalink":"/plays/play-01-build-and-use-data-values-statements/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-01-build-and-use-data-values-statements/","tags":["dataproducts","#documentation","usability","transparency","trust","collaboration"]}
 ---
 
 ### Relational play for data stewards: Build and use data values statements.

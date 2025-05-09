@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","tags":["dataco-ownership","documentation"],"dg-publish":true,"permalink":"/tools-and-templates/data-co-ownership-template/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/tools-and-templates/data-co-ownership-template/","tags":["dataco-ownership","documentation"]}
 ---
 
 

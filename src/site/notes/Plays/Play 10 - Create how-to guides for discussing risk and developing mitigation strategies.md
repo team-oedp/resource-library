@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["support"],"tags":["collection","usability","documentation"],"dg-publish":true,"permalink":"/plays/play-10-create-how-to-guides-for-discussing-risk-and-developing-mitigation-strategies/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-10-create-how-to-guides-for-discussing-risk-and-developing-mitigation-strategies/","tags":["collection","usability","documentation"]}
 ---
 
 ### **Support play for intermediary organizations: Create how-to guides for conducting a risk evaluation.** 

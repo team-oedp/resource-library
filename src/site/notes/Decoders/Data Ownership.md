@@ -1,5 +1,5 @@
 ---
-{"author":"Leticia Marques and Emelia Williams","category":["relational"],"dg-publish":true,"tags":["#datarights","accessibility","rolesandpermissions","Indigenousdata","interoperability","extractivism"],"permalink":"/decoders/data-ownership/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/data-ownership/","tags":["#datarights","accessibility","rolesandpermissions","Indigenousdata","interoperability","extractivism"]}
 ---
 
 ### **What is it?**

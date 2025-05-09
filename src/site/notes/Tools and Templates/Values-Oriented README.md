@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","tags":["documentation","trust","transparency","accessibility"],"dg-publish":true,"permalink":"/tools-and-templates/values-oriented-readme/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/tools-and-templates/values-oriented-readme/","tags":["documentation","trust","transparency","accessibility"]}
 ---
 
 

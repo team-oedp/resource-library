@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["support"],"tags":["collaboration","fundraising","communityscience"],"dg-publish":true,"permalink":"/plays/play-04-create-and-distribute-communication-products-that-socialize-the-criticality-of-relational-and-technical-dynamics-within-environmental-data-governance/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-04-create-and-distribute-communication-products-that-socialize-the-criticality-of-relational-and-technical-dynamics-within-environmental-data-governance/","tags":["collaboration","fundraising","communityscience"]}
 ---
 
 ### **Support Play for Intermediary Organizations: Create and distribute communication products that socialize the criticality of relational and technical dynamics within environmental data governance.** 

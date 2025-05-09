@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["support"],"tags":["collaboration","capacity","misuse"],"dg-publish":true,"permalink":"/plays/play-18-create-templates-to-support-data-sharing/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-18-create-templates-to-support-data-sharing/","tags":["collaboration","capacity","misuse"]}
 ---
 
 ### **Support play for intermediary organizations: Create templates to support data sharing.**

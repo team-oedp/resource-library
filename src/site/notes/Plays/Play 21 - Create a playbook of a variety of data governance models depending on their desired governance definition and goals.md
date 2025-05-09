@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["support"],"tags":null,"dg-publish":true,"permalink":"/plays/play-21-create-a-playbook-of-a-variety-of-data-governance-models-depending-on-their-desired-governance-definition-and-goals/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-21-create-a-playbook-of-a-variety-of-data-governance-models-depending-on-their-desired-governance-definition-and-goals/"}
 ---
 
 ### **Support play for intermediary organizations: Create a guide detailing a variety of data governance frameworks and models depending on their desired outcome.** 

@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":["interoperability","findability","datastandards","documentation"],"dg-publish":true,"permalink":"/plays/play-12-create-templates-to-support-metadata-usage/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-12-create-templates-to-support-metadata-usage/","tags":["interoperability","findability","datastandards","documentation"]}
 ---
 
 ### **Support play for intermediary organizations: Create templates and guides to support metadata standards and documentation.** 

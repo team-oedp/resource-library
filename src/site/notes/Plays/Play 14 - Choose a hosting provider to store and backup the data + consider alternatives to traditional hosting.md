@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["transparency","dataencryption","storage"],"dg-publish":true,"permalink":"/plays/play-14-choose-a-hosting-provider-to-store-and-backup-the-data-consider-alternatives-to-traditional-hosting/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-14-choose-a-hosting-provider-to-store-and-backup-the-data-consider-alternatives-to-traditional-hosting/","tags":["transparency","dataencryption","storage"]}
 ---
 
 ### **Technical play for data stewards: Choose a hosting provider to store and backup the data.** 

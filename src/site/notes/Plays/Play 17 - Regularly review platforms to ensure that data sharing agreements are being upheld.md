@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["dataaudit","documentation","usage","access"],"dg-publish":true,"permalink":"/plays/play-17-regularly-review-platforms-to-ensure-that-data-sharing-agreements-are-being-upheld/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-17-regularly-review-platforms-to-ensure-that-data-sharing-agreements-are-being-upheld/","tags":["dataaudit","documentation","usage","access"]}
 ---
 
 ### **Technical play for data stewards: Regularly review platforms to ensure that data sharing agreements are being upheld.** 

@@ -1,5 +1,5 @@
 ---
-{"author":"Kate Wing","tags":["usage","dataco-ownership","accountability","research","datamanagement"],"dg-publish":true,"permalink":"/tools-and-templates/data-use-and-sharing-agreement-questions/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/tools-and-templates/data-use-and-sharing-agreement-questions/","tags":["usage","dataco-ownership","accountability","research","datamanagement"]}
 ---
 
 

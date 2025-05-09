@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["relational"],"tags":["#risk","rolesandpermissions","dataproducts","collaboration","documentation","Misuse"],"dg-publish":true,"permalink":"/plays/play-05-establish-clear-roles-permissions-and-moderators/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-05-establish-clear-roles-permissions-and-moderators/","tags":["#risk","rolesandpermissions","dataproducts","collaboration","documentation","Misuse"]}
 ---
 
 ### **Relational play for data stewards: Establish clear roles and permissions for each kind of data user.** 

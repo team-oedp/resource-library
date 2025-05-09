@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":["mapping","communityscience","waterquality","naturedata","usage","documentation","management","capacity","risk","legal","Argentina"],"dg-publish":true,"permalink":"/case-studies/co-act/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/case-studies/co-act/","tags":["mapping","communityscience","waterquality","naturedata","usage","documentation","management","capacity","risk","legal","Argentina"]}
 ---
 
 ![CoAct-Place-2.png](/img/user/Photos%20for%20Resource%20Library/CoAct-Place-2.png)

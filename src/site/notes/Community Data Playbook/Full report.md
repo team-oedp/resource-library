@@ -1,5 +1,5 @@
 ---
-{"tags":null,"dg-publish":true,"dg-home":false,"dg-pinned":false,"cssclasses":null,"permalink":"/community-data-playbook/full-report/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/community-data-playbook/full-report/"}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"author":"Leticia Marques","category":["legal","relational"],"dg-publish":true,"tags":["#Indigenousdata","#collaboration","#dataencryption","accountability","naturedata","misuse"],"permalink":"/decoders/data-sharing-agreements/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/data-sharing-agreements/","tags":["#Indigenousdata","#collaboration","#dataencryption","accountability","naturedata","misuse"]}
 ---
 
 ### **What is it?**

@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["relational"],"tags":["capacity","management"],"dg-publish":true,"permalink":"/plays/play-24-conduct-research-through-informational-interviews-to-create-user-personas-or-a-community-audit/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-24-conduct-research-through-informational-interviews-to-create-user-personas-or-a-community-audit/","tags":["capacity","management"]}
 ---
 
 ### **Relational play for data stewards: Conduct research through informational interviews to create user personas or a community audit.** 

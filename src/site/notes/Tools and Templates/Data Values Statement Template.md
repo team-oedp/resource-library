@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","tags":["accountability","trust","transparency","datamanagement"],"dg-publish":true,"permalink":"/tools-and-templates/data-values-statement-template/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/tools-and-templates/data-values-statement-template/","tags":["accountability","trust","transparency","datamanagement"]}
 ---
 
 

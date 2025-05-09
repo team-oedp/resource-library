@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["documentation","access","collection"],"dg-publish":true,"permalink":"/plays/play-22-ensure-documentation-is-available-in-a-central-place/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-22-ensure-documentation-is-available-in-a-central-place/","tags":["documentation","access","collection"]}
 ---
 
 ### **Technical play for data stewards: Ensure documentation is available in a central place.**

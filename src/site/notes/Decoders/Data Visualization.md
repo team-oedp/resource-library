@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["relational","technical"],"dg-publish":true,"tags":["mapping","access","accessibility"],"permalink":"/decoders/data-visualization/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/data-visualization/","tags":["mapping","access","accessibility"]}
 ---
 
 

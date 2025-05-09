@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["relational"],"tags":["extractivism","misuse","capacity","collaboration","legal"],"dg-publish":true,"permalink":"/plays/play-16-develop-a-readymade-workflow-for-employing-and-maintaining-data-sharing-agreements/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-16-develop-a-readymade-workflow-for-employing-and-maintaining-data-sharing-agreements/","tags":["extractivism","misuse","capacity","collaboration","legal"]}
 ---
 
 ### **Relational play for data stewards: Develop a readymade workflow for employing and maintaining data sharing agreements.** 

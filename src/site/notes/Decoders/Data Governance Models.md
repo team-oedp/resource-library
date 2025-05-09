@@ -1,5 +1,5 @@
 ---
-{"author":"Leticia Marques","category":["relational"],"dg-publish":true,"tags":["#California","#transparency","#accountability","#NewEngland","#Australia","#waterdata","#fisheriesdata","#LatinAmerica","#usability","risk","extractivism","datatrust","datacooperative"],"permalink":"/decoders/data-governance-models/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/data-governance-models/","tags":["#California","#transparency","#accountability","#NewEngland","#Australia","#waterdata","#fisheriesdata","#LatinAmerica","#usability","risk","extractivism","datatrust","datacooperative"]}
 ---
 
 ### **What are they?**

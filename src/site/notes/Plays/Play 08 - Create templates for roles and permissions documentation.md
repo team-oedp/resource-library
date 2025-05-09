@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["support"],"tags":["rolesandpermissions","risk","Misuse"],"dg-publish":true,"permalink":"/plays/play-08-create-templates-for-roles-and-permissions-documentation/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-08-create-templates-for-roles-and-permissions-documentation/","tags":["rolesandpermissions","risk","Misuse"]}
 ---
 
 ### **Support play for intermediary organizations: Create templates for documentation of permissions and roles.**

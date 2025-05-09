@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["starter"],"tags":["collection"],"dg-publish":true,"permalink":"/decoders/environmental-data/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/environmental-data/","tags":["collection"]}
 ---
 
 ### **What is it?**

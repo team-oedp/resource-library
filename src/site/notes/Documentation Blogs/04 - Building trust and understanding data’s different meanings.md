@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":["datasovereignty","transparency","accountability","Japan","collaboration","collection","storage","knowledge","documentation","accessibility"],"dg-publish":true,"permalink":"/documentation-blogs/04-building-trust-and-understanding-data-s-different-meanings/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/documentation-blogs/04-building-trust-and-understanding-data-s-different-meanings/","tags":["datasovereignty","transparency","accountability","Japan","collaboration","collection","storage","knowledge","documentation","accessibility"]}
 ---
 
 _This is the fourth post for the Community Data Hubs Documentation series. This series will document the thought and conversation trajectories within the process of creating the building blocks of our Community Data Hubs model and OEDP’s broader data stewardship work. The first of these blogs will document the progress of the Community Data Hubs Advisory Group, which is working alongside OEDP to tackle conceptual questions related to the model, including social and technical infrastructures, stewardship, and community data._

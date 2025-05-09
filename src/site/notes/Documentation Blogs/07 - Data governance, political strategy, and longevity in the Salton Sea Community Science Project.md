@@ -1,5 +1,5 @@
 ---
-{"author":"John Favini","category":null,"tags":["California","communityscience","NewYork","researchpractices","risk","datalicense","Indigenousdata","collection","datasovereignty","research"],"dg-publish":true,"permalink":"/documentation-blogs/07-data-governance-political-strategy-and-longevity-in-the-salton-sea-community-science-project/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/documentation-blogs/07-data-governance-political-strategy-and-longevity-in-the-salton-sea-community-science-project/","tags":["California","communityscience","NewYork","researchpractices","risk","datalicense","Indigenousdata","collection","datasovereignty","research"]}
 ---
 
 _This is the seventh post for the Community Data Hubs Documentation series. This series will document the thought and conversation trajectories within the process of creating the building blocks of our Community Data Hubs model and OEDP’s broader data stewardship work. The first of these blogs will document the progress of the Community Data Hubs Advisory Group, which is working alongside OEDP to tackle conceptual questions related to the model, including social and technical infrastructures, stewardship, and community data._

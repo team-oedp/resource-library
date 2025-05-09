@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":null,"tags":["transparency","access"],"dg-publish":true,"permalink":"/how-to-guides-and-zines/zine-the-data-we-own/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/how-to-guides-and-zines/zine-the-data-we-own/","tags":["transparency","access"]}
 ---
 
 This zine is a how-to guide for environmental [[Decoders/Data Sharing\|data sharing]]. It prompts considerations around practices like data protection, #transparency, and equitable #access to ensure justice remains a key piece of environmental data sharing.

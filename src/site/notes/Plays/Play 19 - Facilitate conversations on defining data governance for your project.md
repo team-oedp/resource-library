@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["relational"],"tags":["usage","findability","usability","datatrust","documentation","dataproducts"],"dg-publish":true,"permalink":"/plays/play-19-facilitate-conversations-on-defining-data-governance-for-your-project/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-19-facilitate-conversations-on-defining-data-governance-for-your-project/","tags":["usage","findability","usability","datatrust","documentation","dataproducts"]}
 ---
 
 ### **Relational play for data stewards: Facilitate conversations on defining data governance frameworks or models for your project.** 

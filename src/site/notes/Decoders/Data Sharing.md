@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["relational"],"dg-publish":true,"tags":["#datalicense","#California","#NewYork","#risk","#surveillance","#misrepresentation","#collaboration","#airquality","misuse","extractivism","research"],"permalink":"/decoders/data-sharing/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/data-sharing/","tags":["#datalicense","#California","#NewYork","#risk","#surveillance","#misrepresentation","#collaboration","#airquality","misuse","extractivism","research"]}
 ---
 
 ### **What is it?

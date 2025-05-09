@@ -1,5 +1,5 @@
 ---
-{"author":null,"category":null,"tags":null,"dg-publish":true,"dg-pinned":true,"permalink":"/plays/about-the-plays/","pinned":true,"dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/about-the-plays/","pinned":true}
 ---
 
 The plays in this section are modular strategies to support better environmental data governance. They can be used individually or in combination with one another; they can be adapted and used no matter what relational or technical infrastructure you might currently have. We’ve grouped the plays for each takeaway as relational, technical, or as a support play. 

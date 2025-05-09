@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["starter"],"tags":["reuse","access","license","FAIR","CARE"],"dg-publish":true,"permalink":"/decoders/open-data/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/open-data/","tags":["reuse","access","license","FAIR","CARE"]}
 ---
 
 ### **What is it?**

@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","tags":["usage","accountability","datastorage"],"dg-publish":true,"permalink":"/tools-and-templates/privacy-policy-template/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/tools-and-templates/privacy-policy-template/","tags":["usage","accountability","datastorage"]}
 ---
 
 

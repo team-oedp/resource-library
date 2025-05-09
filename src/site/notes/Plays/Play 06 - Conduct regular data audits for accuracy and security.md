@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["relational"],"tags":["dataaudit","risk","sensitivedata","documentation"],"dg-publish":true,"permalink":"/plays/play-06-conduct-regular-data-audits-for-accuracy-and-security/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-06-conduct-regular-data-audits-for-accuracy-and-security/","tags":["dataaudit","risk","sensitivedata","documentation"]}
 ---
 
 ### **Relational play for data stewards: Conduct regular data audits for accuracy and security.** 

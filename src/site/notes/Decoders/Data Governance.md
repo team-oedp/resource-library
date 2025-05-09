@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["starter"],"tags":["rolesandpermissions","sensitivedata","transparency"],"dg-publish":true,"permalink":"/decoders/data-governance/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/data-governance/","tags":["rolesandpermissions","sensitivedata","transparency"]}
 ---
 
 ### **What is it?**

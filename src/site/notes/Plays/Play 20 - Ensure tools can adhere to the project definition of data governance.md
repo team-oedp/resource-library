@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["rolesandpermissions","access"],"dg-publish":true,"permalink":"/plays/play-20-ensure-tools-can-adhere-to-the-project-definition-of-data-governance/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-20-ensure-tools-can-adhere-to-the-project-definition-of-data-governance/","tags":["rolesandpermissions","access"]}
 ---
 
 ### **Technical play for data stewards: Ensure your tools and workflows can adhere to your framework of [[Decoders/Data Governance\|data governance]].** 

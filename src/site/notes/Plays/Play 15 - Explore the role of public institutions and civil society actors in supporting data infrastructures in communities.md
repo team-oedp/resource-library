@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":["support"],"tags":["trust","knowledge","collaboration"],"dg-publish":true,"permalink":"/plays/play-15-explore-the-role-of-public-institutions-and-civil-society-actors-in-supporting-data-infrastructures-in-communities/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-15-explore-the-role-of-public-institutions-and-civil-society-actors-in-supporting-data-infrastructures-in-communities/","tags":["trust","knowledge","collaboration"]}
 ---
 
 ### **Support play for intermediary organizations: Explore the role of public institutions and civil society actors in supporting data infrastructures in communities.**

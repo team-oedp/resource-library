@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":["airquality","Georgia","interoperability","rolesandpermissions","dataproducts","waterquality","extractivism","researchpractices"],"dg-publish":true,"permalink":"/case-studies/charrs/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/case-studies/charrs/","tags":["airquality","Georgia","interoperability","rolesandpermissions","dataproducts","waterquality","extractivism","researchpractices"]}
 ---
 
 ![CHARRS-Place-1.png](/img/user/Photos%20for%20Resource%20Library/CHARRS-Place-1.png)

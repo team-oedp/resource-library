@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["documentation","rolesandpermissions"],"dg-publish":true,"permalink":"/plays/play-23-develop-processes-for-maintaining-documentation/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-23-develop-processes-for-maintaining-documentation/","tags":["documentation","rolesandpermissions"]}
 ---
 
 ### **Technical play for data stewards: Develop processes for maintaining documentation.** 

@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["starter"],"tags":["transparency","collaboration","accessibility"],"dg-publish":true,"permalink":"/decoders/open-source/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/open-source/","tags":["transparency","collaboration","accessibility"]}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"author":"Cathy Richards","category":["technical"],"tags":["accessibility","documentation","collection"],"dg-publish":true,"permalink":"/plays/play-02-develop-a-values-oriented-read-me-for-the-technical-implementer/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/plays/play-02-develop-a-values-oriented-read-me-for-the-technical-implementer/","tags":["accessibility","documentation","collection"]}
 ---
 
 ### **Technical play for data stewards: Develop a README for the technical implementer.** 

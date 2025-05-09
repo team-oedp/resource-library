@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":["datamanagement","accessibility","communityscience","collaboration","legal","research","access","anonymization","dataproducts"],"dg-publish":true,"permalink":"/documentation-blogs/13-workshopping-legal-solutions-to-data-governance-issues/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/documentation-blogs/13-workshopping-legal-solutions-to-data-governance-issues/","tags":["datamanagement","accessibility","communityscience","collaboration","legal","research","access","anonymization","dataproducts"]}
 ---
 
 This blog documents the content and structure of one of OEDP’s two pilot Environmental Data Labs, undefined held on August 16, 2023. OEDP hosted these labs to inform our broader data stewardship work and the emerging model for [Community Data Hubs](https://oedp-datastewardship.pubpub.org/) (CDH). 

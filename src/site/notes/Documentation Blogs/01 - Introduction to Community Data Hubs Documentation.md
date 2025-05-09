@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":["accountability","transparency","documentation","collection","storage","usability"],"dg-publish":true,"dg-pinned":true,"permalink":"/documentation-blogs/01-introduction-to-community-data-hubs-documentation/","pinned":true,"dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/documentation-blogs/01-introduction-to-community-data-hubs-documentation/","pinned":true,"tags":["accountability","transparency","documentation","collection","storage","usability"]}
 ---
 
 

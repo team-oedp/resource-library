@@ -1,5 +1,5 @@
 ---
-{"author":"Leticia Marques","category":["relational"],"dg-publish":true,"tags":["#discoverability","#API","#FAIR","#datacollection","accessibility","sensitivedata","context","#hydrology"],"permalink":"/decoders/data-access/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/decoders/data-access/","tags":["#discoverability","#API","#FAIR","#datacollection","accessibility","sensitivedata","context","#hydrology"]}
 ---
 
 ### **What is it?** 

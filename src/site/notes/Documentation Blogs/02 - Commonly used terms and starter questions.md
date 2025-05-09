@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":["documentation","findability","usability"],"dg-publish":true,"permalink":"/documentation-blogs/02-commonly-used-terms-and-starter-questions/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/documentation-blogs/02-commonly-used-terms-and-starter-questions/","tags":["documentation","findability","usability"]}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":["datalicense","datatrust","collaboration","accessibility","risk","datastorage","legal","research"],"dg-publish":true,"permalink":"/documentation-blogs/14-legal-mechanisms-and-environmental-data-governance-questions-to-start-the-conversation/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/documentation-blogs/14-legal-mechanisms-and-environmental-data-governance-questions-to-start-the-conversation/","tags":["datalicense","datatrust","collaboration","accessibility","risk","datastorage","legal","research"]}
 ---
 
 Currently, formal #legal mechanisms are not widely used by data stewards who collect, use, and share community-generated environmental data. There are often barriers to their application: since these tools are still emerging and newly used in this space, there are not many case studies to learn from, or tools to spur collaboration. It can be costly to hire legal support, and without examples of existing proofs of concept, it can be difficult to justify the financial cost. 

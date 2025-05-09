@@ -1,5 +1,5 @@
 ---
-{"tags":["gardenEntry","gardenEntry","gardenEntry","gardenEntry","gardenEntry"],"dg-publish":true,"dg-home":true,"dg-pinned":true,"cssclasses":["img-grid","cards"],"permalink":"/home/","pinned":true,"contentClasses":"img-grid cards","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/home/","pinned":true,"contentClasses":"img-grid cards","tags":["gardenEntry"]}
 ---
 
 # The Resource Library for Community Data is a virtual learning space to find resources, templates, and guidance for environmental data governance. 

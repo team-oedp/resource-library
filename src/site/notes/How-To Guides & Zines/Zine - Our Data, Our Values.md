@@ -1,5 +1,5 @@
 ---
-{"author":"Emelia Williams","category":null,"tags":null,"dg-publish":true,"permalink":"/how-to-guides-and-zines/zine-our-data-our-values/","dgPassFrontmatter":true}
+{"dg-publish":true,"permalink":"/how-to-guides-and-zines/zine-our-data-our-values/"}
 ---
 
 
