@@ -10,7 +10,7 @@
 
 
 ## Project Leads
-## Emelia Williams, Research and Policy Manager, emelia@openenvironmentaldata.org
+### Emelia Williams, Research and Policy Manager, emelia@openenvironmentaldata.org
 
 ![IMG_8672 (1).jpg](/img/user/Photos%20for%20Resource%20Library/IMG_8672%20(1).jpg)
 
@@ -18,7 +18,7 @@
 
 
 
-## Cathy Richards, Civic Science Fellow and Data Inclusion Specialist
+### Cathy Richards, Civic Science Fellow and Data Inclusion Specialist
 
 ![Cathy Richards.jpg](/img/user/Photos%20for%20Resource%20Library/Cathy%20Richards.jpg)
 
