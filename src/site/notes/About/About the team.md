@@ -5,9 +5,7 @@
 
 > [!TIP] This Resource Library is maintained and created by the [Open Environmental Data Project (OEDP).](https://www.openenvironmentaldata.org) 
 
-
-
-
+<br><br><br>
 ## Project Leads
 ### Emelia Williams, Research and Policy Manager, emelia@openenvironmentaldata.org
 
