@@ -60,4 +60,3 @@ Well-designed data governance models promote #accessibility, #trust, and #usabil
 - To read Aapti Institute’s findings from research with the Omidyar Network on understanding data stewardship, see [Data Stewardship: A Taxonomy](https://thedataeconomylab.com/2020/06/24/data-stewardship-a-taxonomy/). 
 - To explore how different data governance models were used across 6 different countries in the Americas, see [Open Data and Climate Change: Experiences from the Americas](https://medium.com/opendatacharter/open-data-and-climate-change-experiences-from-the-americas-7e4187b89f4c).
 
-**
