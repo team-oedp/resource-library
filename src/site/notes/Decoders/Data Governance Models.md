@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-governance-models/","tags":["#California","#transparency","#accountability","#NewEngland","#Australia","#waterdata","#fisheriesdata","#LatinAmerica","#usability","risk","extractivism","datatrust","datacooperative"]}
+{"dg-publish":true,"permalink":"/decoders/data-governance-models/","tags":["California","transparency","accountability","NewEngland","Australia","waterdata","fisheriesdata","LatinAmerica","usability","risk","extractivism","datatrust","datacooperative"]}
 ---
 
 ### **What are they?**
