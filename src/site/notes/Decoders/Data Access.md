@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-access/","tags":["#discoverability","#API","#FAIR","#datacollection","accessibility","sensitivedata","context","#hydrology"]}
+{"dg-publish":true,"permalink":"/decoders/data-access/","tags":["discoverability","API","FAIR","datacollection","accessibility","sensitivedata","context","hydrology"]}
 ---
 
 ### **What is it?** 
