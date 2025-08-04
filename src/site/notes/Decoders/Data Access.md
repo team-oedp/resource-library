@@ -32,7 +32,7 @@ While not all data needs to be public, having a data access strategy can increas
 
   
 
-### **Mentioned and additional resources:
+### **Mentioned and additional resources**:
 
 - To examine a model for data access in the field of hydrology, see [A data sharing method in the open web environment: Data sharing in hydrology](https://thelivinglib.org/a-data-sharing-method-in-the-open-web-environment-data-sharing-in-hydrology/). 
 - For more on the importance of accessible [[Decoders/Environmental Data\|environmental data]] and the impacts it has, see [Climate data can save lives. Most countries can’t access it](https://thelivinglib.org/climate-data-can-save-lives-most-countries-cant-access-it/). 
