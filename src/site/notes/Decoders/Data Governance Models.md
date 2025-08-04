@@ -4,7 +4,7 @@
 
 ### **What are they?**
 
-[[Decoders/Environmental Data\|Environmental data]] is an essential tool for monitoring and evaluating environmental issues. Navigating these often complex issues requires context-specific data practices to ensure accuracy, accessibility, responsible use, and overall collective benefit of the data. Environmental data stewards can use a [[Decoders/Data Governance\|data governance]] model to contextualize their data practices. .
+[[Decoders/Environmental Data\|Environmental data]] is an essential tool for monitoring and evaluating environmental issues. Navigating these often complex issues requires context-specific data practices to ensure accuracy, accessibility, responsible use, and overall collective benefit of the data. Environmental data stewards can use a [[Decoders/Data Governance\|data governance]] model to contextualize their data practices.
 
 Data governance models are frameworks or sets of practices that outline how an organization will manage and use their environmental data. They encompass the relational, legal, and technical aspects of the data lifecycle, from collection to dissemination, in order “to minimize risks, ensure accountability, and optimize data assets” ([The World Bank](https://digitalregulation.org/navigating-data-governance-a-guiding-tool-for-regulators/#:~:text=Data%20governance%20refers%20to%20the,accountability%2C%20and%20optimize%20data%20assets.)).
 
