@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/metadata/","tags":["documentation","datacollection","#usability","climatedata","FAIR","CARE","findability","collection","transparency"]}
+{"dg-publish":true,"permalink":"/decoders/metadata/","tags":["documentation","datacollection","usability","climatedata","FAIR","CARE","findability","collection","transparency"]}
 ---
 
 ### **What is it?**
@@ -19,7 +19,7 @@ The power of metadata lies in its #documentation. This can be as simple as inclu
 While you are in the early stages of data collection or creation, make a note of file names and formats, how the data is organized, how it was generated, and how it was processed or altered, as well as any explanation of codes or abbreviations used in the naming structure ([MIT Libraries](https://libraries.mit.edu/data-management/store/documentation/)). Making a note of these specific codes and structures can support integration of metadata standards and broader data documentation. 
 
   
-**Why is it important?**
+### **Why is it important?**
 
 Metadata is important for [[Decoders/Environmental Data\|environmental data]] because it makes it easier to identify important datasets that could support environmental research and decision making. In short, it makes the data more accessible. Metadata also helps improve #transparency around where the data came from, how it was collected, and how it can be used ([John Horodyski, 2022](https://www.taylorfrancis.com/chapters/mono/10.1201/9781003189732-1/praise-metadata-lost-found-john-horodyski?context=ubx&refId=39d2f67b-0c7e-404f-a128-59b6b308cbdc)). This makes it easier to reuse the data and replicate the methods of #collection, as well as helping others improve and build on the original research. 
 
