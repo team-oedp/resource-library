@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-ownership/","tags":["#datarights","accessibility","rolesandpermissions","Indigenousdata","interoperability","extractivism"]}
+{"dg-publish":true,"permalink":"/decoders/data-ownership/","tags":["datarights","accessibility","rolesandpermissions","Indigenousdata","interoperability","extractivism"]}
 ---
 
 ### **What is it?**

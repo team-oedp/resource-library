@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-privacy-and-security/","tags":["#risk","surveillance","dataencryption","transparency","#rolesandpermissions","#sensitivedata","#dataproducts"]}
+{"dg-publish":true,"permalink":"/decoders/data-privacy-and-security/","tags":["risk","surveillance","dataencryption","transparency","rolesandpermissions","sensitivedata","dataproducts"]}
 ---
 
 ### **What is it?**

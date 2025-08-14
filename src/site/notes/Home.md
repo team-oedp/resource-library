@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/home/","pinned":true,"contentClasses":"img-grid cards","tags":["gardenEntry","gardenEntry","gardenEntry"]}
+{"dg-publish":true,"permalink":"/home/","pinned":true,"contentClasses":"img-grid cards","tags":["gardenEntry"]}
 ---
 
 # The Resource Library for Community Data is a virtual learning space to find resources, templates, and guidance for environmental data governance. 
@@ -9,5 +9,5 @@
 
 
 
-The **knowledge graph** on the right shows the connections between the different pages. You can isolate different pages and highlight their connections by clicking on the word/dot. 
+The **knowledge graph** shows the connections between the different pages. You can isolate different pages and highlight their connections by clicking on the word/dot. 
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-sharing-agreements/","tags":["#Indigenousdata","#collaboration","#dataencryption","accountability","naturedata","misuse"]}
+{"dg-publish":true,"permalink":"/decoders/data-sharing-agreements/","tags":["Indigenousdata","collaboration","dataencryption","accountability","naturedata","misuse"]}
 ---
 
 ### **What is it?**

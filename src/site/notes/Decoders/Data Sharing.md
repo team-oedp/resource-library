@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/data-sharing/","tags":["#datalicense","#California","#NewYork","#risk","#surveillance","#misrepresentation","#collaboration","#airquality","misuse","extractivism","research"]}
+{"dg-publish":true,"permalink":"/decoders/data-sharing/","tags":["datalicense","California","NewYork","risk","surveillance","misrepresentation","collaboration","airquality","misuse","extractivism","research"]}
 ---
 
 ### **What is it?
