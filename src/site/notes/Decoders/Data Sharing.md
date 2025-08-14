@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/decoders/data-sharing/","tags":["datalicense","California","NewYork","risk","surveillance","misrepresentation","collaboration","airquality","misuse","extractivism","research"]}
 ---
 
-### **What is it?
+### **What is it?**
 
 Data sharing, simply, is making data available to another party. This could include sharing with a partnering environmental non-profit, a researcher at a university, a community group, or a government agency.
 
