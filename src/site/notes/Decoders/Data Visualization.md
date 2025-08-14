@@ -31,4 +31,4 @@ Why does it matter?In a time where people are overwhelmed with information, data
 - For more on data visualization types, check out [The Data Visualization Catalogue](https://datavizcatalogue.com/), a reference guide to different types of data visualizations and when to use them.
 - To learn about effective data storytelling, check out the [Storytelling with Data](https://www.storytellingwithdata.com/) blog (and book).
 - To learn about visualization design principles, read [The Functional Art by Alberto Cairo](https://www.amazon.com/Functional-Art-introduction-information-visualization/dp/0321834739/)
-- To learn about organizational data storytelling, read [How to tell your organisation’s data story](https://www.theengineroom.org/library/how-to-tell-your-organisations-data-story/), a helpful resource to help you start small and work backwards.**
+- To learn about organizational data storytelling, read [How to tell your organisation’s data story](https://www.theengineroom.org/library/how-to-tell-your-organisations-data-story/), a helpful resource to help you start small and work backwards.

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/decoders/indigenous-data-sovereignty/","tags":["CARE","#FAIR","Māori","#researchpractices","#stewardship","extractivism","#Canada","#knowledge","Indigenousdata"]}
+{"dg-publish":true,"permalink":"/decoders/indigenous-data-sovereignty/","tags":["CARE","FAIR","Māori","researchpractices","stewardship","extractivism","Canada","knowledge","Indigenousdata"]}
 ---
 
 ### **What is it?**
