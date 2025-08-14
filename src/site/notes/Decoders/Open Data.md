@@ -27,4 +27,3 @@ Open data—and the principles, practices, and movement surrounding it—are sig
 - To read the foundational document presenting the CARE principles, see  [CARE Principles for Indigenous Data Governance](https://static1.squarespace.com/static/5d3799de845604000199cd24/t/6397b363b502ff481fce6baf/1670886246948/CARE%2BPrinciples_One%2BPagers%2BFINAL_Oct_17_2019.pdf).
 - To read a discussion on using FAIR and CARE practices, see [Operationalizing the CARE and FAIR Principles for Indigenous data futures](https://www.nature.com/articles/s41597-021-00892-0).
 
-**
