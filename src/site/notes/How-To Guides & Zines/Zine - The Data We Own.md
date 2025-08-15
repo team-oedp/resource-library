@@ -9,7 +9,7 @@ This zine is a how-to guide for environmental [[Decoders/Data Sharing\|data shar
 This zine supports and draws from the [[Tools and Templates/Data Use and Sharing Agreement Questions\|Data Use and Sharing Agreement Questions]].
 
   
-[Click here](https://zenodo.org/records/15285148) to read and download the zine.
+### [Click here](https://zenodo.org/records/15285148) to read and download the zine.
 
 
 ![zine data sharing preview.png](/img/user/Photos%20for%20Resource%20Library/zine%20data%20sharing%20preview.png)

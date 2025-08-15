@@ -10,6 +10,6 @@ This zine is a how-to guide for creating data value statements. You can use this
 This zine supports the use of the [[Tools and Templates/Data Values Statement Template\|Data Values Statement Template]].
 
   
-[Click here](https://zenodo.org/records/15285175) to read and download the zine.
+### [Click here](https://zenodo.org/records/15285175) to read and download the zine.
 
 ![zine data values preview.png](/img/user/Photos%20for%20Resource%20Library/zine%20data%20values%20preview.png)
