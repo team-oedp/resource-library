@@ -37,12 +37,12 @@ Data privacy and security refers to the policies and practices in place to prote
 > - What resources, like [[Decoders/Data Sharing Agreements\|data sharing agreements]], can you create to bolster data security?
   
 
-**Why does it matter?** 
+### **Why does it matter?** 
 
 Data security and privacy helps prevent data breaches, safeguarding personal information collected to help prevent harm to individuals. By creating transparent and clear security and privacy guidelines, data collectors can build and strengthen trust with communities.
 
 
-**Mentioned and additional resources:**
+### **Mentioned and additional resources:**
 
 - To read more about the challenges faced by environmental initiatives in keeping their data safe and the role of strong privacy protocols, see [Safeguarding Sustainability: The Role of Data Privacy in Environmental Initiatives](https://insights.pecb.com/safeguarding-sustainability-the-role-of-data-privacy-in-environmental-initiatives/).
 - To read a discussion of the importance of proactive data security and privacy measures, see [Data privacy and security challenges in environmental research: Approaches to safeguarding sensitive information](https://www.fepbl.com/index.php/ijarss/article/view/1210#:~:text=Key%20findings%20reveal%20a%20growing,Data%20Security%20Solutions%2C%20International%20Regulations).
