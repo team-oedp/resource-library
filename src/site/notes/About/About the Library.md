@@ -18,4 +18,4 @@ This Library is designed for community environmental and climate data users, col
   
 This Resource Library is maintained and created by the [Open Environmental Data Project.](https://www.openenvironmentaldata.org/)
 
-![logo-darkback-jpg-01 (1).jpg](/img/user/Photos%20for%20Resource%20Library/logo-darkback-jpg-01%20(1).jpg)
+![logo-lightback-eps-01.png](/img/user/Photos%20for%20Resource%20Library/logo-lightback-eps-01.png)
