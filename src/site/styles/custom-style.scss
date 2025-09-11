@@ -1,3 +1,6 @@
+// Import unified typography system
+@import 'user/typography-scale';
+
 body {
   --cards-min-width: 180px;
   --cards-max-width: 1fr;
@@ -8,16 +11,17 @@ body {
   --cards-background: transparent;
   --cards-border-width: 1px;
   --cards-aspect-ratio: auto;
-  --cards-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width))); }
+  --cards-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width)));
+  padding-block: 0; }
 
 /* Override aside padding to normalize top spacing */
 aside {
-  padding: 0 var(--size-4-3) var(--size-4-3) var(--size-4-3) !important;
+  padding: 0 var(--size-4-4) var(--size-4-4) var(--size-4-4) !important;
 }
 
-/* Reduce content top margin to normalize page spacing */
+/* Align content top margin with sidebar padding for consistent heading alignment */
 .content {
-  margin-top: 20px !important;
+  margin-top: 0px !important; /* Match sidebar padding for aligned headings */
   margin-left: 270px !important; /* Account for filetree sidebar width (250px) + padding */
 }
 
@@ -64,12 +68,6 @@ aside {
     border: var(--cards-border-width) solid var(--background-modifier-border-hover);
     box-shadow: 0 4px 6px 0px rgba(0, 0, 0, 0.05), 0 1px 3px 1px rgba(0, 0, 0, 0.025);
     transition: box-shadow 0.15s linear; }
-  .cards table.dataview tbody > tr > td {
-    /* Paragraphs */
-    /* Links */
-    /* Buttons */
-    /* Lists */
-    /* Images */ }
     .cards table.dataview tbody > tr > td:first-child {
       font-weight: var(--bold-weight);
       border: none; }
@@ -115,3 +113,114 @@ aside {
 .markdown-source-view.mod-cm6.cards .dataview.table-view-table > tbody > tr > td,
 .trim-cols .cards table.dataview tbody > tr > td {
   white-space: normal; }
+
+/* Typography overrides to enforce unified system */
+
+// Override hardcoded font sizes in digital-garden-base.scss
+.content {
+  font-size: var(--font-text-size) !important; // Override 18px
+}
+
+.toc-container {
+  font-size: var(--font-text-size) !important; // Override 1rem
+}
+
+.backlink-title {
+  font-size: var(--font-lg) !important; // Override 18px
+}
+
+.backlink-card {
+  font-size: var(--font-text-size) !important; // Override 1rem
+}
+
+.graph-title {
+  font-size: var(--font-lg) !important; // Override 1.2rem
+}
+
+.filetree-sidebar h1 {
+  font-size: var(--h2-size) !important; // Use h2 size (30px/1.875rem) for larger sidebar heading
+  text-align: left !important; // Left align the sidebar heading
+}
+
+.navbar h1 {
+  font-size: var(--h3-size) !important; // Override 18px on mobile
+}
+
+.search-box input {
+  font-size: var(--font-2xl) !important; // Override 2rem
+}
+
+.searchresult {
+  font-size: var(--font-lg) !important; // Override 1.2rem
+}
+
+.search-link {
+  font-size: var(--font-lg) !important; // Override 1.4rem
+}
+
+.navigation-hint {
+  font-size: var(--font-text-size) !important; // Override 1rem
+}
+
+.timestamps {
+  font-size: var(--font-xs) !important; // Override 0.8em
+}
+
+// Override specific problematic sizes
+.font-bg {
+  font-size: var(--font-8xl) !important; // Override 92px
+}
+
+blockquote:before {
+  font-size: var(--font-4xl) !important; // Override 4em
+}
+
+// Override table text sizes
+.cards table.dataview tbody > tr > td:not(:first-child) {
+  font-size: var(--font-sm) !important; // Override calc(var(--table-text-size) * .9)
+}
+
+// Override callout title size
+.callout-title {
+  font-size: var(--font-lg) !important; // Override var(--callout-title-size)
+}
+
+// Override depth display
+#depth-display {
+  font-size: var(--font-xs) !important; // Override 0.8rem
+}
+
+// Override backlink icon
+.backlink-card i {
+  font-size: var(--font-xs) !important; // Override 0.8rem
+}
+
+// Override toc items
+.toc-container li::before {
+  font-size: var(--font-xs) !important; // Override 0.8rem
+}
+
+// Override no backlinks message
+.no-backlinks-message {
+  font-size: var(--font-xs) !important; // Override 0.8rem
+}
+
+// OEDP logo size constraint
+img[src*="logo-lightback-eps-01.png"] {
+  max-height: 120px !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Fix file tree indentation to align with sidebar heading */
+.notelink {
+  padding-left: 0 !important; /* Remove left padding to align with heading */
+}
+
+.inner-folder {
+  padding-left: 0 !important; /* Remove left padding to align with heading */
+}
+
+.foldername-wrapper {
+  margin-left: 0 !important; /* Remove left margin to align with heading */
+}
