@@ -95,10 +95,11 @@
     };
 
     function setCorrectShortcut() {
+        const shortcutElements = document.querySelectorAll(".shortcut-text");
         if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
-            document
-                .querySelectorAll(".search-keys")
-                .forEach(x => x.innerHTML = "⌘ + K");
+            shortcutElements.forEach(x => x.textContent = "⌘ + K");
+        } else {
+            shortcutElements.forEach(x => x.textContent = "CTRL + K");
         }
     }
 
