@@ -215,6 +215,7 @@ img[src*="logo-lightback-eps-01.png"] {
 /* Fix file tree indentation to align with sidebar heading */
 .notelink {
   padding-left: 0 !important; /* Remove left padding to align with heading */
+  font-weight: 500 !important; /* Medium font weight for menu items */
 }
 
 .inner-folder {
@@ -223,12 +224,13 @@ img[src*="logo-lightback-eps-01.png"] {
 
 .foldername-wrapper {
   margin-left: 0 !important; /* Remove left margin to align with heading */
+  font-weight: 500 !important; /* Medium font weight for folder names */
 }
 
 /* Update search input styling in sidebar */
 .search-button {
   width: 100% !important; /* Fill the width of the container */
-  margin: 10px 0 !important; /* Remove horizontal margins */
+  margin: 10px 0 20px 0 !important; /* Add more space beneath the search input */
   border-radius: 8px !important; /* Add rounded corners */
   border: 1px solid var(--background-modifier-border) !important; /* Add border all around */
   background-color: white !important; /* White background */
