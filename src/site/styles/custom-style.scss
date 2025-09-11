@@ -10,6 +10,24 @@ body {
   --cards-aspect-ratio: auto;
   --cards-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width))); }
 
+/* Override aside padding to normalize top spacing */
+aside {
+  padding: 0 var(--size-4-3) var(--size-4-3) var(--size-4-3) !important;
+}
+
+/* Reduce content top margin to normalize page spacing */
+.content {
+  margin-top: 20px !important;
+  margin-left: 270px !important; /* Account for filetree sidebar width (250px) + padding */
+}
+
+/* Reset left margin on mobile where filetree sidebar is hidden */
+@media (max-width: 1400px) {
+  .content {
+    margin-left: auto !important;
+  }
+}
+
 @media (max-width: 400pt) {
   body {
     --cards-min-width:var(--cards-mobile-width); } }
