@@ -276,8 +276,11 @@
         let search = field
             .value
             .trim();
-        if (!search) 
+        if (!search) {
+            // Restore empty state when search is cleared
+            resultsDiv.innerHTML = '<div class="search-empty-state"><p>Start typing to search the resource library</p></div>';
             return;
+        }
         if (search == lastSearch) 
             return;
         console.log(`search for ${search}`);
