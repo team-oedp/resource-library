@@ -1,6 +1,8 @@
 // Import unified typography system
 @import 'user/typography-scale';
 @import 'user/heading-spacing';
+@import 'user/brand-tokens';
+@import 'user/sidebar';
 
 body {
   --cards-min-width: 180px;
@@ -14,24 +16,6 @@ body {
   --cards-aspect-ratio: auto;
   --cards-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width)));
   padding-block: 0; }
-
-/* Override aside padding to normalize top spacing */
-aside {
-  padding: 0 var(--size-4-5) var(--size-4-4) var(--size-4-5) !important;
-}
-
-/* Align content top margin with sidebar padding for consistent heading alignment */
-.content {
-  margin-top: 0px !important; /* Match sidebar padding for aligned headings */
-  margin-left: 270px !important; /* Account for filetree sidebar width (250px) + padding */
-}
-
-/* Reset left margin on mobile where filetree sidebar is hidden */
-@media (max-width: 1400px) {
-  .content {
-    margin-left: auto !important;
-  }
-}
 
 @media (max-width: 400pt) {
   body {
@@ -138,17 +122,12 @@ aside {
   font-size: var(--font-lg) !important; // Override 1.2rem
 }
 
-.filetree-sidebar h1 {
-  font-size: var(--h2-size) !important; // Use h2 size (30px/1.875rem) for larger sidebar heading
-  text-align: left !important; // Left align the sidebar heading
-}
-
 .navbar h1 {
   font-size: var(--h3-size) !important; // Override 18px on mobile
 }
 
 .search-box input {
-  font-size: var(--font-2xl) !important; // Override 2rem
+  font-size: var(--font-3xl) !important; // Larger, clearer input text
 }
 
 .searchresult {
@@ -213,89 +192,153 @@ img[src*="logo-lightback-eps-01.png"] {
   height: auto !important;
 }
 
+/* ================================================
+   Search modal refinements
+   ================================================ */
+
+/* Add minimum height and better structure to the modal */
+.search-box {
+  padding: 16px 12px 0 12px !important; /* Remove bottom padding */
+  min-height: 300px !important; /* Prevent squashed appearance */
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: white !important; /* White background */
+}
+
+/* Larger input and improved padding/placement */
+.search-box input {
+  padding: 16px 14px !important;
+  font-size: var(--font-4xl) !important; /* Even larger input text */
+  margin-bottom: 12px !important; /* Ensure clear separation from results */
+}
+
+/* Clear divider between input and results - full width borders */
+#search-results {
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 24px -12px 0 -12px !important; /* Increased top margin to push down from input */
+  padding: 24px 0 0 0 !important; /* Additional top padding for safety */
+  flex: 1 !important; /* Take remaining space */
+  background-color: white !important; /* White background instead of grey */
+  display: flex !important; /* Ensure flex behavior for centering */
+  flex-direction: column !important;
+  position: relative !important; /* Create stacking context */
+  z-index: 1 !important; /* Sit above any overlapping header artifacts */
+  min-height: 100px !important; /* Ensure container has minimum height */
+}
+
+/* Bulletproof spacer to guarantee results start below the header/input */
+#search-results::before {
+  content: '';
+  display: block;
+  height: 8px; /* Additional nudge below the border */
+}
+
+/* Ensure all JS-generated wrapper divs have adequate spacing */
+#search-results > div {
+  padding-top: 24px !important; /* Push all results content down within container */
+}
+
+/* Result card breathing room with zero side padding container */
+#search-results .searchresult {
+  padding: 14px 16px !important; /* Padding inside individual results */
+  margin: 0 16px 12px 16px !important; /* Margin for spacing between results */
+}
+
+/* Spacing between title, tags, and description */
+.searchresult .search-link {
+  margin-bottom: 10px !important;
+}
+.searchresult .header-meta {
+  margin-bottom: 8px !important;
+}
+.searchresult .header-tags {
+  line-height: 1.8 !important; /* Increased line height for tags */
+}
+.searchresult .header-tags .tag {
+  margin-right: 6px !important;
+  margin-bottom: 4px !important; /* Vertical spacing for wrapped tags */
+}
+
+/* Header tags spacing for main content */
+.header-tags .tag {
+  margin-right: 6px !important;
+  margin-bottom: 8px !important; /* Increased vertical spacing to prevent touching */
+}
+
+.searchresult p {
+  margin-top: 8px !important;
+}
+
+/* Empty state styling for centered instructional text */
+.search-empty-state {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 !important; /* Take all available space for proper centering */
+  color: var(--text-muted) !important;
+  font-size: var(--font-lg) !important;
+}
+
+.search-empty-state p {
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+/* Footer bar fixed to bottom of modal content with border extending to edges */
+.search-box-footer {
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 0 -12px 0 -12px !important; /* Negative left/right margins to reach edges, no bottom margin */
+  padding: 10px 16px !important; /* Internal padding for content */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px; /* Add spacing between footer items */
+  margin-top: auto !important; /* Push to bottom of flex container */
+  flex-shrink: 0 !important; /* Prevent footer from shrinking */
+  background-color: white !important; /* Match modal background */
+  border-radius: 0 0 15px 15px !important; /* Match the modal's bottom rounded corners */
+}
+
 /* Increase callout margins for better breathing room */
 .callout {
   margin: 3em 0 !important; /* Increased from 1em 0 for more spacing */
 }
 
-/* Fix file tree indentation to align with sidebar heading */
-.notelink {
-  padding-left: 0 !important; /* Remove left padding to align with heading */
-  font-weight: 500 !important; /* Medium font weight for menu items */
+/* Fix callout word wrapping to keep whole words together */
+.callout {
+  word-wrap: normal !important; /* Override break-word from digital-garden-base.scss */
+  overflow-wrap: break-word !important; /* Allow breaking at word boundaries only */
+  word-break: normal !important; /* Prevent breaking within words */
+  text-wrap: pretty !important; /* Modern CSS for better line breaking */
 }
 
-.inner-folder {
-  padding-left: 0 !important; /* Remove left padding to align with heading */
+/* Fix link wrapping in callouts specifically */
+.callout a {
+  word-break: normal !important; /* Prevent breaking within words */
+  overflow-wrap: break-word !important; /* Allow breaking at word boundaries only */
+  hyphens: none !important; /* Disable automatic hyphenation */
+  text-wrap: pretty !important; /* Modern CSS for better line breaking */
 }
 
-.foldername-wrapper {
-  margin-left: 0 !important; /* Remove left margin to align with heading */
-  font-weight: 500 !important; /* Medium font weight for folder names */
-}
+/* Sidebar styles moved to user/sidebar.scss */
 
-/* Update search input styling in sidebar */
-.search-button {
-  width: 100% !important; /* Fill the width of the container */
-  margin: 10px 0 20px 0 !important; /* Add more space beneath the search input */
-  border-radius: 8px !important; /* Add rounded corners */
-  border: 1px solid var(--background-modifier-border) !important; /* Add border all around */
-  background-color: white !important; /* White background */
-  padding: 10px 0 !important; /* Reduced vertical padding */
-  line-height: 1.1 !important; /* Reduced line height for more compact appearance */
-  min-height: 40px !important; /* Reduced minimum height */
-  justify-content: space-between !important; /* Space between search text and keyboard shortcut */
-}
-
-.search-button:hover {
-  border: 1px solid var(--text-accent) !important; /* Change border color on hover */
-  background-color: white !important; /* Keep white background on hover */
-}
-
-.search-text {
-  text-align: left !important; /* Left align the text content */
-  margin-left: 6px !important; /* Reduced space between icon and text */
-  display: flex !important; /* Make it a flex container */
-  align-items: baseline !important; /* Align items on the same baseline */
-  flex: 1 !important; /* Take up available space */
-  font-size: inherit !important; /* Use same font size as parent */
-}
-
-.search-text > span {
-  vertical-align: baseline !important; /* Ensure baseline alignment for all spans */
-  line-height: inherit !important; /* Use same line height */
-}
-
-.search-keys {
-  text-align: right !important; /* Right align the keyboard shortcut */
-  margin-left: auto !important; /* Push to the right side */
-  color: #ccc !important; /* Lighter grey color for keyboard shortcut */
-  font-size: inherit !important; /* Use same font size as parent */
-  transform: none !important; /* Remove translateY transform */
-  padding: 0 !important; /* Remove all padding */
-  vertical-align: baseline !important; /* Ensure baseline alignment */
-}
-
-/* Add spacing between search icon and text */
-.search-icon {
-  margin-right: 8px !important; /* Add space after the magnifying glass icon */
-  margin-left: 8px !important; /* Add space from the left edge of the input */
-}
-
-/* Prevent layout shift in keyboard shortcut text */
-.shortcut-text {
-  display: inline-block;
-  min-width: 60px; /* Ensure consistent width to prevent layout shift */
-  text-align: center;
-}
+/* Sidebar search styles moved to user/sidebar.scss */
 
 /* Link styling with flexbox layout for proper icon alignment */
 a {
   text-decoration: none !important; /* Remove underlines */
+  word-break: normal !important; /* Prevent breaking within words */
+  overflow-wrap: break-word !important; /* Allow breaking at word boundaries only */
+  hyphens: none !important; /* Disable automatic hyphenation */
+  text-wrap: pretty !important; /* Modern CSS for better line breaking */
 }
 
-/* External links with icon */
+/* External links with icon - override to scale with text size */
 .external-link {
   text-decoration: none !important;
+  background-size: 0.8em !important; /* Scale with text size instead of fixed 13px */
+  padding-right: 1em !important; /* Scale with text size instead of fixed 16px */
+  background-position-y: 0.2em !important; /* Scale with text size instead of fixed 4px */
 }
 
 /* Internal links */
@@ -310,4 +353,19 @@ a {
 
 .internal-link.is-unresolved:hover {
   color: #666;
+}
+
+/* Sidebar details moved to user/sidebar.scss */
+
+/* ================================================
+   MARKDOWN IMAGES - ROUNDED CORNERS
+   ================================================ */
+
+/* Add rounded corners to all images in markdown content */
+.content img {
+  border-radius: 12px !important; /* Large border-radius for rounded corners */
+  max-width: 50% !important; /* Set images to half width for better balance */
+  height: auto !important; /* Maintain aspect ratio */
+  display: block !important; /* Block element for proper spacing */
+  margin: 2em 0 !important; /* Left align with generous top/bottom margin */
 }
