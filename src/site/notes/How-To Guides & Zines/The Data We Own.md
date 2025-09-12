@@ -11,4 +11,4 @@ This zine supports and draws from the [[Tools and Templates/Data Use and Sharing
 #### [Click here](https://zenodo.org/records/15285148) to read and download the zine.
 
 
-![zine data sharing preview.png](/img/user/Photos%20for%20Resource%20Library/zine%20data%20sharing%20preview.png)
+![zine data sharing preview.png|half](/img/user/Photos%20for%20Resource%20Library/zine%20data%20sharing%20preview.png)

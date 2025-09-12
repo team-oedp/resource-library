@@ -207,36 +207,26 @@ img[src*="logo-lightback-eps-01.png"] {
 
 /* Larger input and improved padding/placement */
 .search-box input {
-  padding: 16px 14px !important;
+  padding: 12px 14px !important; /* Equal top and bottom padding */
   font-size: var(--font-4xl) !important; /* Even larger input text */
-  margin-bottom: 12px !important; /* Ensure clear separation from results */
+  margin-bottom: 12px !important; /* Balanced margin for separation from results */
 }
 
 /* Clear divider between input and results - full width borders */
 #search-results {
   border-top: 1px solid var(--background-modifier-border);
-  margin: 24px -12px 0 -12px !important; /* Increased top margin to push down from input */
-  padding: 24px 0 0 0 !important; /* Additional top padding for safety */
-  flex: 1 !important; /* Take remaining space */
+  margin: 0 -12px !important; /* Full width container, no top margin */
+  padding: 0 !important; /* Remove padding to let content control spacing */
+  flex: 1 !important; /* Take remaining space between input and footer */
   background-color: white !important; /* White background instead of grey */
   display: flex !important; /* Ensure flex behavior for centering */
   flex-direction: column !important;
   position: relative !important; /* Create stacking context */
   z-index: 1 !important; /* Sit above any overlapping header artifacts */
-  min-height: 100px !important; /* Ensure container has minimum height */
+  min-height: 200px !important; /* Ensure adequate space for centering */
 }
 
-/* Bulletproof spacer to guarantee results start below the header/input */
-#search-results::before {
-  content: '';
-  display: block;
-  height: 8px; /* Additional nudge below the border */
-}
-
-/* Ensure all JS-generated wrapper divs have adequate spacing */
-#search-results > div {
-  padding-top: 24px !important; /* Push all results content down within container */
-}
+/* Remove old spacer elements - no longer needed with new centering approach */
 
 /* Result card breathing room with zero side padding container */
 #search-results .searchresult {
@@ -265,6 +255,26 @@ img[src*="logo-lightback-eps-01.png"] {
   margin-bottom: 8px !important; /* Increased vertical spacing to prevent touching */
 }
 
+/* Fix tag wrapping to keep tags as complete units */
+a.tag,
+.editor .cl-hashtag,
+.tag,
+.header-tags .tag,
+.searchresult .header-tags .tag {
+  white-space: nowrap !important; /* Prevent line breaks within tags */
+  word-break: normal !important; /* Override word-break: break-word */
+  overflow-wrap: normal !important; /* Prevent wrapping within words */
+  display: inline-block !important; /* Ensure proper wrapping behavior */
+}
+
+/* Fix tag pane text from breaking words */
+.tag-pane-tag-text {
+  word-break: normal !important; /* Override break-word from obsidian-base.scss */
+  white-space: nowrap !important; /* Keep tag text on one line */
+  overflow: hidden !important; /* Hide overflow if needed */
+  text-overflow: ellipsis !important; /* Add ellipsis for very long tags */
+}
+
 .searchresult p {
   margin-top: 8px !important;
 }
@@ -275,13 +285,15 @@ img[src*="logo-lightback-eps-01.png"] {
   align-items: center !important;
   justify-content: center !important;
   flex: 1 !important; /* Take all available space for proper centering */
-  color: var(--text-muted) !important;
+  color: #999 !important; /* Light grey color for placeholder text */
   font-size: var(--font-lg) !important;
+  padding: 20px !important; /* Add padding to prevent edge touching */
 }
 
 .search-empty-state p {
   margin: 0 !important;
   text-align: center !important;
+  color: #999 !important; /* Ensure light grey color */
 }
 
 /* Footer bar fixed to bottom of modal content with border extending to edges */
@@ -293,7 +305,6 @@ img[src*="logo-lightback-eps-01.png"] {
   align-items: center;
   justify-content: flex-end;
   gap: 16px; /* Add spacing between footer items */
-  margin-top: auto !important; /* Push to bottom of flex container */
   flex-shrink: 0 !important; /* Prevent footer from shrinking */
   background-color: white !important; /* Match modal background */
   border-radius: 0 0 15px 15px !important; /* Match the modal's bottom rounded corners */
@@ -358,14 +369,91 @@ a {
 /* Sidebar details moved to user/sidebar.scss */
 
 /* ================================================
-   MARKDOWN IMAGES - ROUNDED CORNERS
+   MARKDOWN IMAGES - ROUNDED CORNERS & WIDTH CONTROLS
    ================================================ */
 
-/* Add rounded corners to all images in markdown content */
-.content img {
+/* Base styling for all images and picture elements in markdown content */
+.content img,
+.content picture {
   border-radius: 12px !important; /* Large border-radius for rounded corners */
-  max-width: 50% !important; /* Set images to half width for better balance */
   height: auto !important; /* Maintain aspect ratio */
   display: block !important; /* Block element for proper spacing */
   margin: 2em 0 !important; /* Left align with generous top/bottom margin */
+  max-width: 100% !important; /* Prevent overflow */
+}
+
+/* Ensure images inside picture elements inherit proper styling */
+.content picture img {
+  border-radius: 12px !important;
+  margin: 0 !important; /* Reset margin since picture element handles spacing */
+}
+
+/* Default image width (when no width class is specified) - preserve aspect ratio */
+.content img:not(.img-full):not(.img-half):not(.img-small),
+.content picture:not(.img-full):not(.img-half):not(.img-small) {
+  max-width: 100% !important; /* Allow up to full width but maintain aspect ratio */
+  width: auto !important; /* Let the image determine its natural width within max-width constraint */
+}
+
+/* Full width images */
+.content img.img-full,
+.content picture.img-full {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Half width images - optimized for portrait photos and readability */
+.content img.img-half,
+.content picture.img-half {
+  width: 75% !important;
+  max-width: 75% !important;
+  min-width: 300px !important; /* Ensure minimum readable size */
+}
+
+/* Small images (for thumbnails or icons) */
+.content img.img-small,
+.content picture.img-small {
+  width: 25% !important;
+  max-width: 25% !important;
+}
+
+/* Responsive behavior for mobile devices */
+@media (max-width: 768px) {
+  .content img.img-full,
+  .content img.img-half,
+  .content picture.img-full,
+  .content picture.img-half {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: unset !important; /* Remove min-width constraint on mobile */
+  }
+  
+  .content img.img-small,
+  .content picture.img-small {
+    width: 50% !important;
+    max-width: 50% !important;
+  }
+  
+  /* Default images (no class) maintain their aspect-ratio preserving behavior on mobile */
+}
+
+/* ================================================
+   HEADING LINE BREAK UTILITIES
+   ================================================ */
+
+/* Force long headings to wrap more naturally */
+.content h3 {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+}
+
+/* Optional: Add a class for manual line breaking control */
+.content .break-after-comma h3 {
+  word-break: break-all !important;
+}
+
+/* Better line height for multi-line headings */
+.content h3 {
+  line-height: 1.3 !important;
 }

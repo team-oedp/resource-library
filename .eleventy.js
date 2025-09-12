@@ -231,17 +231,24 @@ module.exports = function (eleventyConfig) {
         const [fileName, ...widthAndMetaData] = imageName.split("|");
         const lastValue = widthAndMetaData[widthAndMetaData.length - 1];
         const lastValueIsNumber = !isNaN(lastValue);
+        
+        // Check for width keywords
+        const widthKeywords = ['full', 'half', 'small'];
+        const isWidthKeyword = widthKeywords.includes(lastValue?.toLowerCase());
+        
         const width = lastValueIsNumber ? lastValue : null;
+        const widthKeyword = isWidthKeyword ? lastValue.toLowerCase() : null;
 
         let metaData = "";
         if (widthAndMetaData.length > 1) {
           metaData = widthAndMetaData.slice(0, widthAndMetaData.length - 1).join(" ");
         }
 
-        if (!lastValueIsNumber) {
+        if (!lastValueIsNumber && !isWidthKeyword) {
           metaData += ` ${lastValue}`;
         }
 
+        // Apply pixel width for numeric values
         if (width) {
           const widthIndex = tokens[idx].attrIndex("width");
           const widthAttr = `${width}px`;
@@ -249,6 +256,18 @@ module.exports = function (eleventyConfig) {
             tokens[idx].attrPush(["width", widthAttr]);
           } else {
             tokens[idx].attrs[widthIndex][1] = widthAttr;
+          }
+        }
+
+        // Apply CSS class for width keywords
+        if (widthKeyword) {
+          const classIndex = tokens[idx].attrIndex("class");
+          const widthClass = `img-${widthKeyword}`;
+          if (classIndex < 0) {
+            tokens[idx].attrPush(["class", widthClass]);
+          } else {
+            const existingClasses = tokens[idx].attrs[classIndex][1];
+            tokens[idx].attrs[classIndex][1] = `${existingClasses} ${widthClass}`.trim();
           }
         }
 

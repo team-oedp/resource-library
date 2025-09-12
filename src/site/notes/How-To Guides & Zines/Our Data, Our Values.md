@@ -11,4 +11,4 @@ This zine supports the use of the [[Tools and Templates/Data Values Statement Te
   
 #### [Click here](https://zenodo.org/records/15285175) to read and download the zine.
 
-![zine data values preview.png](/img/user/Photos%20for%20Resource%20Library/zine%20data%20values%20preview.png)
+![zine data values preview.png|half](/img/user/Photos%20for%20Resource%20Library/zine%20data%20values%20preview.png)
