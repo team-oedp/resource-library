@@ -50,12 +50,13 @@
   }
 }
 
-// Fix link wrapping in callouts
+// Fix link wrapping in callouts - keep whole words together
 .callout-content {
   a {
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-    hyphens: auto !important;
+    word-break: normal !important; // Prevent breaking within words
+    overflow-wrap: break-word !important; // Allow breaking at word boundaries only
+    hyphens: none !important; // Disable automatic hyphenation
+    text-wrap: pretty !important; // Modern CSS for better line breaking
   }
 }
 
