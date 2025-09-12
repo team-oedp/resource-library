@@ -63,6 +63,10 @@
         if (graphData == null) {
             return;
         }
+        if (typeof ForceGraph === 'undefined') {
+            console.warn('ForceGraph library not loaded yet');
+            return;
+        }
         const el = document.getElementById(id);
         width = el.offsetWidth;
         height = el.offsetHeight;
@@ -120,13 +124,16 @@
                     ctx.stroke();
                 }
 
-                const label = htmlDecode(node.title)
-                const fontSize = 3.5;
-                ctx.font = `${fontSize}px Sans-Serif`;
+                // Only show labels when enlarged or fullscreen (not minimized)  
+                if (fullScreen) {
+                    const label = htmlDecode(node.title)
+                    const fontSize = 3.5;
+                    ctx.font = `${fontSize}px Sans-Serif`;
 
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'top';
-                ctx.fillText(label, node.x, node.y + nodeR + 2);
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'top';
+                    ctx.fillText(label, node.x, node.y + nodeR + 2);
+                }
             })
             .onNodeClick(node => {
                 window.location = node.url;
@@ -140,20 +147,34 @@
                 hoverNode = node || null;
                 
             });
-            if (fullScreen || (delay != null && graphData.nodes.length > 4)) {
-                setTimeout(() => {
-                    Graph.zoomToFit(5, 75);
-                }, delay || 200);
-            }
+            // Auto-fit once engine stops (stable layout)
+            Graph.__fitted = false;
+            Graph.onEngineStop(() => {
+                if (Graph.__fitted) return;
+                if (graphData.nodes.length > 1) {
+                    Graph.zoomToFit(5, 0);
+                } else {
+                    Graph.zoom(1, {x: width / 2, y: height / 2});
+                }
+                Graph.__fitted = true;
+            });
         return Graph;
     }
 
-    function renderLocalGraph(graphData, depth, fullScreen) {
-        if (window.graph){
+    // Shared helper: dispose current graph then render new data into same canvas
+    function swapGraph(data, viewMode){
+        if(window.graph && window.graph._destructor){
             window.graph._destructor();
         }
+        const isFullscreen = viewMode === 'fullscreen';
+        const enlarged = viewMode === 'enlarged' || isFullscreen;
+        const delay = enlarged ? 200 : null; // auto-fit when enlarged/fullscreen
+        return renderGraph(data, 'link-graph', delay, enlarged);
+    }
+
+    function renderLocalGraph(graphData, depth, viewMode) {
         const data = filterLocalGraphData(graphData, depth);
-        return renderGraph(data, 'link-graph', null, fullScreen);
+        return swapGraph(data, viewMode);
     }
 
     function filterFullGraphData(graphData) {
@@ -169,46 +190,48 @@
         return data
     }
 
-    function openFullGraph(fullGraphData) {
-        lucide.createIcons({
-                attrs: {
-                    class: ["svg-icon"]
-                }
-            });
-        return renderGraph(fullGraphData, "full-graph-container", 200, false);;
-    }
-
-    function closefullGraph(fullGraph) {
-        if (fullGraph) {
-            fullGraph._destructor();
-        }
-        return null;
+    function renderGlobalGraph(fullGraphData, viewMode) {
+        return swapGraph(fullGraphData, viewMode);
     }
 </script>
-<div  x-init="{graphData, fullGraphData} = await fetchGraphData();" x-data="{ graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null}" id="graph-component" x-bind:class="fullScreen ? 'graph graph-fs' : 'graph'" v-scope>
+<div  x-init="{graphData, fullGraphData} = await fetchGraphData();" x-data="{ graphData: null, fullGraphData: null, depth: 1, savedDepth: 1, showingGlobal: false, viewMode: 'minimized', graph: null }" x-effect="document.body.classList.toggle('graph-fullscreen-active', viewMode === 'fullscreen')" id="graph-component" x-bind:class="viewMode === 'enlarged' ? 'graph graph-fs' : viewMode === 'fullscreen' ? 'graph graph-fullscreen' : 'graph'" v-scope>
     <div class="graph-title-container">
         <div class="graph-title">Knowledge Graph</div>
-        <div id="graph-controls">
-                <div class="depth-control">
-                    <label for="graph-depth">Depth</label>
-                    <div class="slider">
-                            <input x-model.number="depth" name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth"/>
-                    <datalist id="depthmarkers">
-                            <option value="1" label="1"></option>
-                            <option value="2" label="2"></option>
-                            <option value="3" label="3"></option>
-                    </datalist>
-                    </div>
-                    <span id="depth-display" x-text="depth"></span>
-                </div>
-                <div class="ctrl-right">
-                    <span id="global-graph-btn" x-on:click="showFullGraph = true; setTimeout(() => {fullGraph = openFullGraph(fullGraphData)}, 100)"><i  icon-name="globe" aria-hidden="true"></i></span>
-                    <span  id="graph-fs-btn"  x-on:click="fullScreen = !fullScreen"><i  icon-name="expand" aria-hidden="true"></i></span>
-                </div>
-        </div>
     </div>
-    <div x-effect="window.graph = renderLocalGraph(graphData, depth, fullScreen)" id="link-graph" ></div>
-    <div x-show="showFullGraph" id="full-graph" class="show" style="display: none;">
-        <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
+    <div x-effect="window.graph = showingGlobal ? renderGlobalGraph(fullGraphData, viewMode) : renderLocalGraph(graphData, depth, viewMode)" id="link-graph" ></div>
+    <div id="graph-controls">
+            <div class="depth-control">
+                <label for="graph-depth">Depth</label>
+                <div class="simple-slider">
+                    <input x-model.number="depth" type="range" min="1" max="3" step="1" id="graph-depth">
+                </div>
+                <span id="depth-display" x-text="depth"></span>
+            </div>
+            <div class="ctrl-right">
+                <div class="button-container">
+                    <span id="global-graph-btn"
+                          x-on:click="
+                             if(!showingGlobal){
+                                 savedDepth = depth;
+                                 showingGlobal = true;
+                                 document.getElementById('graph-depth').disabled = true;
+                                 
+                              } else {
+                                 depth = savedDepth;
+                                 showingGlobal = false;
+                                 document.getElementById('graph-depth').disabled = false;
+                              }
+                          "
+                          :title="showingGlobal ? 'Return to page graph' : 'Show global graph'">
+                          <i icon-name="globe" x-show="!showingGlobal" aria-hidden="true"></i>
+                          <i icon-name="file-check" x-show="showingGlobal" aria-hidden="true"></i>
+                    </span>
+                    <span x-show="viewMode === 'minimized'" id="graph-enlarge-btn" x-on:click="viewMode = 'enlarged'" title="Enlarge graph"><i icon-name="expand" aria-hidden="true"></i></span>
+                    <span x-show="viewMode === 'enlarged'" id="graph-fullscreen-btn" x-on:click="viewMode = 'fullscreen'" title="Enter fullscreen"><i icon-name="maximize-2" aria-hidden="true"></i></span>
+                    <span x-show="viewMode === 'enlarged'" id="graph-minimize-btn" x-on:click="viewMode = 'minimized'" title="Minimize graph"><i icon-name="minimize-2" aria-hidden="true"></i></span>
+                    <span x-show="viewMode === 'fullscreen'" id="graph-close-btn" x-on:click="viewMode = 'minimized'" title="Exit fullscreen"><i icon-name="x" aria-hidden="true"></i></span>
+                </div>
+            </div>
     </div>
+    <!-- Modal removed: global graph now swaps inline -->
 </div>

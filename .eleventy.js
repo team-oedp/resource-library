@@ -572,6 +572,13 @@ module.exports = function (eleventyConfig) {
     },
   });
 
+  eleventyConfig.addFilter("countHeadings", function (content) {
+    if (!content) return 0;
+    const parsed = parse(content);
+    const headings = parsed.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    return headings.length;
+  });
+
   userEleventySetup(eleventyConfig);
 
   return {

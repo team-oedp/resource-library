@@ -10,7 +10,8 @@
 
                   {%if settings.dgShowToc === true%}
                         {%set tocHtml= (content and (content|toc)) %}
-                        {%if tocHtml %}
+                        {%set headingCount = (content and (content|countHeadings)) or 0 %}
+                        {%if tocHtml and headingCount > 1 %}
                               <div class="toc">
                                     <div class="toc-title-container">
                                           <div class="toc-title">

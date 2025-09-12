@@ -12,3 +12,4 @@ CLAUDE.md
 .cache
 _site/
 **/.DS_Store
+.suggestions/
