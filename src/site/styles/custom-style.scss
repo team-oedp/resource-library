@@ -216,7 +216,7 @@ img[src*="logo-lightback-eps-01.png"] {
 #search-results {
   border-top: 1px solid var(--background-modifier-border);
   margin: 0 -12px !important; /* Full width container, no top margin */
-  padding: 0 !important; /* Remove padding to let content control spacing */
+  padding: 0px 0 0 0 !important; /* Add top padding to push results down below input */
   flex: 1 !important; /* Take remaining space between input and footer */
   background-color: white !important; /* White background instead of grey */
   display: flex !important; /* Ensure flex behavior for centering */
