@@ -213,6 +213,11 @@ img[src*="logo-lightback-eps-01.png"] {
   height: auto !important;
 }
 
+/* Increase callout margins for better breathing room */
+.callout {
+  margin: 3em 0 !important; /* Increased from 1em 0 for more spacing */
+}
+
 /* Fix file tree indentation to align with sidebar heading */
 .notelink {
   padding-left: 0 !important; /* Remove left padding to align with heading */
@@ -281,4 +286,28 @@ img[src*="logo-lightback-eps-01.png"] {
   display: inline-block;
   min-width: 60px; /* Ensure consistent width to prevent layout shift */
   text-align: center;
+}
+
+/* Link styling with flexbox layout for proper icon alignment */
+a {
+  text-decoration: none !important; /* Remove underlines */
+}
+
+/* External links with icon */
+.external-link {
+  text-decoration: none !important;
+}
+
+/* Internal links */
+.internal-link {
+  text-decoration: none !important;
+}
+
+/* Unresolved links */
+.internal-link.is-unresolved {
+  color: #999;
+}
+
+.internal-link.is-unresolved:hover {
+  color: #666;
 }

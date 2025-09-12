@@ -50,6 +50,15 @@
   }
 }
 
+// Fix link wrapping in callouts
+.callout-content {
+  a {
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+}
+
 // Responsive adjustments for callouts
 @media (max-width: 768px) {
   .callout-content {

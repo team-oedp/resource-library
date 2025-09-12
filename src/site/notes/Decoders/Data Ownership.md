@@ -18,11 +18,11 @@ For Indigenous data stewards, the framework of [[Decoders/Indigenous Data Sovere
 
 
 > [!NOTE]
-> #### Questions to ask when considering ownership within your data project or organization:
+> **Questions to ask when considering ownership within your data project or organization:**
 > - Who owns, or should own, the data I am collecting?
 > - Who is, or should be, allowed to access the data?
 > - What rights do I have to publish the data?
-> - Does collecting these data impose any obligations on me? ([Office of Research Integrity](https://ori.hhs.gov/content/Chapter-6-Data-Management-Practices-Data-ownership))
+> - Does collecting these data impose any obligations on me? See: [Office of Research Integrity](https://ori.hhs.gov/content/Chapter-6-Data-Management-Practices-Data-ownership)
 
 ## Why does it matter? 
 

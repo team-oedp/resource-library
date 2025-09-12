@@ -263,21 +263,35 @@ module.exports = function (eleventyConfig) {
       md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
         const aIndex = tokens[idx].attrIndex("target");
         const classIndex = tokens[idx].attrIndex("class");
-
-        if (aIndex < 0) {
-          tokens[idx].attrPush(["target", "_blank"]);
-        } else {
-          tokens[idx].attrs[aIndex][1] = "_blank";
+        const hrefIndex = tokens[idx].attrIndex("href");
+        
+        // Get the href value to determine if it's external
+        let href = "";
+        if (hrefIndex >= 0) {
+          href = tokens[idx].attrs[hrefIndex][1];
         }
 
-        if (classIndex < 0) {
-          tokens[idx].attrPush(["class", "external-link"]);
-        } else {
-          tokens[idx].attrs[classIndex][1] = "external-link";
+        // Check if this is an external URL (starts with http:// or https://)
+        const isExternalUrl = href && (href.startsWith("http://") || href.startsWith("https://"));
+
+        if (isExternalUrl) {
+          // Only add target="_blank" and external-link class for actual external URLs
+          if (aIndex < 0) {
+            tokens[idx].attrPush(["target", "_blank"]);
+          } else {
+            tokens[idx].attrs[aIndex][1] = "_blank";
+          }
+
+          if (classIndex < 0) {
+            tokens[idx].attrPush(["class", "external-link"]);
+          } else {
+            tokens[idx].attrs[classIndex][1] = "external-link";
+          }
         }
 
         return defaultLinkRule(tokens, idx, options, env, self);
       };
+
     })
     .use(userMarkdownSetup);
 
