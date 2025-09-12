@@ -151,12 +151,30 @@
             Graph.__fitted = false;
             Graph.onEngineStop(() => {
                 if (Graph.__fitted) return;
+
+                // One-time fit after layout stabilises
                 if (graphData.nodes.length > 1) {
                     Graph.zoomToFit(5, 0);
                 } else {
-                    Graph.zoom(1, {x: width / 2, y: height / 2});
+                    Graph.zoom(1, { x: width / 2, y: height / 2 });
                 }
+
+                /* Freeze simulation and detach FG internal resize observer */
+                if (Graph.pauseAnimation) Graph.pauseAnimation();
+
+                // disconnect hidden resize observer to stop auto-recentre
+                const sym = Object.getOwnPropertySymbols(Graph).find(s => String(s).includes('resizeObserver'));
+                if (sym && Graph[sym]) {
+                    Graph[sym].disconnect?.();
+                    Graph[sym] = null;
+                }
+
                 Graph.__fitted = true;
+
+                // End the simulation entirely to prevent any further auto-recenters
+                if (Graph.cooldownTicks) Graph.cooldownTicks(0);
+                if (Graph.cooldownTime)  Graph.cooldownTime(0);
+                if (Graph.pauseAnimation) Graph.pauseAnimation();
             });
         return Graph;
     }
