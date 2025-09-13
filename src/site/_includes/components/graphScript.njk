@@ -147,35 +147,24 @@
                 hoverNode = node || null;
                 
             });
-            // Auto-fit once engine stops (stable layout)
-            Graph.__fitted = false;
-            Graph.onEngineStop(() => {
-                if (Graph.__fitted) return;
+            
+            /* -------------------------------------------------------------
+               Immediate predictable positioning (replaces onEngineStop)
+            -------------------------------------------------------------*/
+            const shouldAutoFit = fullScreen || (delay !== null && graphData.nodes.length > 1);
 
-                // One-time fit after layout stabilises
-                if (graphData.nodes.length > 1) {
-                    Graph.zoomToFit(5, 0);
-                } else {
-                    Graph.zoom(1, { x: width / 2, y: height / 2 });
-                }
-
-                /* Freeze simulation and detach FG internal resize observer */
-                if (Graph.pauseAnimation) Graph.pauseAnimation();
-
-                // disconnect hidden resize observer to stop auto-recentre
-                const sym = Object.getOwnPropertySymbols(Graph).find(s => String(s).includes('resizeObserver'));
-                if (sym && Graph[sym]) {
-                    Graph[sym].disconnect?.();
-                    Graph[sym] = null;
-                }
-
-                Graph.__fitted = true;
-
-                // End the simulation entirely to prevent any further auto-recenters
-                if (Graph.cooldownTicks) Graph.cooldownTicks(0);
-                if (Graph.cooldownTime)  Graph.cooldownTime(0);
-                if (Graph.pauseAnimation) Graph.pauseAnimation();
-            });
+            if (shouldAutoFit) {
+                setTimeout(() => {
+                    if (graphData.nodes.length > 1) {
+                        Graph.zoomToFit(5, 75);
+                    }
+                    Graph.pauseAnimation();
+                }, delay || 200);
+            } else {
+                // single node in minimized view
+                Graph.zoom(1, { x: width / 2, y: height / 2 });
+                Graph.pauseAnimation();
+            }
         return Graph;
     }
 
@@ -211,12 +200,23 @@
     function renderGlobalGraph(fullGraphData, viewMode) {
         return swapGraph(fullGraphData, viewMode);
     }
+
+    // Expose helpers for Alpine expressions
+    window.renderLocalGraph = renderLocalGraph;
+    window.renderGlobalGraph = renderGlobalGraph;
+
 </script>
 <div  x-init="{graphData, fullGraphData} = await fetchGraphData();" x-data="{ graphData: null, fullGraphData: null, depth: 1, savedDepth: 1, showingGlobal: false, viewMode: 'minimized', graph: null }" x-effect="document.body.classList.toggle('graph-fullscreen-active', viewMode === 'fullscreen')" id="graph-component" x-bind:class="viewMode === 'enlarged' ? 'graph graph-fs' : viewMode === 'fullscreen' ? 'graph graph-fullscreen' : 'graph'" v-scope>
     <div class="graph-title-container">
         <div class="graph-title">Knowledge Graph</div>
     </div>
-    <div x-effect="window.graph = showingGlobal ? renderGlobalGraph(fullGraphData, viewMode) : renderLocalGraph(graphData, depth, viewMode)" id="link-graph" ></div>
+    <div x-effect="
+        if (graphData) {
+            window.graph = showingGlobal
+                ? renderGlobalGraph(fullGraphData, viewMode)
+                : renderLocalGraph(graphData, depth, viewMode);
+        }
+    " id="link-graph"></div>
     <div id="graph-controls">
             <div class="depth-control">
                 <label for="graph-depth">Depth</label>
