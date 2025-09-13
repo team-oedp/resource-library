@@ -114,6 +114,7 @@ aside {
 
 .inner-folder .notelink a:hover {
   background-color: transparent !important;
+  text-decoration: none !important;
 }
 
 /* Active states: color and consistent indentation */
@@ -144,6 +145,13 @@ aside {
 .inner-folder .notelink,
 .nav-folder-children .nav-file-title {
   background-color: transparent !important;
+}
+
+/* Remove underlines from all sidebar navigation links on hover */
+.filetree-sidebar .notelink a:hover,
+.filetree-sidebar .nav-file-title:hover,
+.filetree-sidebar .nav-folder-title:hover {
+  text-decoration: none !important;
 }
 
 /* Remove sidebar navigation icons */
