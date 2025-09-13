@@ -148,22 +148,10 @@
                 
             });
             
-            /* -------------------------------------------------------------
-               Immediate predictable positioning (replaces onEngineStop)
-            -------------------------------------------------------------*/
-            const shouldAutoFit = fullScreen || (delay !== null && graphData.nodes.length > 1);
-
-            if (shouldAutoFit) {
+            if (fullScreen || (delay != null && graphData.nodes.length > 1)) {
                 setTimeout(() => {
-                    if (graphData.nodes.length > 1) {
-                        Graph.zoomToFit(5, 75);
-                    }
-                    Graph.pauseAnimation();
+                    Graph.zoomToFit(5, 75);
                 }, delay || 200);
-            } else {
-                // single node in minimized view
-                Graph.zoom(1, { x: width / 2, y: height / 2 });
-                Graph.pauseAnimation();
             }
         return Graph;
     }
@@ -210,13 +198,7 @@
     <div class="graph-title-container">
         <div class="graph-title">Knowledge Graph</div>
     </div>
-    <div x-effect="
-        if (graphData) {
-            window.graph = showingGlobal
-                ? renderGlobalGraph(fullGraphData, viewMode)
-                : renderLocalGraph(graphData, depth, viewMode);
-        }
-    " id="link-graph"></div>
+    <div id="link-graph" x-effect="window.graph = showingGlobal ? renderGlobalGraph(fullGraphData, viewMode) : renderLocalGraph(graphData, depth, viewMode)"></div>
     <div id="graph-controls">
             <div class="depth-control">
                 <label for="graph-depth">Depth</label>
