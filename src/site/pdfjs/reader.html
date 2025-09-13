@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PDF Reader</title>
+	<link rel="stylesheet" href="/pdfjs/web/pdf_viewer.css">
+	<style>
+		html, body { height: 100%; margin: 0; padding: 0; background: #1e1e1e; color: #e6e6e6; font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+		#toolbar { position: absolute; left: 0; right: 0; top: 0; height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 10px; background: #2a2a2a; border-bottom: 1px solid #000; z-index: 10; }
+		#toolbar button { display: inline-flex; align-items: center; justify-content: center; height: 28px; padding: 0 8px; border-radius: 6px; background: #3a3a3a; color: #fff; border: 1px solid #555; cursor: pointer; }
+		#toolbar button:hover { background: #4a4a4a; }
+		#pageIndicator { margin: 0 8px; opacity: .9; }
+		#viewerContainer { position: absolute; left: 0; right: 0; top: 44px; bottom: 0; overflow: auto; }
+		.pdfViewer .page { margin: 8px auto; }
+	</style>
+</head>
+<body>
+	<div id="toolbar">
+		<button id="prevBtn" aria-label="Previous page">◀</button>
+		<span id="pageIndicator">1 / 1</span>
+		<button id="nextBtn" aria-label="Next page">▶</button>
+		<div style="flex:1"></div>
+		<select id="zoomSelect" aria-label="Zoom">
+			<option value="page-fit">Page Fit</option>
+			<option value="page-width">Page Width</option>
+			<option value="auto">Automatic</option>
+			<option value="1">100%</option>
+			<option value="1.25">125%</option>
+			<option value="1.5">150%</option>
+			<option value="2">200%</option>
+		</select>
+	</div>
+	<div id="viewerContainer"><div id="viewer" class="pdfViewer"></div></div>
+	<script src="/pdfjs/build/pdf.js"></script>
+	<script src="/pdfjs/web/pdf_viewer.js"></script>
+	<script>
+	(function () {
+		var params = new URLSearchParams(location.search)
+		var fileUrl = params.get('file') || ''
+		if (!fileUrl) {
+			document.body.textContent = 'No file provided'
+			return
+		}
+		var workerSrc = '/pdfjs/build/pdf.worker.min.js'
+		if (!document.createElement('script')) {}
+		if (window.pdfjsLib) {
+			window.pdfjsLib.GlobalWorkerOptions.workerSrc = workerSrc
+		}
+		var eventBus = new window.pdfjsViewer.EventBus()
+		var linkService = new window.pdfjsViewer.PDFLinkService({ eventBus: eventBus })
+		var findController = new window.pdfjsViewer.PDFFindController({ eventBus: eventBus, linkService: linkService })
+		var container = document.getElementById('viewerContainer')
+		var viewerEl = document.getElementById('viewer')
+		var pdfViewer = new window.pdfjsViewer.PDFViewer({
+			container: container,
+			viewer: viewerEl,
+			eventBus: eventBus,
+			linkService: linkService,
+			findController: findController
+		})
+		linkService.setViewer(pdfViewer)
+		eventBus.on('pagesinit', function () {
+			pdfViewer.currentScaleValue = 'page-fit'
+			if (window.pdfjsViewer.SpreadMode) {
+				pdfViewer.spreadMode = window.pdfjsViewer.SpreadMode.ODD
+			}
+		})
+
+		function updateUI () {
+			var c = pdfViewer.currentPageNumber || 1
+			var t = pdfViewer.pagesCount || 1
+			document.getElementById('pageIndicator').textContent = c + ' / ' + t
+		}
+
+		eventBus.on('pagechanging', updateUI)
+		eventBus.on('pagesloaded', updateUI)
+		window.pdfjsLib.getDocument({ url: fileUrl, withCredentials: false }).promise.then(function (pdfDocument) {
+			pdfViewer.setDocument(pdfDocument)
+			linkService.setDocument(pdfDocument, null)
+		}).catch(function (err) {
+			console.error(err)
+			document.body.textContent = 'Failed to load PDF'
+		})
+
+		document.getElementById('prevBtn').addEventListener('click', function(){
+			if (pdfViewer.currentPageNumber > 1) pdfViewer.currentPageNumber -= 1
+			updateUI()
+		})
+		document.getElementById('nextBtn').addEventListener('click', function(){
+			if (pdfViewer.currentPageNumber < pdfViewer.pagesCount) pdfViewer.currentPageNumber += 1
+			updateUI()
+		})
+		document.getElementById('zoomSelect').addEventListener('change', function(e){
+			var v = e.target.value
+			if (v === 'auto' || v === 'page-width' || v === 'page-fit') {
+				pdfViewer.currentScaleValue = v
+			} else {
+				var n = parseFloat(v)
+				if (!isNaN(n)) pdfViewer.currentScale = n
+			}
+		})
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'ArrowLeft') {
+				if (pdfViewer.currentPageNumber > 1) pdfViewer.currentPageNumber -= 1
+				updateUI()
+			}
+			if (e.key === 'ArrowRight') {
+				if (pdfViewer.currentPageNumber < pdfViewer.pagesCount) pdfViewer.currentPageNumber += 1
+				updateUI()
+			}
+		})
+	})()
+	</script>
+</body>
+</html>
+
+
