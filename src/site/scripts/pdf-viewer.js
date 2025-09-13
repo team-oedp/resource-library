@@ -72,18 +72,20 @@
   function showModal (src) {
     var modal = qs('#pdf-viewer-modal')
     var iframe = qs('#pdf-viewer-iframe', modal)
-    var loading = qs('.pdf-viewer-loading', modal)
 
-    loading.hidden = false
+    if (!modal) {
+      console.error('PDF viewer modal not found')
+      return
+    }
+    if (!iframe) {
+      console.error('PDF viewer iframe not found')
+      return
+    }
+
     iframe.removeAttribute('src')
     modal.setAttribute('aria-hidden', 'false')
     modal.classList.add('active')
 
-    function onLoad () {
-      loading.hidden = true
-      iframe.removeEventListener('load', onLoad)
-    }
-    iframe.addEventListener('load', onLoad)
     iframe.src = src
     document.body.style.overflow = 'hidden'
   }
@@ -99,46 +101,67 @@
 
   function wireModalClose () {
     var modal = qs('#pdf-viewer-modal')
+    if (!modal) {
+      console.error('PDF viewer: Modal not found when wiring close events')
+      return
+    }
+    console.log('PDF viewer: Modal found, wiring close events')
     qsa('[data-pdf-close]', modal).forEach(function (el) {
       el.addEventListener('click', hideModal)
     })
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') hideModal()
     })
+    window.addEventListener('message', function (e) {
+      if (e.data && e.data.type === 'closePdf') {
+        hideModal()
+      }
+    })
   }
 
   async function openInModal (anchor) {
     try {
       var id = recordIdFromUrl(anchor.href)
+      console.log('PDF viewer: Processing link', anchor.href, 'ID:', id)
+      
       // Prefer local files
       if (id && LOCAL_PDF_MAP[id]) {
+        console.log('PDF viewer: Using local file', LOCAL_PDF_MAP[id])
         showModal(buildViewerSrc(LOCAL_PDF_MAP[id]))
         return
       }
       // Fallback: try Zenodo API
       if (id) {
+        console.log('PDF viewer: Fetching from Zenodo API')
         var res = await fetch('https://zenodo.org/api/records/' + id)
         if (res.ok) {
           var json = await res.json()
           var pdfUrl = findPdfFileLink(json)
           if (pdfUrl) {
+            console.log('PDF viewer: Found PDF URL from API', pdfUrl)
             showModal(buildViewerSrc(pdfUrl))
             return
           }
         }
       }
       // Final fallback
+      console.log('PDF viewer: Falling back to opening link in new tab')
       window.open(anchor.href, '_blank')
     } catch (err) {
-      console.error(err)
+      console.error('PDF viewer error:', err)
       window.open(anchor.href, '_blank')
     }
   }
 
   function enhanceZenodoLinks () {
     var content = qs('main.content') || document
-    qsa('a.external-link', content).forEach(function (a) {
+    console.log('PDF viewer: Enhancing Zenodo links, content element:', content)
+    var externalLinks = qsa('a.external-link', content)
+    console.log('PDF viewer: Found', externalLinks.length, 'external links')
+    
+    externalLinks.forEach(function (a) {
       if (!isZenodoRecordUrl(a.href)) return
+      console.log('PDF viewer: Creating reader button for', a.href)
       var btn = createReaderButton(a)
       a.insertAdjacentElement('afterend', btn)
     })

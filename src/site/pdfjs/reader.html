@@ -6,13 +6,145 @@
 	<title>PDF Reader</title>
 	<link rel="stylesheet" href="/pdfjs/web/pdf_viewer.css">
 	<style>
-		html, body { height: 100%; margin: 0; padding: 0; background: #1e1e1e; color: #e6e6e6; font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-		#toolbar { position: absolute; left: 0; right: 0; top: 0; height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 10px; background: #2a2a2a; border-bottom: 1px solid #000; z-index: 10; }
-		#toolbar button { display: inline-flex; align-items: center; justify-content: center; height: 28px; padding: 0 8px; border-radius: 6px; background: #3a3a3a; color: #fff; border: 1px solid #555; cursor: pointer; }
-		#toolbar button:hover { background: #4a4a4a; }
-		#pageIndicator { margin: 0 8px; opacity: .9; }
-		#viewerContainer { position: absolute; left: 0; right: 0; top: 44px; bottom: 0; overflow: auto; }
-		.pdfViewer .page { margin: 8px auto; }
+		html, body { 
+			height: 100%; 
+			margin: 0; 
+			padding: 0; 
+			background: #272727; 
+			color: #e6e6e6; 
+			font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+		}
+		
+		#toolbar { 
+			position: absolute; 
+			left: 0; 
+			right: 0; 
+			top: 0; 
+			height: 52px; 
+			display: flex; 
+			align-items: center; 
+			gap: 12px; 
+			padding: 0 16px; 
+			background: linear-gradient(135deg, #2d2d2d, #252525); 
+			border-bottom: 1px solid #404040;
+			box-shadow: 0 2px 8px rgba(0,0,0,.3);
+			z-index: 10; 
+		}
+		
+		#toolbar button { 
+			display: inline-flex; 
+			align-items: center; 
+			justify-content: center; 
+			height: 32px; 
+			min-width: 32px;
+			padding: 0 12px; 
+			border-radius: 8px; 
+			background: #404040; 
+			color: #fff; 
+			border: 1px solid #555; 
+			cursor: pointer; 
+			font-size: 14px;
+			font-weight: 500;
+			transition: all 0.2s ease;
+			box-shadow: 0 1px 3px rgba(0,0,0,.2);
+		}
+		
+		#toolbar button:hover { 
+			background: #4a4a4a; 
+			border-color: #666;
+		}
+		
+		#toolbar button:active {
+			background: #3a3a3a;
+		}
+		
+		#toolbar button:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
+			transform: none;
+		}
+		
+		#pageIndicator { 
+			margin: 0 12px; 
+			opacity: .9; 
+			font-weight: 500;
+			background: #333;
+			padding: 4px 8px;
+			border-radius: 4px;
+			border: 1px solid #444;
+		}
+		
+		#zoomSelect {
+			background: #404040 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="%23fff" d="M1 1l5 5 5-5"/></svg>') no-repeat;
+			background-position: right 12px center;
+			background-size: 12px 8px;
+			color: #fff;
+			border: 1px solid #555;
+			border-radius: 8px;
+			padding: 6px 32px 6px 12px;
+			font-size: 14px;
+			cursor: pointer;
+			transition: all 0.2s ease;
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		}
+		
+		#zoomSelect:hover {
+			background: #4a4a4a url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="%23fff" d="M1 1l5 5 5-5"/></svg>') no-repeat;
+			background-position: right 12px center;
+			background-size: 12px 8px;
+			border-color: #666;
+		}
+		
+		#zoomSelect:focus {
+			outline: 2px solid #007acc;
+			outline-offset: 2px;
+		}
+		
+		#viewerContainer { 
+			position: absolute; 
+			left: 0; 
+			right: 0; 
+			top: 52px; 
+			bottom: 0; 
+			overflow: auto;
+			background: #272727;
+		}
+		
+		.pdfViewer .page { 
+			margin: 12px auto; 
+			box-shadow: 0 4px 12px rgba(0,0,0,.4);
+			border-radius: 4px;
+			overflow: hidden;
+		}
+		
+		/* Scrollbar styling */
+		#viewerContainer::-webkit-scrollbar {
+			width: 8px;
+		}
+		
+		#viewerContainer::-webkit-scrollbar-track {
+			background: #272727;
+		}
+		
+		#viewerContainer::-webkit-scrollbar-thumb {
+			background: #555;
+			border-radius: 4px;
+		}
+		
+		#viewerContainer::-webkit-scrollbar-thumb:hover {
+			background: #666;
+		}
+		
+		/* Ensure all corners and background areas are consistent */
+		#viewerContainer::-webkit-scrollbar-corner {
+			background: #272727;
+		}
+		
+		.pdfViewer {
+			background: #272727;
+		}
 	</style>
 </head>
 <body>
@@ -22,7 +154,7 @@
 		<button id="nextBtn" aria-label="Next page">▶</button>
 		<div style="flex:1"></div>
 		<select id="zoomSelect" aria-label="Zoom">
-			<option value="page-fit">Page Fit</option>
+			<option value="page-fit" selected>Page Fit</option>
 			<option value="page-width">Page Width</option>
 			<option value="auto">Automatic</option>
 			<option value="1">100%</option>
@@ -30,6 +162,7 @@
 			<option value="1.5">150%</option>
 			<option value="2">200%</option>
 		</select>
+		<button id="closeBtn" aria-label="Close reader" style="font-size: 18px; font-weight: normal;">×</button>
 	</div>
 	<div id="viewerContainer"><div id="viewer" class="pdfViewer"></div></div>
 	<script src="/pdfjs/build/pdf.js"></script>
@@ -62,8 +195,9 @@
 		linkService.setViewer(pdfViewer)
 		eventBus.on('pagesinit', function () {
 			pdfViewer.currentScaleValue = 'page-fit'
+			document.getElementById('zoomSelect').value = 'page-fit'
 			if (window.pdfjsViewer.SpreadMode) {
-				pdfViewer.spreadMode = window.pdfjsViewer.SpreadMode.ODD
+				pdfViewer.spreadMode = window.pdfjsViewer.SpreadMode.NONE
 			}
 		})
 
@@ -99,6 +233,9 @@
 				var n = parseFloat(v)
 				if (!isNaN(n)) pdfViewer.currentScale = n
 			}
+		})
+		document.getElementById('closeBtn').addEventListener('click', function(){
+			window.parent.postMessage({ type: 'closePdf' }, '*')
 		})
 		document.addEventListener('keydown', function (e) {
 			if (e.key === 'ArrowLeft') {
