@@ -1,23 +1,25 @@
 {% macro menuItem(fileOrFolderName, fileOrFolder, step, currentPath) %}
     {%if fileOrFolder.isNote or fileOrFolder.isFolder%}
-        <div x-show="isOpen" style="display:none" class="{{'filelist' if step>0}}">
-            {%if fileOrFolder.isNote and not fileOrFolder.hide %}
+        {%if fileOrFolder.isNote and not fileOrFolder.hide %}
+            <div x-show="isOpen" x-cloak class="{{'filelist' if step>0}}">
                 <div @click.stop class="notelink {{ 'active-note' if fileOrFolder.permalink === permalink}}">
                     {%- if not meta.noteIconsSettings.filetree -%}<i icon-name="sticky-note" aria-hidden="true"></i>{%- endif -%}
                     <a data-note-icon="{{fileOrFolder.noteIcon}}" style="text-decoration: none;" class="filename" href="{{fileOrFolder.permalink}}">{{fileOrFolder.name}} </a>
                 </div>
-            {% elif fileOrFolder.isFolder%}
-                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('{{currentPath}}')}" @click.stop="isOpen=!isOpen" :class="{ 'is-open': isOpen }">
-                    <div class="foldername-wrapper align-icon">
-                    <i class="chevron" icon-name="chevron-right" aria-hidden="true"></i>
-                    <span class="foldername">{{fileOrFolderName}}</span>
-                    </div>
+            </div>
+        {% elif fileOrFolder.isFolder%}
+            <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('{{currentPath}}')}" :class="{ 'is-open': isOpen }">
+                <div class="foldername-wrapper align-icon" @click.stop="isOpen=!isOpen">
+                <i class="chevron" icon-name="chevron-right" aria-hidden="true"></i>
+                <span class="foldername">{{fileOrFolderName}}</span>
+                </div>
+                <div x-show="isOpen" x-cloak class="{{'filelist' if step>0}}">
                     {% for fileOrFolderName, child in fileOrFolder %}
                         {{menuItem(fileOrFolderName, child, step+1, (currentPath+"/"+fileOrFolderName))}}
                     {% endfor %}
                 </div>
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
         {%endif%}
     {% endmacro %}
     
