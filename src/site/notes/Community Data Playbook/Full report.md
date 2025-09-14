@@ -6,7 +6,8 @@
 The Community Data Playbook is a compilation of case studies and strategies related to environmental data governance. It is the result of OEDP’s collaboration with three community partners that are collecting environmental data. In 2024, we conducted workshops to identify and co-design governance solutions, and from the partnerships, we developed “plays,” or modular strategies and opportunities that data stewards can use to employ better data governance. 
 
   
-### Access the full report in [English](https://zenodo.org/records/15285124) or [Spanish.](https://zenodo.org/records/15483728) 
+> [!NOTE]
+> #### Access the full report in [English](https://zenodo.org/records/15285124) or [Spanish.](https://zenodo.org/records/15483728)
 
 
 Readers interested in explorations of organizations working through data governance and stewardship challenges and building processes and tools, see Section 1: Community Case Studies. This section includes a discussion of the environmental justice (EJ) concerns in each area, the data each partner collects, and their current governance and management systems. It also includes our workshop process and major takeaways from each case. The case studies are also documented in [[Case Studies/About the Case Studies\|About the Case Studies]]. 

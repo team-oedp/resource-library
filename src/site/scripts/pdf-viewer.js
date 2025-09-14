@@ -25,6 +25,10 @@
   }
   // Prefer local static files first
   var LOCAL_PDF_MAP = {
+    // Community Data Playbook - English
+    '15285124': '/files/OEDP_Playbook_English_4.23.25.pdf',
+    // Community Data Playbook - Spanish  
+    '15483728': '/files/OEDP_Playbook_Spanish_5.20.25.pdf',
     // Our Data, Our Rules (Zine)
     '15285154': '/files/OEDP_Zine 2_Data Co-Ownership_4.23.25.pdf',
     // Our Data, Our Values (Zine)
@@ -32,39 +36,16 @@
     // The Data We Own (Zine)
     '15285148': '/files/OEDP_Zine 1_Data Sharing_4.23.25.pdf'
   }
-  function findPdfFileLink (recordJson) {
-    // Try RDM/legacy schemas
-    var files = recordJson && (recordJson.files || (recordJson.metadata && recordJson.metadata.files) || [])
-    if (Array.isArray(files) && files.length) {
-      var pdf = files.find(function (f) {
-        return f && ((f.mimetype && f.mimetype.indexOf('pdf') !== -1) ||
-          (f.key && /\.pdf$/i.test(f.key)) || (f.filename && /\.pdf$/i.test(f.filename)))
-      })
-      if (pdf) {
-        if (pdf.links && (pdf.links.download || pdf.links.self)) {
-          return pdf.links.download || pdf.links.self
-        }
-        if (pdf.links && pdf.links.self) return pdf.links.self
-        if (pdf.href) return pdf.href
-      }
-    }
-    // Try top-level link under recordJson.links (e.g., bestmatch)
-    if (recordJson && recordJson.links) {
-      if (recordJson.links.pdf) return recordJson.links.pdf
-      if (recordJson.links.self && /\.pdf($|\?)/i.test(recordJson.links.self)) return recordJson.links.self
-      if (recordJson.links.download && /\.pdf($|\?)/i.test(recordJson.links.download)) return recordJson.links.download
-    }
-    return null
-  }
 
-  function createReaderButton (anchor) {
+  function createReaderButtonForId (recordId, customText) {
     var btn = document.createElement('button')
     btn.type = 'button'
     btn.className = 'pdf-reader-button'
-    btn.textContent = 'Open reader'
+    btn.style.margin = '0'
+    btn.textContent = customText || 'Open PDF Viewer'
     btn.addEventListener('click', function (e) {
       e.preventDefault()
-      openInModal(anchor)
+      openPdfById(recordId)
     })
     return btn
   }
@@ -119,57 +100,77 @@
     })
   }
 
-  async function openInModal (anchor) {
+  function openPdfById (recordId) {
     try {
-      var id = recordIdFromUrl(anchor.href)
-      console.log('PDF viewer: Processing link', anchor.href, 'ID:', id)
+      console.log('PDF viewer: Opening PDF by ID:', recordId)
       
-      // Prefer local files
-      if (id && LOCAL_PDF_MAP[id]) {
-        console.log('PDF viewer: Using local file', LOCAL_PDF_MAP[id])
-        showModal(buildViewerSrc(LOCAL_PDF_MAP[id]))
+      // Use local files when available
+      if (recordId && LOCAL_PDF_MAP[recordId]) {
+        console.log('PDF viewer: Using local file', LOCAL_PDF_MAP[recordId])
+        showModal(buildViewerSrc(LOCAL_PDF_MAP[recordId]))
         return
       }
-      // Fallback: try Zenodo API
-      if (id) {
-        console.log('PDF viewer: Fetching from Zenodo API')
-        var res = await fetch('https://zenodo.org/api/records/' + id)
-        if (res.ok) {
-          var json = await res.json()
-          var pdfUrl = findPdfFileLink(json)
-          if (pdfUrl) {
-            console.log('PDF viewer: Found PDF URL from API', pdfUrl)
-            showModal(buildViewerSrc(pdfUrl))
-            return
-          }
-        }
-      }
-      // Final fallback
-      console.log('PDF viewer: Falling back to opening link in new tab')
-      window.open(anchor.href, '_blank')
+      
+      // If no local file mapping found, construct Zenodo URL and open externally
+      var zenodoUrl = 'https://zenodo.org/records/' + recordId
+      console.log('PDF viewer: No local file found, opening external link:', zenodoUrl)
+      window.open(zenodoUrl, '_blank')
     } catch (err) {
       console.error('PDF viewer error:', err)
-      window.open(anchor.href, '_blank')
+      var zenodoUrl = 'https://zenodo.org/records/' + recordId
+      window.open(zenodoUrl, '_blank')
     }
   }
 
-  function enhanceZenodoLinks () {
+  function processManualPdfViewers () {
     var content = qs('main.content') || document
-    console.log('PDF viewer: Enhancing Zenodo links, content element:', content)
-    var externalLinks = qsa('a.external-link', content)
-    console.log('PDF viewer: Found', externalLinks.length, 'external links')
+    console.log('PDF viewer: Processing manual PDF viewer elements')
     
-    externalLinks.forEach(function (a) {
-      if (!isZenodoRecordUrl(a.href)) return
-      console.log('PDF viewer: Creating reader button for', a.href)
-      var btn = createReaderButton(a)
-      a.insertAdjacentElement('afterend', btn)
+    // Process custom <pdf-viewer-button> elements
+    var customButtons = qsa('pdf-viewer-button[data-zenodo-id]', content)
+    console.log('PDF viewer: Found', customButtons.length, 'custom PDF viewer button elements')
+    
+    customButtons.forEach(function (el) {
+      var recordId = el.getAttribute('data-zenodo-id')
+      var customText = el.textContent.trim() || el.getAttribute('data-text')
+      
+      if (recordId && LOCAL_PDF_MAP[recordId]) {
+        console.log('PDF viewer: Creating custom button for record ID:', recordId)
+        var btn = createReaderButtonForId(recordId, customText)
+        el.parentNode.replaceChild(btn, el)
+      } else {
+        console.warn('PDF viewer: No local file found for record ID:', recordId)
+      }
+    })
+    
+    // Process elements with data-pdf-viewer attribute
+    var dataPdfElements = qsa('[data-pdf-viewer]', content)
+    console.log('PDF viewer: Found', dataPdfElements.length, 'elements with data-pdf-viewer attribute')
+    
+    dataPdfElements.forEach(function (el) {
+      var recordId = el.getAttribute('data-pdf-viewer')
+      var customText = el.getAttribute('data-pdf-text')
+      
+      if (recordId && LOCAL_PDF_MAP[recordId]) {
+        console.log('PDF viewer: Converting element to PDF viewer for record ID:', recordId)
+        el.style.cursor = 'pointer'
+        el.addEventListener('click', function (e) {
+          e.preventDefault()
+          openPdfById(recordId)
+        })
+        if (customText) {
+          el.textContent = customText
+        }
+      } else {
+        console.warn('PDF viewer: No local file found for record ID:', recordId)
+      }
     })
   }
 
+
   document.addEventListener('DOMContentLoaded', function () {
     wireModalClose()
-    enhanceZenodoLinks()
+    processManualPdfViewers()
   })
 })()
 
