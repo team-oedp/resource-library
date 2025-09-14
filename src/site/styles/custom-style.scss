@@ -347,9 +347,8 @@ a {
 /* External links with icon - override to scale with text size */
 .external-link {
   text-decoration: none !important;
-  background-size: 0.8em !important; /* Scale with text size instead of fixed 13px */
-  padding-right: 1em !important; /* Scale with text size instead of fixed 16px */
-  background-position-y: 0.2em !important; /* Scale with text size instead of fixed 4px */
+  /* Removed background-image related properties - now using ::after pseudo-element with mask in brand-tokens.scss */
+  padding-right: 0 !important; /* Remove padding since we're using margin-left on ::after pseudo-element */
 }
 
 /* Internal links */
