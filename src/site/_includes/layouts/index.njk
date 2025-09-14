@@ -15,6 +15,10 @@
     {%include "components/notegrowthhistory.njk"%}
     {% if settings.dgShowFileTree !== true %}
       {%include "components/navbar.njk"%}
+      <!-- Mobile filetree sidebar for search access on screens ≤768px -->
+      <div class="mobile-filetree-container">
+        {%include "components/filetree.njk"%}
+      </div>
     {%else%}
       {%include "components/filetree.njk"%}
     {% endif %}

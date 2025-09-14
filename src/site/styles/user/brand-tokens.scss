@@ -98,7 +98,7 @@ p > code {
 
 // Ensure navbar search button gets the same hover styling on mobile/tablet
 .navbar .search-button:hover {
-	@media (max-width: 1200px) {
+	@media (max-width: 1400px) {
 		border: 1px solid var(--oedp-slate) !important;
 		background-color: white !important;
 	}
