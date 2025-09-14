@@ -2,9 +2,7 @@
 {"dg-publish":true,"permalink":"/tools-and-templates/about-the-tools-and-templates/"}
 ---
 
-We create templates and tools for using and sharing environmental data safely, equitably, and effectively. Most of the templates and tools correspond to a detailed play ([[Plays/About the Plays\|About the Plays]]) or case study ([[About the Case Studies)\|About the Case Studies)]] though others may originate from other workshops or events.  
-
-  
+We create templates and tools for using and sharing environmental data safely, equitably, and effectively. Most of the templates and tools correspond to a detailed play ([[Plays/About the Plays\|About the Plays]]) or case study ([[Case Studies/About the Case Studies|About the Case Studies]]) though others may originate from other workshops or events.  
 
 **Current templates and tools available:**
 
