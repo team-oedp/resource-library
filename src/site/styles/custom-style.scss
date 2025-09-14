@@ -369,6 +369,13 @@ a.tag,
   border-radius: 0 0 15px 15px !important; /* Match the modal's bottom rounded corners */
 }
 
+/* Hide navigation hints on mobile and tablet devices */
+@media (max-width: 767px) {
+  .search-box-footer .navigation-hint {
+    display: none !important;
+  }
+}
+
 /* Increase callout margins for better breathing room */
 .callout {
   margin: 3em 0 !important; /* Increased from 1em 0 for more spacing */
