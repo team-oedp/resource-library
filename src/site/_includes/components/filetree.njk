@@ -32,24 +32,31 @@
         <div x-show="showFilesMobile && !isDesktop" @click="showFilesMobile = false" style="display:none;" class="fullpage-overlay"></div>
 
       <nav class="filetree-sidebar"  x-show.important="isDesktop || showFilesMobile" style="display: none;">
-        {% for imp in dynamics.filetree.beforeTitle %}
-            {% include imp %}
-        {% endfor %}
-         <a href="/" style="text-decoration: none;">
-               <h1 style="text-align:center;">{{meta.siteName}}</h1>
-         </a>
-         {% for imp in dynamics.filetree.afterTitle %}
-            {% include imp %}
-        {% endfor %}
-        {% if settings.dgEnableSearch === true%}
-            <div style="display: flex; justify-content: center;">
-                {% include "components/searchButton.njk" %}
-            </div>
-        {%endif%}
-         <div class="folder" x-data="{isOpen: true}">
-               {%- for fileOrFolderName, fileOrFolder in filetree -%}
-                  {{menuItem(fileOrFolderName, fileOrFolder, 0, fileOrFolderName)}}
-               {%- endfor -%}
-         </div>
+        <!-- Fixed header section -->
+        <div class="sidebar-header">
+            {% for imp in dynamics.filetree.beforeTitle %}
+                {% include imp %}
+            {% endfor %}
+             <a href="/" style="text-decoration: none;">
+                   <h1>{{meta.siteName}}</h1>
+             </a>
+             {% for imp in dynamics.filetree.afterTitle %}
+                {% include imp %}
+            {% endfor %}
+            {% if settings.dgEnableSearch === true%}
+                <div class="search-button-container">
+                    {% include "components/searchButton.njk" %}
+                </div>
+            {%endif%}
+        </div>
+        
+        <!-- Scrollable content section -->
+        <div class="sidebar-content">
+             <div class="folder" x-data="{isOpen: true}">
+                   {%- for fileOrFolderName, fileOrFolder in filetree -%}
+                      {{menuItem(fileOrFolderName, fileOrFolder, 0, fileOrFolderName)}}
+                   {%- endfor -%}
+             </div>
+        </div>
       </nav>
     </div>
