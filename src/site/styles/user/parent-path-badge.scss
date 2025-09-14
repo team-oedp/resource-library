@@ -14,3 +14,10 @@
 	margin-bottom: 1rem;
 	transition: all 0.2s ease-in-out;
 }
+
+// Extra margin top on mobile for better spacing
+@media (max-width: 768px) {
+	.parent-path-badge {
+		margin-top: 20px;
+	}
+}

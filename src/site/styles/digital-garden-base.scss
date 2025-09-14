@@ -551,6 +551,10 @@ ul.task-list {
         margin: 10px 25px 10px 25px;
         width: auto;
     }
+    
+    @media (max-width: 425px) {
+        display: none !important;
+    }
 }
 
 /* Navbar search text styles for mobile/tablet - aligned with filetree breakpoint */
@@ -567,6 +571,10 @@ ul.task-list {
             font-size: inherit !important;
         }
     }
+    
+    @media (max-width: 425px) {
+        display: none !important;
+    }
 }
 
 /* Fix search keys spacing and alignment in navbar */
@@ -581,6 +589,10 @@ ul.task-list {
         .shortcut-text {
             font-size: inherit !important;
         }
+    }
+    
+    @media (max-width: 425px) {
+        display: none !important;
     }
 }
 
