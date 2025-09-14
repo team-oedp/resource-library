@@ -17,6 +17,13 @@ body {
   --cards-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width)));
   padding-block: 0; }
 
+/* Force body padding with higher specificity */
+body.theme-light,
+body.theme-dark,
+body {
+  padding: 10px !important;
+}
+
 @media (max-width: 400pt) {
   body {
     --cards-min-width:var(--cards-mobile-width); } }
@@ -104,6 +111,12 @@ body {
 // Override hardcoded font sizes in digital-garden-base.scss
 .content {
   font-size: var(--font-text-size) !important; // Override 18px
+}
+
+/* Override sidebar margin with higher specificity */
+main.content.cm-s-obsidian,
+.content {
+  margin-left: 320px !important; // Increased from 280px to account for body padding and provide more clearance
 }
 
 .toc-container {

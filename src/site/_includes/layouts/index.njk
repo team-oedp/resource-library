@@ -22,6 +22,7 @@
     {% endif %}
     <main class="content cm-s-obsidian {{contentClasses}}">
       <header>
+      {%include "components/parentPathBadge.njk"%}
       {% if settings.dgShowInlineTitle === true %}
         <h1>{{ noteTitle  }}</h1>
       {% endif %}
