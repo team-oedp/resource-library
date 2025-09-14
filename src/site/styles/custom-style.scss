@@ -119,6 +119,29 @@ main.content.cm-s-obsidian,
   margin-left: 320px !important; // Increased from 280px to account for body padding and provide more clearance
 }
 
+/* Responsive layout: remove left margin on tablet and mobile when sidebar becomes drawer */
+@media (max-width: 1400px) {
+  main.content.cm-s-obsidian,
+  .content {
+    margin-left: auto !important; // Center horizontally
+    margin-right: auto !important; // Center horizontally
+    max-width: 100% !important; // Prevent overflow
+    padding-top: 80px !important; // Add top padding to prevent navbar overlap
+    padding-left: 20px !important; // Add some breathing room from edges
+    padding-right: 20px !important; // Add some breathing room from edges
+  }
+}
+
+/* Additional top padding for mobile to account for navbar height */
+@media (max-width: 800px) {
+  main.content.cm-s-obsidian,
+  .content {
+    padding-top: 90px !important; // Slightly more padding on mobile
+    padding-left: 16px !important; // Slightly less padding on smaller screens
+    padding-right: 16px !important; // Slightly less padding on smaller screens
+  }
+}
+
 .toc-container {
   font-size: var(--font-text-size) !important; // Override 1rem
 }
@@ -228,18 +251,25 @@ img[src*="logo-lightback-eps-01.png"] {
 /* Clear divider between input and results - full width borders */
 #search-results {
   border-top: 1px solid var(--background-modifier-border);
-  margin: 0 -12px !important; /* Full width container, no top margin */
-  padding: 0px 0 0 0 !important; /* Add top padding to push results down below input */
+  margin: 24px -12px 0 -12px !important; /* Restore top margin to push down from input */
+  padding: 24px 0 0 0 !important; /* Restore top padding for proper spacing */
   flex: 1 !important; /* Take remaining space between input and footer */
   background-color: white !important; /* White background instead of grey */
   display: flex !important; /* Ensure flex behavior for centering */
   flex-direction: column !important;
+  justify-content: flex-start !important; /* Start content at the top in column layout */
+  align-items: stretch !important; /* Stretch children to container width */
   position: relative !important; /* Create stacking context */
   z-index: 1 !important; /* Sit above any overlapping header artifacts */
   min-height: 200px !important; /* Ensure adequate space for centering */
+  /* Provide offset for programmatic scrollIntoView so first item isn't obscured */
+  scroll-padding-top: 32px !important;
 }
 
-/* Remove old spacer elements - no longer needed with new centering approach */
+/* Ensure all JS-generated wrapper divs have adequate spacing */
+#search-results > div {
+  padding-top: 24px !important; /* Push all results content down within container */
+}
 
 /* Result card breathing room with zero side padding container */
 #search-results .searchresult {
