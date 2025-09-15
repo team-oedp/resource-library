@@ -1,0 +1,247 @@
+/* Sidebar layout and navigation styles extracted from custom-style.scss */
+
+/* Align content with sidebar and normalize aside padding */
+aside {
+  padding: 0 var(--size-4-5) var(--size-4-4) var(--size-4-5) !important;
+}
+
+.content {
+  margin-top: 0px !important;
+  margin-left: 280px !important; /* Match reduced sidebar width (294) minus overlap */
+}
+
+@media (max-width: 1400px) {
+  .content {
+    margin-left: auto !important;
+  }
+}
+
+/* Sidebar container */
+.filetree-sidebar {
+  background-color: var(--background-primary) !important;
+  border-right: 1px solid var(--background-modifier-border) !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  width: 294px !important;
+}
+
+.filetree-sidebar h1 {
+  font-size: var(--h2-size) !important;
+  text-align: left !important;
+  padding-left: 0 !important; /* Align to left of container */
+}
+
+/* Nudge entire nav group inwards */
+.filetree-sidebar > .folder {
+  padding-left: 0 !important; /* keep top-level headings flush */
+}
+
+/* Indentation and spacing */
+.notelink {
+  padding: 1px 0 !important;
+  padding-left: 0 !important;
+  font-weight: 500 !important;
+  margin: 1px 0 !important;
+}
+
+.inner-folder {
+  padding-left: 0 !important;
+}
+
+.foldername-wrapper {
+  margin-left: 0 !important;
+  font-weight: 500 !important;
+}
+
+/* Child indentation under folders */
+.filelist .notelink {
+  padding: 1px 0 !important;
+  padding-left: 42px !important; /* align with folder text after chevron icon */
+  margin: 1px 0 !important;
+}
+
+/* Align top-level single notes (e.g., Home) with folder text, not chevrons */
+.filetree-sidebar .folder > div:not(.filelist) > .notelink {
+  padding-left: 22px !important;
+}
+
+/* Indent nested folder headings (not top-level) */
+.filelist .foldername-wrapper {
+  padding-left: 20px !important;
+}
+
+.nav-folder-children .nav-file-title {
+  padding: 2px 0 !important;
+  padding-left: 20px !important;
+  margin: 1px 0 !important;
+}
+
+/* Compact vertical spacing */
+.nav-file-title,
+.nav-folder-title,
+.notelink {
+  margin-bottom: 2px !important;
+}
+
+/* Folder name styling */
+.foldername-wrapper {
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  margin: 1px 0 !important;
+}
+
+/* Link alignment */
+.notelink a {
+  display: block !important;
+  padding: 2px 0 !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.inner-folder .notelink a {
+  padding: 2px 0 !important;
+}
+
+.filetree-sidebar .filename {
+  margin-left: 0 !important; /* align all items flush left */
+}
+
+.inner-folder .notelink:hover {
+  background-color: transparent !important;
+}
+
+.inner-folder .notelink a:hover {
+  background-color: transparent !important;
+  text-decoration: none !important;
+}
+
+/* Active states: color and consistent indentation */
+.notelink.active-note a,
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  color: var(--oedp-green) !important;
+  font-weight: 600 !important;
+  margin-left: 0 !important;
+}
+
+.notelink.active-note {
+  margin-left: 0 !important;
+  transform: none !important;
+  background-color: transparent !important;
+}
+
+/* Ensure active items keep the same left padding as siblings */
+.filelist .notelink.active-note {
+  padding-left: 42px !important;
+}
+
+.nav-folder-children .nav-file-title.is-active {
+  padding-left: 20px !important;
+}
+
+/* Remove backgrounds for child links */
+.inner-folder .notelink,
+.nav-folder-children .nav-file-title {
+  background-color: transparent !important;
+}
+
+/* Remove underlines from all sidebar navigation links on hover */
+.filetree-sidebar .notelink a:hover,
+.filetree-sidebar .nav-file-title:hover,
+.filetree-sidebar .nav-folder-title:hover {
+  text-decoration: none !important;
+}
+
+/* Remove sidebar navigation icons */
+body.filetree-note-icon .filename[data-note-icon]::before {
+  display: none !important;
+}
+
+.nav-file-icon,
+.nav-folder-collapse-indicator,
+.collapse-icon {
+  display: none !important;
+}
+
+.notelink::before,
+.notelink .filename::before {
+  display: none !important;
+}
+
+.filetree-sidebar .svg-icon {
+  display: none !important;
+}
+
+/* Sidebar search input/button layout */
+.filetree-sidebar .search-button {
+  width: 100% !important;
+  margin: 10px 0 20px 0 !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--background-modifier-border) !important;
+  background-color: white !important;
+  padding: 10px 0 !important;
+  line-height: 1.1 !important;
+  min-height: 40px !important;
+  justify-content: space-between !important;
+}
+
+.filetree-sidebar .search-text {
+  text-align: left !important;
+  margin-left: 6px !important;
+  display: flex !important;
+  align-items: baseline !important;
+  flex: 1 !important;
+  font-size: inherit !important;
+}
+
+.filetree-sidebar .search-text > span {
+  vertical-align: baseline !important;
+  line-height: inherit !important;
+}
+
+.filetree-sidebar .search-keys {
+  text-align: right !important;
+  margin-left: auto !important;
+  font-size: inherit !important;
+  transform: none !important;
+  padding: 0 !important;
+  vertical-align: baseline !important;
+}
+
+.filetree-sidebar .search-icon {
+  margin-right: 8px !important;
+  margin-left: 8px !important;
+}
+
+.filetree-sidebar .shortcut-text {
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+}
+
+
+/* Accordion chevrons */
+.foldername-wrapper .chevron {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 6px !important;
+  transition: transform 0.15s ease !important;
+  color: var(--text-muted) !important;
+}
+
+.filetree-sidebar .foldername-wrapper .chevron .svg-icon {
+  display: inline-block !important; /* override sidebar svg hide */
+  width: 1em;
+  height: 1em;
+}
+
+.folder.is-open .foldername-wrapper .chevron {
+  transform: rotate(90deg);
+}
+
+.foldername-wrapper:hover .chevron {
+  color: var(--text-normal) !important;
+}
+

@@ -276,8 +276,11 @@
         let search = field
             .value
             .trim();
-        if (!search) 
+        if (!search) {
+            // Restore empty state when search is cleared
+            resultsDiv.innerHTML = '<div class="search-empty-state"><p>Start typing to search the resource library</p></div>';
             return;
+        }
         if (search == lastSearch) 
             return;
         console.log(`search for ${search}`);
@@ -289,10 +292,7 @@
         let results = offlineSearch(search);
         let resultsHTML = '';
         if (!results.length) {
-            let resultParagraph = document.createElement("p");
-            resultParagraph.innerText = `No results for "${search}"`;
-            resultsDiv.innerHTML = '';
-            resultsDiv.appendChild(resultParagraph);
+            resultsDiv.innerHTML = `<div class="search-empty-state"><p>No results for "${search}"</p></div>`;
             return;
         }
         resultsHTML += '<div style="max-width:100%;">';

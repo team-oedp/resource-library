@@ -1,0 +1,73 @@
+/**
+ * Heading Spacing Improvements
+ * Adds breathing room around headings for better readability
+ */
+
+// Add top margin to headings for better spacing after content
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 2.5rem !important; // Increased spacing above headings
+  margin-bottom: 1rem !important; // Consistent spacing below headings
+}
+
+// Reduce top margin for first heading in content to avoid too much space at top
+.content > h1:first-child,
+.content > h2:first-child,
+.content > h3:first-child,
+.content > h4:first-child,
+.content > h5:first-child,
+.content > h6:first-child {
+  margin-top: 0 !important;
+}
+
+// Special handling for headings that follow other headings
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+  margin-top: 1.5rem !important; // Less space between consecutive headings
+}
+
+// Add some bottom margin to paragraphs for better spacing
+p {
+  margin-bottom: 1.2rem !important;
+}
+
+// Responsive adjustments for mobile devices
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 2rem !important; // Slightly less space on mobile
+    margin-bottom: 0.8rem !important;
+  }
+  
+  h1 + h2,
+  h2 + h3,
+  h3 + h4,
+  h4 + h5,
+  h5 + h6 {
+    margin-top: 1.2rem !important;
+  }
+  
+  p {
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5rem !important; // Even less space on very small screens
+    margin-bottom: 0.6rem !important;
+  }
+  
+  h1 + h2,
+  h2 + h3,
+  h3 + h4,
+  h4 + h5,
+  h5 + h6 {
+    margin-top: 1rem !important;
+  }
+  
+  p {
+    margin-bottom: 0.8rem !important;
+  }
+}

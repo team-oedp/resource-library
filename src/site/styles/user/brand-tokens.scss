@@ -1,0 +1,127 @@
+// OEDP Brand Colors and Token Overrides
+// This file contains brand color definitions and overrides for generated styles
+
+:root {
+	// OEDP Brand Colors
+	--oedp-blue: #0B2D4C;
+	--oedp-green: #6BE13F;
+	--oedp-gray: #B0BDC2;
+	--oedp-slate: #5C7386;
+	--oedp-white: #FFFFFF;
+	
+	// Semantic tokens
+	--text: var(--text-normal);
+	--bg: var(--background-primary);
+	--link: var(--oedp-slate);
+	--accent: var(--oedp-green);
+	--border: var(--background-modifier-border);
+}
+
+// Override generated yellow colors with OEDP green
+:root {
+	--color-yellow: var(--oedp-green);
+	--code-function: var(--oedp-green);
+	--graph-node-attachment: var(--oedp-green);
+	--text-highlight-bg: rgba(107, 225, 63, 0.4);
+	--text-highlight-bg-active: rgba(107, 225, 63, 0.6);
+}
+
+// Heading color overrides
+h1 {
+	color: var(--oedp-blue) !important;
+}
+
+h2 {
+	color: var(--oedp-slate) !important;
+}
+
+h3 {
+	color: var(--oedp-slate) !important;
+}
+
+h4 {
+	color: var(--oedp-blue) !important;
+}
+
+// Link color overrides
+a {
+	color: var(--oedp-slate) !important;
+}
+
+a:hover {
+	color: var(--oedp-green) !important;
+}
+
+// Button styling with brand tokens
+button {
+	border: 1px solid var(--oedp-slate) !important;
+	color: var(--oedp-white) !important;
+	background-color: var(--oedp-slate) !important;
+	padding: 5px 15px !important;
+	border-radius: 4px !important;
+}
+
+button:hover {
+	background-color: var(--oedp-green) !important;
+	border-color: var(--oedp-green) !important;
+}
+
+button:focus {
+	outline: 2px solid var(--oedp-green) !important;
+	outline-offset: 2px !important;
+}
+
+// Blockquote styling
+blockquote {
+	background: rgba(107, 225, 63, 0.1) !important;
+	border-left: 10px solid var(--oedp-green) !important;
+	margin: 1.5em 10px !important;
+	padding: 0.5em 10px !important;
+	quotes: "\201C""\201D""\2018""\2019" !important;
+}
+
+// Inline code styling
+p > code {
+	color: var(--oedp-green) !important;
+	background-color: var(--oedp-blue) !important;
+	padding: 2px 4px !important;
+	border-radius: 3px !important;
+}
+
+// Search button hover styling
+.search-button:hover {
+	border: 1px solid var(--oedp-slate) !important;
+	background-color: white !important;
+}
+
+// Ensure navbar search button gets the same hover styling on mobile/tablet
+.navbar .search-button:hover {
+	@media (max-width: 1200px) {
+		border: 1px solid var(--oedp-slate) !important;
+		background-color: white !important;
+	}
+}
+
+.search-keys {
+	color: var(--oedp-gray) !important;
+}
+
+// Unresolved links
+.internal-link.is-unresolved {
+	color: var(--oedp-gray) !important;
+}
+
+.internal-link.is-unresolved:hover {
+	color: var(--oedp-slate) !important;
+}
+
+// Fix bullet point links in main content area for better readability
+.content ul li .internal-link,
+.content ol li .internal-link {
+	color: var(--oedp-slate) !important;
+}
+
+.content ul li .internal-link:hover,
+.content ol li .internal-link:hover {
+	color: var(--oedp-green) !important;
+}

@@ -30,18 +30,17 @@ These principles have helped develop many models, each with a different approach
 	For more information on the application of data collaboratives and cooperatives, see these examples of working models:
 	
 	- The [California Data Collaborative (CaDC)](https://www.californiadatacollaborative.org/) is a coalition of water utilities working to “revolutionize the data infrastructure of California's water management… to automate the collection and analysis of metered water use from participating agencies. This information will allow for the creation of a more accurate dataset that details how much, when and where water was used by California residents.” ([The Data Economy Lab](https://thedataeconomylab.com/explorer/california-data-collaborative-cadc-coalition-of-water-utilities/)) 
-	- [PescaData](https://platform.coop/blog/16623/) is a cooperative platform model that enables fishing communities in Latin America to collect more accurate data to ensure sustainable fisheries. 
-	- [GovLab’s Data Collaboratives Explorer](https://datacollaboratives.org/explorer.html) documents many different types of collaborative and cooperative models in the environmental sector. 
+	- [PescaData](https://platform.coop/blog/16623/) is a cooperative platform model that enables fishing communities in Latin America to collect more accurate data to ensure sustainable fisheries.
+	- [GovLab’s Data Collaboratives Explorer](https://datacollaboratives.org/explorer.html) documents many different types of collaborative and cooperative models in the environmental sector.
 
-  
 
 > [!NOTE]
-> 
+>
 > **When establishing a new data governance model, consider these questions:**
 > - What is your goal of establishing a data governance model? 
-> - Are there policies and procedures already in place to control user [[Decoders/Data Access\|data access]], limiting what data can be accessed depending on job roles and responsibilities? 
-> - Are there standards for data integration and information exchange? 
-> 	- For more questions and guidance on how to select the right model, visit [ITRC’s Environmental Data Management Best Practices](https://edm-1.itrcweb.org/data-governance/) and [Aapti’s Data Stewardship Explorer](https://thedataeconomylab.com/stewardship-explorer/). 
+> - Are there policies and procedures already in place to control user [[Decoders/Data Access\|data access]], limiting what data can be accessed depending on job roles and responsibilities?
+> - Are there standards for data integration and information exchange?
+> - For more questions and guidance on how to select the right model, visit [ITRC’s Environmental Data Management Best Practices](https://edm-1.itrcweb.org/data-governance/) and [Aapti’s Data Stewardship Explorer](https://thedataeconomylab.com/stewardship-explorer/).
 
 
 ### **Why does it matter?** 

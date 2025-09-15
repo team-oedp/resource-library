@@ -1,5 +1,8 @@
 // Import unified typography system
 @import 'user/typography-scale';
+@import 'user/heading-spacing';
+@import 'user/brand-tokens';
+@import 'user/sidebar';
 
 body {
   --cards-min-width: 180px;
@@ -13,24 +16,6 @@ body {
   --cards-aspect-ratio: auto;
   --cards-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width)));
   padding-block: 0; }
-
-/* Override aside padding to normalize top spacing */
-aside {
-  padding: 0 var(--size-4-5) var(--size-4-4) var(--size-4-5) !important;
-}
-
-/* Align content top margin with sidebar padding for consistent heading alignment */
-.content {
-  margin-top: 0px !important; /* Match sidebar padding for aligned headings */
-  margin-left: 270px !important; /* Account for filetree sidebar width (250px) + padding */
-}
-
-/* Reset left margin on mobile where filetree sidebar is hidden */
-@media (max-width: 1400px) {
-  .content {
-    margin-left: auto !important;
-  }
-}
 
 @media (max-width: 400pt) {
   body {
@@ -137,17 +122,12 @@ aside {
   font-size: var(--font-lg) !important; // Override 1.2rem
 }
 
-.filetree-sidebar h1 {
-  font-size: var(--h2-size) !important; // Use h2 size (30px/1.875rem) for larger sidebar heading
-  text-align: left !important; // Left align the sidebar heading
-}
-
 .navbar h1 {
   font-size: var(--h3-size) !important; // Override 18px on mobile
 }
 
 .search-box input {
-  font-size: var(--font-2xl) !important; // Override 2rem
+  font-size: var(--font-3xl) !important; // Larger, clearer input text
 }
 
 .searchresult {
@@ -212,72 +192,283 @@ img[src*="logo-lightback-eps-01.png"] {
   height: auto !important;
 }
 
-/* Fix file tree indentation to align with sidebar heading */
-.notelink {
-  padding-left: 0 !important; /* Remove left padding to align with heading */
-  font-weight: 500 !important; /* Medium font weight for menu items */
-}
+/* ================================================
+   Search modal refinements
+   ================================================ */
 
-.inner-folder {
-  padding-left: 0 !important; /* Remove left padding to align with heading */
-}
-
-.foldername-wrapper {
-  margin-left: 0 !important; /* Remove left margin to align with heading */
-  font-weight: 500 !important; /* Medium font weight for folder names */
-}
-
-/* Update search input styling in sidebar */
-.search-button {
-  width: 100% !important; /* Fill the width of the container */
-  margin: 10px 0 20px 0 !important; /* Add more space beneath the search input */
-  border-radius: 8px !important; /* Add rounded corners */
-  border: 1px solid var(--background-modifier-border) !important; /* Add border all around */
+/* Add minimum height and better structure to the modal */
+.search-box {
+  padding: 16px 12px 0 12px !important; /* Remove bottom padding */
+  min-height: 300px !important; /* Prevent squashed appearance */
+  display: flex !important;
+  flex-direction: column !important;
   background-color: white !important; /* White background */
-  padding: 10px 0 !important; /* Reduced vertical padding */
-  line-height: 1.1 !important; /* Reduced line height for more compact appearance */
-  min-height: 40px !important; /* Reduced minimum height */
-  justify-content: space-between !important; /* Space between search text and keyboard shortcut */
 }
 
-.search-button:hover {
-  border: 1px solid var(--text-accent) !important; /* Change border color on hover */
-  background-color: white !important; /* Keep white background on hover */
+/* Larger input and improved padding/placement */
+.search-box input {
+  padding: 12px 14px !important; /* Equal top and bottom padding */
+  font-size: var(--font-4xl) !important; /* Even larger input text */
+  margin-bottom: 12px !important; /* Balanced margin for separation from results */
 }
 
-.search-text {
-  text-align: left !important; /* Left align the text content */
-  margin-left: 6px !important; /* Reduced space between icon and text */
-  display: flex !important; /* Make it a flex container */
-  align-items: baseline !important; /* Align items on the same baseline */
-  flex: 1 !important; /* Take up available space */
-  font-size: inherit !important; /* Use same font size as parent */
+/* Clear divider between input and results - full width borders */
+#search-results {
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 0 -12px !important; /* Full width container, no top margin */
+  padding: 0px 0 0 0 !important; /* Add top padding to push results down below input */
+  flex: 1 !important; /* Take remaining space between input and footer */
+  background-color: white !important; /* White background instead of grey */
+  display: flex !important; /* Ensure flex behavior for centering */
+  flex-direction: column !important;
+  position: relative !important; /* Create stacking context */
+  z-index: 1 !important; /* Sit above any overlapping header artifacts */
+  min-height: 200px !important; /* Ensure adequate space for centering */
 }
 
-.search-text > span {
-  vertical-align: baseline !important; /* Ensure baseline alignment for all spans */
-  line-height: inherit !important; /* Use same line height */
+/* Remove old spacer elements - no longer needed with new centering approach */
+
+/* Result card breathing room with zero side padding container */
+#search-results .searchresult {
+  padding: 14px 16px !important; /* Padding inside individual results */
+  margin: 0 16px 12px 16px !important; /* Margin for spacing between results */
 }
 
-.search-keys {
-  text-align: right !important; /* Right align the keyboard shortcut */
-  margin-left: auto !important; /* Push to the right side */
-  color: #ccc !important; /* Lighter grey color for keyboard shortcut */
-  font-size: inherit !important; /* Use same font size as parent */
-  transform: none !important; /* Remove translateY transform */
-  padding: 0 !important; /* Remove all padding */
-  vertical-align: baseline !important; /* Ensure baseline alignment */
+/* Spacing between title, tags, and description */
+.searchresult .search-link {
+  margin-bottom: 10px !important;
+}
+.searchresult .header-meta {
+  margin-bottom: 8px !important;
+}
+.searchresult .header-tags {
+  line-height: 1.8 !important; /* Increased line height for tags */
+}
+.searchresult .header-tags .tag {
+  margin-right: 6px !important;
+  margin-bottom: 4px !important; /* Vertical spacing for wrapped tags */
 }
 
-/* Add spacing between search icon and text */
-.search-icon {
-  margin-right: 8px !important; /* Add space after the magnifying glass icon */
-  margin-left: 8px !important; /* Add space from the left edge of the input */
+/* Header tags spacing for main content */
+.header-tags .tag {
+  margin-right: 6px !important;
+  margin-bottom: 8px !important; /* Increased vertical spacing to prevent touching */
 }
 
-/* Prevent layout shift in keyboard shortcut text */
-.shortcut-text {
-  display: inline-block;
-  min-width: 60px; /* Ensure consistent width to prevent layout shift */
-  text-align: center;
+/* Fix tag wrapping to keep tags as complete units */
+a.tag,
+.editor .cl-hashtag,
+.tag,
+.header-tags .tag,
+.searchresult .header-tags .tag {
+  white-space: nowrap !important; /* Prevent line breaks within tags */
+  word-break: normal !important; /* Override word-break: break-word */
+  overflow-wrap: normal !important; /* Prevent wrapping within words */
+  display: inline-block !important; /* Ensure proper wrapping behavior */
+}
+
+/* Fix tag pane text from breaking words */
+.tag-pane-tag-text {
+  word-break: normal !important; /* Override break-word from obsidian-base.scss */
+  white-space: nowrap !important; /* Keep tag text on one line */
+  overflow: hidden !important; /* Hide overflow if needed */
+  text-overflow: ellipsis !important; /* Add ellipsis for very long tags */
+}
+
+.searchresult p {
+  margin-top: 8px !important;
+}
+
+/* Empty state styling for centered instructional text */
+.search-empty-state {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 !important; /* Take all available space for proper centering */
+  color: #999 !important; /* Light grey color for placeholder text */
+  font-size: var(--font-lg) !important;
+  padding: 20px !important; /* Add padding to prevent edge touching */
+}
+
+.search-empty-state p {
+  margin: 0 !important;
+  text-align: center !important;
+  color: #999 !important; /* Ensure light grey color */
+}
+
+/* Footer bar fixed to bottom of modal content with border extending to edges */
+.search-box-footer {
+  border-top: 1px solid var(--background-modifier-border);
+  margin: 0 -12px 0 -12px !important; /* Negative left/right margins to reach edges, no bottom margin */
+  padding: 10px 16px !important; /* Internal padding for content */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px; /* Add spacing between footer items */
+  flex-shrink: 0 !important; /* Prevent footer from shrinking */
+  background-color: white !important; /* Match modal background */
+  border-radius: 0 0 15px 15px !important; /* Match the modal's bottom rounded corners */
+}
+
+/* Increase callout margins for better breathing room */
+.callout {
+  margin: 3em 0 !important; /* Increased from 1em 0 for more spacing */
+}
+
+/* Fix callout word wrapping to keep whole words together */
+.callout {
+  word-wrap: normal !important; /* Override break-word from digital-garden-base.scss */
+  overflow-wrap: break-word !important; /* Allow breaking at word boundaries only */
+  word-break: normal !important; /* Prevent breaking within words */
+  text-wrap: pretty !important; /* Modern CSS for better line breaking */
+}
+
+/* Fix link wrapping in callouts specifically */
+.callout a {
+  word-break: normal !important; /* Prevent breaking within words */
+  overflow-wrap: break-word !important; /* Allow breaking at word boundaries only */
+  hyphens: none !important; /* Disable automatic hyphenation */
+  text-wrap: pretty !important; /* Modern CSS for better line breaking */
+}
+
+/* Sidebar styles moved to user/sidebar.scss */
+
+/* Sidebar search styles moved to user/sidebar.scss */
+
+/* Link styling with flexbox layout for proper icon alignment */
+a {
+  text-decoration: none !important; /* Remove underlines */
+  word-break: normal !important; /* Prevent breaking within words */
+  overflow-wrap: break-word !important; /* Allow breaking at word boundaries only */
+  hyphens: none !important; /* Disable automatic hyphenation */
+  text-wrap: pretty !important; /* Modern CSS for better line breaking */
+}
+
+/* External links with icon - override to scale with text size */
+.external-link {
+  text-decoration: none !important;
+  background-size: 0.8em !important; /* Scale with text size instead of fixed 13px */
+  padding-right: 1em !important; /* Scale with text size instead of fixed 16px */
+  background-position-y: 0.2em !important; /* Scale with text size instead of fixed 4px */
+}
+
+/* Internal links */
+.internal-link {
+  text-decoration: none !important;
+}
+
+/* Unresolved links */
+.internal-link.is-unresolved {
+  color: #999;
+}
+
+.internal-link.is-unresolved:hover {
+  color: #666;
+}
+
+/* Sidebar details moved to user/sidebar.scss */
+
+/* ================================================
+   MARKDOWN IMAGES - ROUNDED CORNERS & WIDTH CONTROLS
+   ================================================ */
+
+/* Base styling for all images and picture elements in markdown content */
+.content img,
+.content picture {
+  border-radius: 12px !important; /* Large border-radius for rounded corners */
+  height: auto !important; /* Maintain aspect ratio */
+  display: block !important; /* Block element for proper spacing */
+  margin: 2em 0 !important; /* Left align with generous top/bottom margin */
+  max-width: 100% !important; /* Prevent overflow */
+}
+
+/* Ensure images inside picture elements inherit proper styling */
+.content picture img {
+  border-radius: 12px !important;
+  margin: 0 !important; /* Reset margin since picture element handles spacing */
+}
+
+/* Default image width (when no width class is specified) - preserve aspect ratio */
+.content img:not(.img-full):not(.img-half):not(.img-small),
+.content picture:not(.img-full):not(.img-half):not(.img-small) {
+  max-width: 100% !important; /* Allow up to full width but maintain aspect ratio */
+  width: auto !important; /* Let the image determine its natural width within max-width constraint */
+}
+
+/* Full width images */
+.content img.img-full,
+.content picture.img-full {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Half width images - optimized for portrait photos and readability */
+.content img.img-half,
+.content picture.img-half {
+  width: 75% !important;
+  max-width: 75% !important;
+  min-width: 300px !important; /* Ensure minimum readable size */
+}
+
+/* Small images (for thumbnails or icons) */
+.content img.img-small,
+.content picture.img-small {
+  width: 25% !important;
+  max-width: 25% !important;
+}
+
+/* Responsive behavior for mobile devices */
+@media (max-width: 768px) {
+  .content img.img-full,
+  .content img.img-half,
+  .content picture.img-full,
+  .content picture.img-half {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: unset !important; /* Remove min-width constraint on mobile */
+  }
+  
+  .content img.img-small,
+  .content picture.img-small {
+    width: 50% !important;
+    max-width: 50% !important;
+  }
+  
+  /* Default images (no class) maintain their aspect-ratio preserving behavior on mobile */
+}
+
+/* ================================================
+   HEADING LINE BREAK UTILITIES
+   ================================================ */
+
+/* Force long headings to wrap more naturally */
+.content h3 {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+}
+
+/* Optional: Add a class for manual line breaking control */
+.content .break-after-comma h3 {
+  word-break: break-all !important;
+}
+
+/* Better line height for multi-line headings */
+.content h3 {
+  line-height: 1.3 !important;
+}
+
+/* ================================================
+   RESET TEXT SELECTION TO BROWSER DEFAULT
+   ================================================ */
+
+/* Remove custom text selection styling to use browser default */
+::selection {
+  background-color: revert !important;
+  color: revert !important;
+}
+
+::-moz-selection {
+  background-color: revert !important;
+  color: revert !important;
 }

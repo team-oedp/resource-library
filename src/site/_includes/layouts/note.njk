@@ -85,12 +85,14 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
     {% endif %}
     {% include "components/references.njk" %}
     {% include "components/timestamps.njk" %}
+    {% include "components/pdfModal.njk" %}
     {% for imp in dynamics.common.footer %}
       {% include imp %}
     {% endfor %}
     {% for imp in dynamics.notes.footer %}
       {% include imp %}
     {% endfor %}
+    <script src="/scripts/pdf-viewer.js?v={{meta.buildDate|isoDate}}"></script>
     {%include "components/lucideIcons.njk"%}
   </body>
 </html>
