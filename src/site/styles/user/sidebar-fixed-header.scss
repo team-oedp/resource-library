@@ -1,0 +1,57 @@
+/* Fixed header for filetree sidebar - header section stays fixed while content scrolls */
+
+.filetree-sidebar {
+	/* Ensure sidebar uses flexbox for proper layout */
+	display: flex !important;
+	flex-direction: column !important;
+	/* Remove top padding while keeping other padding */
+	padding-top: 0 !important;
+	
+	/* Header section - contains title and search, stays fixed */
+	.sidebar-header {
+		position: sticky !important;
+		top: 0 !important;
+		z-index: 10 !important;
+		padding: 0 !important;
+		flex-shrink: 0 !important;
+		background-color: var(--background-primary) !important;
+	}
+	
+	/* Content section - scrollable file tree */
+	.sidebar-content {
+		margin-top: 20px;
+		flex: 1 !important;
+		overflow: visible !important;
+		padding-top: 0 !important;
+	}
+	
+	/* Ensure the sidebar title stays in the header */
+	h1 {
+		margin: 50px 0 10px 0 !important;
+		text-align: center !important;
+	}
+	
+	/* Search button container styling */
+	.search-button-container {
+		display: flex !important;
+		justify-content: center !important;
+		margin: 10px 0 0 0 !important;
+		
+		.search-button {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
+/* Mobile adjustments to maintain responsive behavior */
+@media (max-width: 800px) {
+	.filetree-sidebar {
+		.sidebar-header {
+			padding: 5px 0 !important;
+		}
+		
+		.search-button-container {
+			margin: 5px 0 !important;
+		}
+	}
+}

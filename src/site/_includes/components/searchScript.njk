@@ -295,7 +295,8 @@
             resultsDiv.innerHTML = `<div class="search-empty-state"><p>No results for "${search}"</p></div>`;
             return;
         }
-        resultsHTML += '<div style="max-width:100%;">';
+        // Add minimal inline top padding so first result clears the input
+        resultsHTML += '<div style="max-width:100%; padding-top: 8px;">';
         // we need to add title, url from ref
         results.forEach(r => {
             if(r.tags && r.tags.length > 0){

@@ -537,9 +537,9 @@ ul.task-list {
     }
 }
 
-/* Navbar search button styles for mobile/tablet - increased breakpoint to catch tablets */
+/* Navbar search button styles for mobile/tablet - aligned with filetree breakpoint */
 .navbar .search-button {
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
         background-color: white !important;
         border-radius: 8px !important;
         border: 1px solid var(--background-modifier-border) !important;
@@ -551,11 +551,15 @@ ul.task-list {
         margin: 10px 25px 10px 25px;
         width: auto;
     }
+    
+    @media (max-width: 425px) {
+        display: none !important;
+    }
 }
 
-/* Navbar search text styles for mobile/tablet - increased breakpoint to catch tablets */
+/* Navbar search text styles for mobile/tablet - aligned with filetree breakpoint */
 .navbar .search-text {
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
@@ -567,11 +571,15 @@ ul.task-list {
             font-size: inherit !important;
         }
     }
+    
+    @media (max-width: 425px) {
+        display: none !important;
+    }
 }
 
 /* Fix search keys spacing and alignment in navbar */
 .navbar .search-keys {
-    @media (max-width: 1200px) {
+    @media (max-width: 1400px) {
         padding: 0 !important;
         margin-left: 12px !important;
         transform: none !important;
@@ -581,6 +589,10 @@ ul.task-list {
         .shortcut-text {
             font-size: inherit !important;
         }
+    }
+    
+    @media (max-width: 425px) {
+        display: none !important;
     }
 }
 

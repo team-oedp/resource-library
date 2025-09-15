@@ -8,6 +8,8 @@
 	--oedp-gray: #B0BDC2;
 	--oedp-slate: #5C7386;
 	--oedp-white: #FFFFFF;
+	--oedp-orange: #F5BC7C;
+	--oedp-powder-blue: #E7EBEA;
 	
 	// Semantic tokens
 	--text: var(--text-normal);
@@ -96,7 +98,7 @@ p > code {
 
 // Ensure navbar search button gets the same hover styling on mobile/tablet
 .navbar .search-button:hover {
-	@media (max-width: 1200px) {
+	@media (max-width: 1400px) {
 		border: 1px solid var(--oedp-slate) !important;
 		background-color: white !important;
 	}
@@ -104,6 +106,45 @@ p > code {
 
 .search-keys {
 	color: var(--oedp-gray) !important;
+}
+
+// External link icon color fix - use CSS mask for proper color inheritance
+.external-link {
+	color: var(--oedp-slate) !important;
+	// Remove the background-image and use mask instead for proper color inheritance
+	background-image: none !important;
+	position: relative !important;
+}
+
+.external-link::after {
+	content: '' !important;
+	display: inline-block !important;
+	width: 0.8em !important;
+	height: 0.8em !important;
+	margin-left: 0.2em !important;
+	vertical-align: middle !important;
+	// Use mask to apply the SVG shape with current text color
+	mask: url('/img/external.svg') no-repeat center !important;
+	mask-size: contain !important;
+	-webkit-mask: url('/img/external.svg') no-repeat center !important;
+	-webkit-mask-size: contain !important;
+	background-color: currentColor !important;
+	// Fallback for browsers that don't support mask
+	@supports not (mask: url('/img/external.svg')) {
+		background-image: url('/img/external.svg') !important;
+		background-repeat: no-repeat !important;
+		background-position: center !important;
+		background-size: contain !important;
+		// In fallback mode, we can't control the SVG color, but at least we show the icon
+	}
+}
+
+.external-link:hover {
+	color: var(--oedp-green) !important;
+}
+
+.external-link:hover::after {
+	background-color: currentColor !important; // This will automatically use the hover color
 }
 
 // Unresolved links

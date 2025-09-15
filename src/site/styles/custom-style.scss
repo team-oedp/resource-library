@@ -17,6 +17,13 @@ body {
   --cards-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width)));
   padding-block: 0; }
 
+/* Force body padding with higher specificity */
+body.theme-light,
+body.theme-dark,
+body {
+  padding: 10px !important;
+}
+
 @media (max-width: 400pt) {
   body {
     --cards-min-width:var(--cards-mobile-width); } }
@@ -104,6 +111,49 @@ body {
 // Override hardcoded font sizes in digital-garden-base.scss
 .content {
   font-size: var(--font-text-size) !important; // Override 18px
+}
+
+/* Override sidebar margin with higher specificity */
+main.content.cm-s-obsidian,
+.content {
+  margin-left: 320px !important; // Increased from 280px to account for body padding and provide more clearance
+}
+
+/* Responsive layout: remove left margin on tablet and mobile when sidebar becomes drawer */
+/* Moved breakpoint slightly higher to prevent content being hidden behind sidebar */
+@media (max-width: 1405px) {
+  main.content.cm-s-obsidian,
+  .content {
+    margin-left: auto !important; // Center horizontally
+    margin-right: auto !important; // Center horizontally
+    max-width: 100% !important; // Prevent overflow
+    padding-top: 80px !important; // Add top padding to prevent navbar overlap
+    padding-left: 20px !important; // Add some breathing room from edges
+    padding-right: 20px !important; // Add some breathing room from edges
+  }
+}
+
+/* For screens 800px and above: center content with readable max-width */
+@media (min-width: 801px) and (max-width: 1405px) {
+  main.content.cm-s-obsidian,
+  .content {
+    max-width: 800px !important; // Set a readable line length
+    margin-left: auto !important; // Center horizontally
+    margin-right: auto !important; // Center horizontally
+  }
+}
+
+/* Below 800px: content fills full width */
+@media (max-width: 800px) {
+  main.content.cm-s-obsidian,
+  .content {
+    margin-left: 0 !important; // Remove left margin
+    margin-right: 0 !important; // Remove right margin
+    max-width: 100% !important; // Fill full width
+    padding-top: 90px !important; // Slightly more padding on mobile
+    padding-left: 16px !important; // Minimal side padding
+    padding-right: 16px !important; // Minimal side padding
+  }
 }
 
 .toc-container {
@@ -209,29 +259,38 @@ img[src*="logo-lightback-eps-01.png"] {
 .search-box input {
   padding: 12px 14px !important; /* Equal top and bottom padding */
   font-size: var(--font-4xl) !important; /* Even larger input text */
-  margin-bottom: 12px !important; /* Balanced margin for separation from results */
+  margin-bottom: 4px !important; /* Tighter gap below input */
 }
 
 /* Clear divider between input and results - full width borders */
 #search-results {
   border-top: 1px solid var(--background-modifier-border);
-  margin: 0 -12px !important; /* Full width container, no top margin */
-  padding: 0px 0 0 0 !important; /* Add top padding to push results down below input */
+  margin: 8px -12px 0 -12px !important; /* Reduce space below input */
+  padding: 8px 0 0 0 !important; /* Slim internal top padding */
   flex: 1 !important; /* Take remaining space between input and footer */
   background-color: white !important; /* White background instead of grey */
   display: flex !important; /* Ensure flex behavior for centering */
   flex-direction: column !important;
+  justify-content: flex-start !important; /* Start content at the top in column layout */
+  align-items: stretch !important; /* Stretch children to container width */
   position: relative !important; /* Create stacking context */
   z-index: 1 !important; /* Sit above any overlapping header artifacts */
   min-height: 200px !important; /* Ensure adequate space for centering */
+  /* Provide offset for programmatic scrollIntoView so first item isn't obscured */
+  scroll-padding-top: 32px !important;
 }
 
-/* Remove old spacer elements - no longer needed with new centering approach */
+/* Ensure all JS-generated wrapper divs have adequate spacing */
+#search-results > div {
+  padding-top: 24px !important; /* Push all results content down within container */
+}
 
 /* Result card breathing room with zero side padding container */
 #search-results .searchresult {
   padding: 14px 16px !important; /* Padding inside individual results */
   margin: 0 16px 12px 16px !important; /* Margin for spacing between results */
+  /* Offset when focused via keyboard or scrolled into view */
+  scroll-margin-top: 32px !important;
 }
 
 /* Spacing between title, tags, and description */
@@ -310,6 +369,13 @@ a.tag,
   border-radius: 0 0 15px 15px !important; /* Match the modal's bottom rounded corners */
 }
 
+/* Hide navigation hints on mobile and tablet devices */
+@media (max-width: 767px) {
+  .search-box-footer .navigation-hint {
+    display: none !important;
+  }
+}
+
 /* Increase callout margins for better breathing room */
 .callout {
   margin: 3em 0 !important; /* Increased from 1em 0 for more spacing */
@@ -347,9 +413,8 @@ a {
 /* External links with icon - override to scale with text size */
 .external-link {
   text-decoration: none !important;
-  background-size: 0.8em !important; /* Scale with text size instead of fixed 13px */
-  padding-right: 1em !important; /* Scale with text size instead of fixed 16px */
-  background-position-y: 0.2em !important; /* Scale with text size instead of fixed 4px */
+  /* Removed background-image related properties - now using ::after pseudo-element with mask in brand-tokens.scss */
+  padding-right: 0 !important; /* Remove padding since we're using margin-left on ::after pseudo-element */
 }
 
 /* Internal links */

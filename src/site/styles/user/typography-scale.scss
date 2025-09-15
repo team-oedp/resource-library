@@ -216,9 +216,12 @@ nav, .nav {
 
 // Responsive typography adjustments
 @media (max-width: 768px) {
-  h1 { @include text-size('3xl', 1.2); }
-  h2 { @include text-size('2xl', 1.3); }
-  h3 { @include text-size('xl', 1.4); }
+  h1 { @include text-size('2xl', 1.2); }
+  h2 { @include text-size('xl', 1.3); }
+  h3 { @include text-size('lg', 1.4); }
+  h4 { @include text-size('base', 1.4); }
+  h5 { @include text-size('sm', 1.5); }
+  h6 { @include text-size('sm', 1.5); }
   
   .search-box input {
     @include text-size('xl');
@@ -230,9 +233,12 @@ nav, .nav {
 }
 
 @media (max-width: 480px) {
-  h1 { @include text-size('2xl', 1.2); }
-  h2 { @include text-size('xl', 1.3); }
-  h3 { @include text-size('lg', 1.4); }
+  h1 { @include text-size('xl', 1.2); }
+  h2 { @include text-size('lg', 1.3); }
+  h3 { @include text-size('base', 1.4); }
+  h4 { @include text-size('sm', 1.4); }
+  h5 { @include text-size('sm', 1.5); }
+  h6 { @include text-size('xs', 1.5); }
   
   .search-box input {
     @include text-size('lg');

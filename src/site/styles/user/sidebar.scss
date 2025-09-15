@@ -20,8 +20,8 @@ aside {
 .filetree-sidebar {
   background-color: var(--background-primary) !important;
   border-right: 1px solid var(--background-modifier-border) !important;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
   width: 294px !important;
 }
 
@@ -56,13 +56,13 @@ aside {
 /* Child indentation under folders */
 .filelist .notelink {
   padding: 1px 0 !important;
-  padding-left: 42px !important; /* align with folder text after chevron icon */
+  padding-left: 24px !important; /* align with folder text after chevron icon */
   margin: 1px 0 !important;
 }
 
 /* Align top-level single notes (e.g., Home) with folder text, not chevrons */
 .filetree-sidebar .folder > div:not(.filelist) > .notelink {
-  padding-left: 22px !important;
+  padding-left: calc(1.2em + 8px) !important;
 }
 
 /* Indent nested folder headings (not top-level) */
@@ -85,7 +85,7 @@ aside {
 
 /* Folder name styling */
 .foldername-wrapper {
-  padding: 2px 8px !important;
+  padding: 2px 0 !important;
   border-radius: 4px !important;
   cursor: pointer !important;
   margin: 1px 0 !important;
@@ -134,7 +134,7 @@ aside {
 
 /* Ensure active items keep the same left padding as siblings */
 .filelist .notelink.active-note {
-  padding-left: 42px !important;
+  padding-left: 24px !important;
 }
 
 .nav-folder-children .nav-file-title.is-active {
@@ -243,5 +243,10 @@ body.filetree-note-icon .filename[data-note-icon]::before {
 
 .foldername-wrapper:hover .chevron {
   color: var(--text-normal) !important;
+}
+
+/* Prevent FOUC for Alpine.js x-show directives */
+[x-cloak] {
+  display: none !important;
 }
 
