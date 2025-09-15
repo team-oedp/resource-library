@@ -1,4 +1,31 @@
 <script>
+    // Graph Color Configuration - Uses CSS variables for consistency with theme
+    const GRAPH_CONFIG = {
+        // Choose base color source:
+        colorSource: 'graph-main',  // Options: 'text-normal', 'text-accent', 'custom', 'graph-main'
+        
+        // Custom color (only used if colorSource is 'custom'):
+        customColor: '#44CF6E',
+        
+        // Opacity levels for different states
+        fadedOpacity: 0.05,     // Much more transparent for unconnected nodes
+        connectedOpacity: 1.0,  // Full opacity for connected nodes (clear contrast)
+    };
+
+    // Simple approach - use CSS variables like main branch but with enhanced contrast
+    const GRAPH_COLORS = {
+        // Nodes
+        active: getCssVar("--graph-main"),              // Hovered nodes - green from theme
+        connected: getCssVar("--graph-main"),           // Connected nodes - same green
+        faded: 'rgba(68, 207, 110, 0.08)',             // Unconnected nodes - very faded green
+        current: getCssVar("--graph-main"),             // Current page indicator
+        
+        // Edges/Links  
+        edgeActive: '#147C83',                          // Active edges - teal color
+        edgeConnected: '#147C83',                       // Connected edges - same teal
+        edgeFaded: 'rgba(20, 124, 131, 0.08)'          // Faded edges - very transparent teal
+    };
+
     async function fetchGraphData() {
         const graphData = await fetch('/graph.json').then(res => res.json());
         const fullGraphData  = filterFullGraphData(graphData);
@@ -54,6 +81,73 @@
 
     function getCssVar(variable) {return getComputedStyle(document.body).getPropertyValue(variable)}
 
+    // Label collision avoidance function
+    function calculateLabelPosition(currentNode, allNodes, nodeRadius) {
+        const minDistance = 25; // Minimum distance between labels
+        const offsetDistance = 12; // How far to offset when collision detected
+        
+        // Default position (below node)
+        let offset = { x: 0, y: 0 };
+        
+        // Check for nearby nodes that would cause label overlap
+        const nearbyNodes = allNodes.filter(node => {
+            if (node.id === currentNode.id) return false;
+            
+            const distance = Math.sqrt(
+                Math.pow(node.x - currentNode.x, 2) + 
+                Math.pow(node.y - currentNode.y, 2)
+            );
+            
+            return distance < minDistance;
+        });
+        
+        // If no nearby nodes, use default position
+        if (nearbyNodes.length === 0) {
+            return offset;
+        }
+        
+        // Simple collision avoidance: try different positions
+        const positions = [
+            { x: 0, y: 0 },           // Below (default)
+            { x: 0, y: -offsetDistance * 2 }, // Above  
+            { x: offsetDistance, y: 0 },      // Right
+            { x: -offsetDistance, y: 0 },     // Left
+            { x: offsetDistance, y: -offsetDistance }, // Top-right
+            { x: -offsetDistance, y: -offsetDistance }, // Top-left
+            { x: offsetDistance, y: offsetDistance },   // Bottom-right
+            { x: -offsetDistance, y: offsetDistance }   // Bottom-left
+        ];
+        
+        // Find position with least conflicts
+        let bestPosition = positions[0];
+        let minConflicts = Infinity;
+        
+        for (const pos of positions) {
+            let conflicts = 0;
+            const labelX = currentNode.x + pos.x;
+            const labelY = currentNode.y + nodeRadius + 4 + pos.y;
+            
+            for (const nearby of nearbyNodes) {
+                const nearbyLabelY = nearby.y + nodeRadius + 4;
+                const distance = Math.sqrt(
+                    Math.pow(labelX - nearby.x, 2) + 
+                    Math.pow(labelY - nearbyLabelY, 2)
+                );
+                
+                if (distance < 20) { // Label conflict threshold
+                    conflicts++;
+                }
+            }
+            
+            if (conflicts < minConflicts) {
+                minConflicts = conflicts;
+                bestPosition = pos;
+            }
+        }
+        
+        return bestPosition;
+    }
+
     function htmlDecode(input) {
         var doc = new DOMParser().parseFromString(input, "text/html");
         return doc.documentElement.textContent;
@@ -72,8 +166,7 @@
         height = el.offsetHeight;
         const highlightNodes = new Set();
         let hoverNode = null;
-        const color = getCssVar("--graph-main");
-        const mutedColor = getCssVar("--graph-muted");
+        // Use configured colors from GRAPH_COLORS object
         let Graph = ForceGraph()
         (el)
             .graphData(graphData)
@@ -89,12 +182,12 @@
             .autoPauseRedraw(false)
             .linkColor((link) => {
                 if (hoverNode == null) {
-                    return color;
+                    return GRAPH_COLORS.edgeActive;
                 }
                 if (link.source.id == hoverNode.id || link.target.id == hoverNode.id) {
-                    return color;
+                    return GRAPH_COLORS.edgeConnected;
                 } else {
-                    return mutedColor;
+                    return GRAPH_COLORS.edgeFaded;
                 }
                 
             })
@@ -105,12 +198,17 @@
                 ctx.beginPath();
                 ctx.arc(node.x, node.y, nodeR, 0, 2 * Math.PI, false);
                 if (hoverNode == null) {
-                    ctx.fillStyle = color;
+                    ctx.fillStyle = GRAPH_COLORS.active;
                 } else {
-                    if (node == hoverNode || highlightNodes.has(node.url)) {
-                        ctx.fillStyle = color;
+                    if (node == hoverNode) {
+                        // Hovered node gets the strongest color
+                        ctx.fillStyle = GRAPH_COLORS.active;
+                    } else if (highlightNodes.has(node.url)) {
+                        // Connected nodes get the connected color
+                        ctx.fillStyle = GRAPH_COLORS.connected;
                     } else {
-                        ctx.fillStyle = mutedColor;
+                        // Unconnected nodes are very faded
+                        ctx.fillStyle = GRAPH_COLORS.faded;
                     }
                 }
                  
@@ -120,19 +218,33 @@
                     ctx.beginPath();
                     ctx.arc(node.x, node.y, nodeR + 1, 0, 2 * Math.PI, false);
                     ctx.lineWidth = 0.5;
-                    ctx.strokeStyle = color;
+                    ctx.strokeStyle = GRAPH_COLORS.current;
                     ctx.stroke();
                 }
 
                 // Only show labels when enlarged or fullscreen (not minimized)  
                 if (fullScreen) {
-                    const label = htmlDecode(node.title)
-                    const fontSize = 3.5;
-                    ctx.font = `${fontSize}px Sans-Serif`;
-
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'top';
-                    ctx.fillText(label, node.x, node.y + nodeR + 2);
+                    // Determine if this label should be shown
+                    let showLabel = true;
+                    if (hoverNode != null) {
+                        // When hovering, only show labels for hovered and connected nodes
+                        showLabel = (node == hoverNode || highlightNodes.has(node.url));
+                    }
+                    
+                    if (showLabel) {
+                        const label = htmlDecode(node.title);
+                        const fontSize = 3.5;
+                        ctx.font = `${fontSize}px Sans-Serif`;
+                        
+                        // Calculate label position with collision avoidance
+                        const labelOffset = calculateLabelPosition(node, graphData.nodes, nodeR);
+                        
+                        // Draw label text - full opacity for visible labels
+                        ctx.fillStyle = '#57120D'; // Full color since we're only showing relevant labels
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'top';
+                        ctx.fillText(label, node.x + labelOffset.x, node.y + nodeR + 4 + labelOffset.y);
+                    }
                 }
             })
             .onNodeClick(node => {
