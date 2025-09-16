@@ -21,6 +21,6 @@ Below are some prompts to help parse out which elements are priorities for your 
 *Takeaway:* Because [[Decoders/Data Governance\|data governance]] can be understood and employed in many different ways, it is essential to define what data governance looks like within your project team. 
 Data governance encompasses the decision making rules, processes, workflows, and tools that determine who owns, manages, shares, and uses the data and how, as well as where the data is stored and shared. Different aspects of data governance may be prioritized differently depending on data stewards’ varying needs. For example, metadata and findability may be paramount to one organization, whereas protection of sensitive data may be the highest priority for another.
 
-*Source:* Community Data Playbook ([[Community Data Playbook/Full report\|Full report]])
+*Source:* Community Data Playbook ([[Community Data Playbook/Full Report\|Full report]])
 
 

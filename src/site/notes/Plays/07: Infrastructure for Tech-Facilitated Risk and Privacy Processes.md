@@ -5,7 +5,7 @@
 ### **Technical play for data stewards: Develop the infrastructure for tech-facilitated risk and privacy processes.** 
 Create a system that facilitates the management of data-related risks and privacy concerns. A good system makes it easier to stick to data protection requirements consistently. This means less chance of staff accidentally sharing sensitive information or for data to be exposed in unintended ways. Relevant parts of the system should also be included in [[Decoders/Data Sharing Agreements\|data sharing agreements]]. This includes:
 
- **[[Data Privacy and Security\|Data Privacy and Security]]:** 
+ **[[Decoders/Data Privacy & Security\|Data Privacy and Security]]:** 
 - Think about the ways in which you may want to use the data in the future so that data #collection is intentional.
 - If collecting data on individuals, ensure that you have a consent process in place that shares with users what their data will be used for and their rights in regards to their data.
 - If needed, use methods like [differential privacy](https://digitalprivacy.ieee.org/publications/topics/what-is-differential-privacy) to anonymize statistical analysis. 
@@ -31,4 +31,4 @@ Create a system that facilitates the management of data-related risks and privac
 *Takeaway:* Risk emerges in different ways when [[Decoders/Data Sharing\|data sharing]]. 
 Data #misuse runs the gamut from truly harmful—misaligned actors can selectively choose data points to communicate harmful or untrue narratives—to merely inconsiderate—people could use data without acknowledging the original source. The risks of sharing data can rarely be fully eliminated, but there are practices and tools that can mitigate against potential threat.
 
-*Source:* Community Data Playbook ([[Community Data Playbook/Full report\|Full report]])
+*Source:* Community Data Playbook ([[Community Data Playbook/Full Report\|Full report]])

@@ -22,7 +22,7 @@ Organizations can also use informational interviews to seed information for a co
 *Takeaway:*  Truly participatory data governance requires deep understanding of each user, including their values, incentives, and #capacity.
 Data governance as a concept can be difficult to understand, especially for those new to ideas surrounding data literacy. Data stewards and organizations can make governance more accessible by understanding how and why a user might want to interact with the data or its governance structures, and thus design appropriate avenues for engagement. 
 
-*Source:* Community Data Playbook ([[Community Data Playbook/Full report\|Full report]])
+*Source:* Community Data Playbook ([[Community Data Playbook/Full Report\|Full report]])
 
 
 [^1]:  Personas - A Simple Introduction. Interaction Design Foundation. Access [here](https://www.interaction-design.org/literature/article/personas-why-and-how-you-should-use-them?srsltid=AfmBOorUiUYQdWWkVn2YpdLO8280eQ5hJyON4KogdNmz_eDMhq7IYjt0).
