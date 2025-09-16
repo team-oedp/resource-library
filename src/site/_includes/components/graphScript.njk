@@ -1,4 +1,34 @@
 <script>
+    // Add custom tooltip styling
+    if (!document.getElementById('graph-tooltip-styles')) {
+        const style = document.createElement('style');
+        style.id = 'graph-tooltip-styles';
+        style.textContent = `
+            /* Target all possible tooltip selectors */
+            .scene-tooltip, 
+            .graph-tooltip,
+            [role="tooltip"],
+            .force-graph-container [role="tooltip"],
+            .force-graph-container .scene-tooltip {
+                background: var(--background-secondary) !important;
+                opacity: 0.9 !important;
+                color: #57120D !important;
+                font-weight: bold !important;
+                border: none !important;
+                border-radius: 4px !important;
+                padding: 6px 10px !important;
+                font-size: 12px !important;
+                font-family: Sans-Serif !important;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+                z-index: 10000 !important;
+                max-width: 200px !important;
+                word-wrap: break-word !important;
+                pointer-events: none !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
     // Graph Color Configuration - Uses CSS variables for consistency with theme
     const GRAPH_CONFIG = {
         // Choose base color source:
@@ -81,72 +111,6 @@
 
     function getCssVar(variable) {return getComputedStyle(document.body).getPropertyValue(variable)}
 
-    // Label collision avoidance function
-    function calculateLabelPosition(currentNode, allNodes, nodeRadius) {
-        const minDistance = 25; // Minimum distance between labels
-        const offsetDistance = 12; // How far to offset when collision detected
-        
-        // Default position (below node)
-        let offset = { x: 0, y: 0 };
-        
-        // Check for nearby nodes that would cause label overlap
-        const nearbyNodes = allNodes.filter(node => {
-            if (node.id === currentNode.id) return false;
-            
-            const distance = Math.sqrt(
-                Math.pow(node.x - currentNode.x, 2) + 
-                Math.pow(node.y - currentNode.y, 2)
-            );
-            
-            return distance < minDistance;
-        });
-        
-        // If no nearby nodes, use default position
-        if (nearbyNodes.length === 0) {
-            return offset;
-        }
-        
-        // Simple collision avoidance: try different positions
-        const positions = [
-            { x: 0, y: 0 },           // Below (default)
-            { x: 0, y: -offsetDistance * 2 }, // Above  
-            { x: offsetDistance, y: 0 },      // Right
-            { x: -offsetDistance, y: 0 },     // Left
-            { x: offsetDistance, y: -offsetDistance }, // Top-right
-            { x: -offsetDistance, y: -offsetDistance }, // Top-left
-            { x: offsetDistance, y: offsetDistance },   // Bottom-right
-            { x: -offsetDistance, y: offsetDistance }   // Bottom-left
-        ];
-        
-        // Find position with least conflicts
-        let bestPosition = positions[0];
-        let minConflicts = Infinity;
-        
-        for (const pos of positions) {
-            let conflicts = 0;
-            const labelX = currentNode.x + pos.x;
-            const labelY = currentNode.y + nodeRadius + 4 + pos.y;
-            
-            for (const nearby of nearbyNodes) {
-                const nearbyLabelY = nearby.y + nodeRadius + 4;
-                const distance = Math.sqrt(
-                    Math.pow(labelX - nearby.x, 2) + 
-                    Math.pow(labelY - nearbyLabelY, 2)
-                );
-                
-                if (distance < 20) { // Label conflict threshold
-                    conflicts++;
-                }
-            }
-            
-            if (conflicts < minConflicts) {
-                minConflicts = conflicts;
-                bestPosition = pos;
-            }
-        }
-        
-        return bestPosition;
-    }
 
     function htmlDecode(input) {
         var doc = new DOMParser().parseFromString(input, "text/html");
@@ -171,7 +135,7 @@
         (el)
             .graphData(graphData)
             .nodeId('id')
-            .nodeLabel('title')
+            .nodeLabel(fullScreen ? '' : (node) => htmlDecode(node.title))
             .linkSource('source')
             .linkTarget('target')
             .d3AlphaDecay(0.10)
@@ -233,17 +197,55 @@
                     
                     if (showLabel) {
                         const label = htmlDecode(node.title);
-                        const fontSize = 3.5;
-                        ctx.font = `${fontSize}px Sans-Serif`;
+                        // Get current zoom level and adjust font size inversely
+                        const zoomLevel = Graph.zoom();
+                        const baseFontSize = 10; // Increased for better readability
+                        const fontSize = baseFontSize / Math.max(zoomLevel, 0.5); // Prevent division by very small numbers
+                        ctx.font = `bold ${fontSize}px Sans-Serif`;
                         
-                        // Calculate label position with collision avoidance
-                        const labelOffset = calculateLabelPosition(node, graphData.nodes, nodeR);
+                        // Max width constraint for labels (adjust for zoom level) - increased width
+                        const baseMaxWidth = 100; // Increased from 60 to allow more width for titles
+                        const maxWidth = baseMaxWidth / Math.max(zoomLevel, 0.5); // Scale width inversely with zoom
+                        const lineHeight = fontSize * 1.2; // Line spacing
                         
-                        // Draw label text - full opacity for visible labels
-                        ctx.fillStyle = '#57120D'; // Full color since we're only showing relevant labels
-                        ctx.textAlign = 'center';
-                        ctx.textBaseline = 'top';
-                        ctx.fillText(label, node.x + labelOffset.x, node.y + nodeR + 4 + labelOffset.y);
+                        // Split text into multiple lines based on max width
+                        const words = label.split(' ');
+                        const lines = [];
+                        let currentLine = '';
+                        
+                        for (const word of words) {
+                            const testLine = currentLine ? `${currentLine} ${word}` : word;
+                            const testWidth = ctx.measureText(testLine).width;
+                            
+                            if (testWidth <= maxWidth) {
+                                currentLine = testLine;
+                            } else {
+                                if (currentLine) {
+                                    lines.push(currentLine);
+                                    currentLine = word;
+                                } else {
+                                    // Single word is too long, break it
+                                    lines.push(word);
+                                }
+                            }
+                        }
+                        if (currentLine) {
+                            lines.push(currentLine);
+                        }
+                        
+                        // Position label at bottom right of node
+                        const labelX = node.x + nodeR + 2; // 2px offset from node edge
+                        const labelY = node.y + nodeR - 2; // Slightly above bottom edge
+                        
+                        // Draw multi-line label text without background
+                        ctx.textAlign = 'left';
+                        ctx.textBaseline = 'bottom';
+                        ctx.fillStyle = '#57120D'; // Text color
+                        
+                        lines.forEach((line, index) => {
+                            const currentY = labelY + (index * lineHeight);
+                            ctx.fillText(line, labelX, currentY);
+                        });
                     }
                 }
             })
@@ -265,12 +267,52 @@
                     Graph.zoomToFit(5, 75);
                 }, delay || 200);
             }
+
+            // Apply custom tooltip styling for minimized mode
+            if (!fullScreen) {
+                // Set up a mutation observer to catch dynamically created tooltips
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        mutation.addedNodes.forEach((node) => {
+                            if (node.nodeType === Node.ELEMENT_NODE) {
+                                // Check if this node or its children contain tooltips
+                                const tooltips = node.querySelectorAll ? 
+                                    [node, ...node.querySelectorAll('*')].filter(el => 
+                                        el.style && el.style.position === 'absolute' && 
+                                        (el.textContent || el.getAttribute('role') === 'tooltip')
+                                    ) : [];
+                                
+                                tooltips.forEach(tooltip => {
+                                    tooltip.style.setProperty('background', 'var(--background-secondary)', 'important');
+                                    tooltip.style.setProperty('color', '#57120D', 'important');
+                                    tooltip.style.setProperty('font-weight', 'bold', 'important');
+                                    tooltip.style.setProperty('opacity', '0.9', 'important');
+                                    tooltip.style.setProperty('border-radius', '4px', 'important');
+                                    tooltip.style.setProperty('padding', '6px 10px', 'important');
+                                    tooltip.style.setProperty('font-size', '12px', 'important');
+                                    tooltip.style.setProperty('z-index', '10000', 'important');
+                                });
+                            }
+                        });
+                    });
+                });
+                
+                observer.observe(document.body, { childList: true, subtree: true });
+                
+                // Cleanup observer when graph is destroyed
+                Graph._customObserver = observer;
+            }
+
         return Graph;
     }
 
     // Shared helper: dispose current graph then render new data into same canvas
     function swapGraph(data, viewMode){
         if(window.graph && window.graph._destructor){
+            // Clean up custom observer if it exists
+            if(window.graph._customObserver){
+                window.graph._customObserver.disconnect();
+            }
             window.graph._destructor();
         }
         const isFullscreen = viewMode === 'fullscreen';
