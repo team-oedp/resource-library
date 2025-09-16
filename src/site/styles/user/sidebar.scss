@@ -56,13 +56,14 @@ aside {
 /* Child indentation under folders */
 .filelist .notelink {
   padding: 1px 0 !important;
-  padding-left: 24px !important; /* align with folder text after chevron icon */
+  padding-left: 22px !important; /* align with folder text after chevron icon */
   margin: 1px 0 !important;
 }
 
 /* Align top-level single notes (e.g., Home) with folder text, not chevrons */
 .filetree-sidebar .folder > div:not(.filelist) > .notelink {
-  padding-left: calc(1.2em + 8px) !important;
+  /* Align top-level single notes with child items */
+  padding-left: 22px !important;
 }
 
 /* Indent nested folder headings (not top-level) */
