@@ -229,6 +229,10 @@ body.filetree-note-icon .filename[data-note-icon]::before {
   margin-right: 6px !important;
   transition: transform 0.15s ease !important;
   color: var(--text-muted) !important;
+  /* Reserve space to prevent CLS before Lucide injects the SVG */
+  width: 1em;
+  min-width: 1em;
+  height: 1em;
 }
 
 .filetree-sidebar .foldername-wrapper .chevron .svg-icon {
