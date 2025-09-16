@@ -68,12 +68,12 @@ aside {
 
 /* Indent nested folder headings (not top-level) */
 .filelist .foldername-wrapper {
-  padding-left: 20px !important;
+  padding-left: 22px !important;
 }
 
 .nav-folder-children .nav-file-title {
   padding: 2px 0 !important;
-  padding-left: 20px !important;
+  padding-left: 22px !important;
   margin: 1px 0 !important;
 }
 
@@ -135,11 +135,11 @@ aside {
 
 /* Ensure active items keep the same left padding as siblings */
 .filelist .notelink.active-note {
-  padding-left: 24px !important;
+  padding-left: 22px !important;
 }
 
 .nav-folder-children .nav-file-title.is-active {
-  padding-left: 20px !important;
+  padding-left: 22px !important;
 }
 
 /* Remove backgrounds for child links */
@@ -157,6 +157,11 @@ aside {
 
 /* Remove sidebar navigation icons */
 body.filetree-note-icon .filename[data-note-icon]::before {
+  display: none !important;
+}
+
+/* Prevent FOUC for note icons - hide immediately */
+.filename[data-note-icon]::before {
   display: none !important;
 }
 
