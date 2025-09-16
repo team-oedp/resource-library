@@ -53,8 +53,8 @@ The team generated a robust list of values that are derived from their practices
 Building on those values, we posed two additional questions for their How We Share Data document: 1) How does data sharing support your mission and program efforts? and 2) How do you plan to use the data? Opening this up to discussion, a response to the first question was clear: data sharing supports connecting participants to resources (i.e., interim water access, and technical and funding assistance), which supports the protection of water, which is essential to life. In discussing the second question, the team delineated how they would use data based on a spectrum of data types, from Personal Identifiable Information (PII) and contact information, to individual and property level data, to aggregated forms of data.[^5] See Figure 3 for this spectrum. This allowed the team to understand and articulate current and future data uses. 
 
 
-> [!Tool + How-to Guide]
-> For a more detailed exploration of building a data values statement with your team, see our template: [[Tools and Templates/Data Values Statement Template\|Data Values Statement Template]], and the accompanying how-to guide: [[How-To Guides & Zines/Zine - Our Data, Our Values\|Zine - Our Data, Our Values]] - A How-To Guide for Creating Data Values Statements.
+> [!TOOL]Tool + How-to Guide
+> For a more detailed exploration of building a data values statement with your team, see our template: [[Tools and Templates/Data Values Statement Template\|Data Values Statement Template]], and the accompanying how-to guide: [[How-To Guides & Zines/Our Data, Our Values\|Our Data, Our Values]] — A How-To Guide for Creating Data Values Statements.
 
 ![Fig-3.jpg](/img/user/Photos%20for%20Resource%20Library/Fig-3.jpg)
 
@@ -71,8 +71,8 @@ In the second module, we focused on building out a data co-ownership agreement t
 We opened the discussion by asking team members about the agreements they’d like to make with participants as co-owners of their site data, and we posed questions to spark ideation. These questions are listed below, in Figure 4, and include queries about access, condition of deletion, sharing, and usage. This conversation highlighted what the team valued most in collaborations with program participants, including consent and transparency. For example, there are certain reporting requirements imposed by agencies and funders that the team feels participants need to know up front.
 
 
-> [!NOTE] Tool
-> To view and utilize a data co-ownership agreement template, see our tool: [[Tools and Templates/Data Co-Ownership Template\|Data Co-Ownership Template]] and the accompanying co-ownership how-to guide: **[[How-To Guides & Zines/Zine - Our Data, Our Rules\|Zine - Our Data, Our Rules]] - A How-To Guide for Environmental Data Co-Ownership.** 
+> [!TOOL] Tool + How-to Guide
+> To view and utilize a data co-ownership agreement template, see our tool: [[Tools and Templates/Data Co-Ownership Template\|Data Co-Ownership Template]] and the accompanying co-ownership how-to guide: **[[How-To Guides & Zines/Our Data, Our Rules\|Our Data, Our Rules]] — A How-To Guide for Environmental Data Co-Ownership.** 
 ****
 
 
@@ -81,7 +81,7 @@ We opened the discussion by asking team members about the agreements they’d li
 
 We then analyzed data sharing considerations for SHE’s [Tank and Hauled Water Program](https://www.selfhelpenterprises.org/programs/emergency-services/water-sustainability/). This program temporarily supplies water to participants whose wells are dry. We mapped the general flow of data and information shared between participants, delivery vendors, funders, and SHE. We diagrammed a detailed data ecosystem, and, after the workshop, formalized the ecosystem graphically, including possibilities for how and where a customer portal could be used to support two-way data exchange. We also listed questions and considerations for each stakeholder, including discussion topics for contracts, data sharing, and funding agreements. Notes from this work are documented below, in Figure 5 and 6. 
 
-> [!Tool]
+> [!TOOL]
 > This data ecosystem and accompanying information can be found as [[Tools and Templates/Self-Help Enterprises Hauled Water Data Mapping\|Self-Help Enterprises Hauled Water Data Mapping]] in the Tools and Templates folder. 
 
 ![Fig-5.jpg](/img/user/Photos%20for%20Resource%20Library/Fig-5.jpg)

@@ -28,9 +28,9 @@ The following practices and tools can be of help when considering data accessibi
 
 When data is accessible, its value can be unlocked for different kinds of uses, far more than originally intended. For example, if a community science initiative is collecting water quality data regarding PFAS contaminants in a local stream, they can make that data accessible by hosting it online on a publicly accessible website and providing [[Decoders/Metadata\|metadata]]. This allows for other stakeholders, such as local government or researchers to utilize this data for their own purposes like providing data as evidence when restructuring local ordinances or when studying the effects of local landfills and industrial sites on local waterways.  
 
-While not all data needs to be public, having a data access strategy can increase the [[data privacy and security\|data privacy and security]] by putting checks in place to ensure the data is not manipulated or tampered with by unauthorized parties. 
+While not all data needs to be public, having a data access strategy can increase the [[Decoders/Data Privacy & Security\|data privacy and security]] by putting checks in place to ensure the data is not manipulated or tampered with by unauthorized parties.
 
-  
+
 
 ### **Mentioned and additional resources**:
 
