@@ -52,9 +52,9 @@ These workshops were designed based on the goals for each partner, and included 
 > Self-Help Enterprises wants to create some organizational language related to their values and practices on how they share data. This language could be referenced in the future when entering into partnership with a new [[Decoders/Data Sharing\|data sharing]] party, collecting a new type of data, or creating a new tool or policy. **How could we support this foundational document creation in the workshop?**
 > 
 > - Brainstorm and surface values on data sharing to inform agreements and products to create the start of a “How We Share Data” document
->     
+>
 
-In most workshops, the modules were sequentially ordered and in some cases, information gathered in one module would explicitly set the stage for the following module. We included time estimates in our facilitation plan to create a basic timeline for the workshop (see an example below); in practice, some modules took more or less time, or were skipped over in lieu of pursuing a line of inquiry or conversation that was better suited to reach a goal or answer a question. For example, the team at Self-Help Enterprises were very interested in our approach to creating a [[data co-ownership\|data co-ownership]] document for their participants in their well water site monitoring program, and wanted to run through the exercise thinking about their hauled water and tank program as well.
+In most workshops, the modules were sequentially ordered and in some cases, information gathered in one module would explicitly set the stage for the following module. We included time estimates in our facilitation plan to create a basic timeline for the workshop (see an example below); in practice, some modules took more or less time, or were skipped over in lieu of pursuing a line of inquiry or conversation that was better suited to reach a goal or answer a question. For example, the team at Self-Help Enterprises were very interested in our approach to creating a [[Tools and Templates/Data Co-Ownership Template\|data co-ownership]] document for their participants in their well water site monitoring program, and wanted to run through the exercise thinking about their hauled water and tank program as well.
 
 
 ![self help modules.png](/img/user/Photos%20for%20Resource%20Library/self%20help%20modules.png)
