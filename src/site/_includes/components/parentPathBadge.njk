@@ -1,0 +1,6 @@
+{% set parentPath = getParentPath(page.url) %}
+{% if parentPath %}
+<div class="parent-path-badge">
+  {{ parentPath | upper }}
+</div>
+{% endif %}

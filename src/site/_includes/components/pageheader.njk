@@ -28,7 +28,12 @@
 <link href="{{style}}" rel="stylesheet">
 {%- endfor -%}
 
-{% favicons './src/site/favicon.svg', appleIconBgColor='#123' %}
+{% favicons './src/site/favicon.png', appleIconBgColor='#14324F' %}
+
+<link
+  rel="icon"
+  href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>"
+/>
 
 {% if metatags %}
     {% for name, content in metatags %}

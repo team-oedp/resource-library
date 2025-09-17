@@ -1,0 +1,96 @@
+/**
+ * Callout Improvements
+ * - Fix excessive heading margins inside callouts
+ * - Align callout title and content padding
+ */
+
+// Fix padding alignment between callout title and content
+// Make title and content have identical padding for perfect alignment
+.callout-title,
+.callout-content {
+  // Both title and content should have the same horizontal padding
+  padding-left: 24px !important;
+  padding-right: 12px !important;
+}
+
+// Fix excessive top margins on headings inside callouts
+.callout-content {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1rem !important; // Reduced from default 2.5rem
+    margin-bottom: 0.75rem !important; // Slightly less bottom margin too
+    
+    // First heading in callout should have minimal top margin
+    &:first-child {
+      margin-top: 0.5rem !important;
+    }
+  }
+  
+  // Consecutive headings inside callouts should have moderate spacing
+  h1 + h2,
+  h2 + h3,
+  h3 + h4,
+  h4 + h5,
+  h5 + h6 {
+    margin-top: 0.75rem !important;
+  }
+  
+  // Slightly reduce paragraph bottom margins inside callouts for tighter layout
+  p {
+    margin-bottom: 1rem !important;
+  }
+  
+  // Ensure good spacing between different elements
+  p + h1,
+  p + h2,
+  p + h3,
+  p + h4,
+  p + h5,
+  p + h6 {
+    margin-top: 1.25rem !important;
+  }
+}
+
+// Fix link wrapping in callouts - keep whole words together
+.callout-content {
+  a {
+    word-break: normal !important; // Prevent breaking within words
+    overflow-wrap: break-word !important; // Allow breaking at word boundaries only
+    hyphens: none !important; // Disable automatic hyphenation
+    text-wrap: pretty !important; // Modern CSS for better line breaking
+  }
+}
+
+// Responsive adjustments for callouts
+@media (max-width: 768px) {
+  .callout-content {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0.8rem !important;
+      margin-bottom: 0.6rem !important;
+      
+      &:first-child {
+        margin-top: 0.4rem !important;
+      }
+    }
+    
+    h1 + h2,
+    h2 + h3,
+    h3 + h4,
+    h4 + h5,
+    h5 + h6 {
+      margin-top: 0.6rem !important;
+    }
+    
+    p {
+      margin-bottom: 0.8rem !important;
+    }
+    
+    p + h1,
+    p + h2,
+    p + h3,
+    p + h4,
+    p + h5,
+    p + h6 {
+      margin-top: 1rem !important;
+    }
+  }
+}

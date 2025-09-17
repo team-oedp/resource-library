@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ meta.mainLanguage }}">
   <head>
@@ -14,6 +15,10 @@
     {%include "components/notegrowthhistory.njk"%}
     {% if settings.dgShowFileTree !== true %}
       {%include "components/navbar.njk"%}
+      <!-- Mobile filetree sidebar for search access on screens ≤768px -->
+      <div class="mobile-filetree-container">
+        {%include "components/filetree.njk"%}
+      </div>
     {%else%}
       {%include "components/filetree.njk"%}
     {% endif %}
@@ -22,6 +27,7 @@
     {% endif %}
     <main class="content cm-s-obsidian {{contentClasses}}">
       <header>
+      {%include "components/parentPathBadge.njk"%}
       {% if settings.dgShowInlineTitle === true %}
         <h1>{{ noteTitle  }}</h1>
       {% endif %}
