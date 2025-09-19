@@ -479,13 +479,14 @@
     </div>
     <div id="link-graph" x-effect="window.graph = showingGlobal ? renderGlobalGraph(fullGraphData, viewMode) : renderLocalGraph(graphData, depth, viewMode)"></div>
     <div id="graph-controls">
-            <div class="depth-control">
+            <div class="depth-control" x-show="!showingGlobal">
                 <label for="graph-depth">Depth</label>
                 <div class="simple-slider">
                     <input x-model.number="depth" type="range" min="1" max="3" step="1" id="graph-depth">
                 </div>
                 <span id="depth-display" x-text="depth"></span>
             </div>
+            <div class="spacer" x-show="showingGlobal"></div>
             <div class="ctrl-right">
                 <div class="button-container">
                     <span id="global-graph-btn"

@@ -498,6 +498,7 @@ body.graph-fullscreen-active .filetree-sidebar {
         margin: 0;
         padding: 0;
         vertical-align: middle;
+        color: var(--text-primary); /* Match desktop green icon color */
       }
     }
   }
@@ -1130,6 +1131,12 @@ body.mobile-graph-active {
   color: var(--text-accent);
   z-index: 20;
   min-height: 32px;
+  transition: all 0.3s ease; /* Smooth animation for layout changes */
+
+  /* Spacer to push controls right when depth control is hidden */
+  .spacer {
+    flex: 1;
+  }
 
   .depth-control {
     display: flex;
