@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/community-data-playbook/full-report/"}
+{"dg-publish":true,"permalink":"/community-data-playbook/full-report/","title":"Full Report"}
 ---
 
 
