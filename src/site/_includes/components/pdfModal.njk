@@ -3,6 +3,14 @@
   <div class="pdf-viewer-dialog" role="document">
     <div class="pdf-viewer-frame-wrap">
       <iframe id="pdf-viewer-iframe" title="PDF Reader" loading="lazy"></iframe>
+      <div id="pdf-viewer-error" class="pdf-viewer-error" style="display: none;">
+        <div class="pdf-error-content">
+          <div class="pdf-error-icon">📄</div>
+          <h3 class="pdf-error-title">No PDF file found</h3>
+          <p class="pdf-error-message">Visit the Zenodo link instead to read this PDF.</p>
+          <button class="pdf-error-close" data-pdf-close>Close</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
