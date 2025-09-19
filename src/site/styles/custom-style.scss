@@ -1,8 +1,44 @@
+/* CRITICAL: Hide filetree sticky note icons immediately - must be first */
+.filetree-sidebar i[icon-name="sticky-note"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 // Import unified typography system
 @import 'user/typography-scale';
 @import 'user/heading-spacing';
 @import 'user/brand-tokens';
 @import 'user/sidebar';
+
+/* ================================================
+   CRITICAL FOUC PREVENTION - LOADS FIRST
+   ================================================ */
+
+/* Immediate font size stabilization for filetree to prevent FOUC */
+.filetree-sidebar * {
+  font-size: var(--font-sm) !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+}
+
+/* Immediate note icon suppression - highest priority */
+.filetree-sidebar [data-note-icon]::before,
+.filetree-sidebar i[icon-name="sticky-note"] {
+  display: none !important;
+  content: none !important;
+  background-image: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
 
 body {
   --cards-min-width: 180px;
@@ -400,6 +436,80 @@ a.tag,
 /* Sidebar styles moved to user/sidebar.scss */
 
 /* Sidebar search styles moved to user/sidebar.scss */
+
+/* ================================================
+   FILETREE FOUC FIXES & NOTE ICON SUPPRESSION
+   ================================================ */
+
+/* Critical: Prevent FOUC by setting stable font sizes immediately */
+.filetree-sidebar .notelink,
+.filetree-sidebar .filename,
+.filetree-sidebar .foldername,
+.filetree-sidebar .nav-file-title,
+.filetree-sidebar .nav-folder-title {
+  font-size: var(--font-sm) !important; /* Use consistent small font size */
+  line-height: 1.4 !important; /* Stable line height */
+  font-weight: 500 !important; /* Consistent font weight */
+  transition: none !important; /* Disable transitions during initial load */
+}
+
+/* Force immediate hiding of note icons - highest specificity */
+.filetree-sidebar .filename[data-note-icon]::before,
+.filetree-sidebar .notelink[data-note-icon]::before,
+.filetree-sidebar .nav-file-title[data-note-icon]::before,
+.filetree-sidebar .nav-folder-title[data-note-icon]::before,
+.filetree-sidebar a[data-note-icon]::before,
+.filetree-sidebar .notelink i[icon-name="sticky-note"],
+.filetree-sidebar i[icon-name="sticky-note"] {
+  display: none !important;
+  content: none !important;
+  background-image: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Override any body class-based note icon display */
+body.filetree-note-icon .filetree-sidebar .filename[data-note-icon]::before,
+body.filetree-note-icon .filetree-sidebar .notelink[data-note-icon]::before,
+body.filetree-note-icon .filetree-sidebar .nav-file-title[data-note-icon]::before,
+body.filetree-note-icon .filetree-sidebar .nav-folder-title[data-note-icon]::before,
+body.filetree-note-icon .filetree-sidebar a[data-note-icon]::before,
+body.filetree-note-icon .filetree-sidebar .notelink i[icon-name="sticky-note"],
+body.filetree-note-icon .filetree-sidebar i[icon-name="sticky-note"] {
+  display: none !important;
+  content: none !important;
+  background-image: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Prevent any pseudo-element content from appearing */
+.filetree-sidebar .filename::before,
+.filetree-sidebar .notelink::before,
+.filetree-sidebar .nav-file-title::before,
+.filetree-sidebar .nav-folder-title::before,
+.filetree-sidebar a::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Ensure stable layout during page transitions */
+.filetree-sidebar {
+  contain: layout style !important; /* CSS containment for performance */
+}
+
+/* Prevent font size jumps during navigation */
+.filetree-sidebar .notelink a,
+.filetree-sidebar .filename,
+.filetree-sidebar .foldername {
+  font-size: inherit !important; /* Inherit from parent, no independent sizing */
+  line-height: inherit !important;
+  font-weight: inherit !important;
+}
 
 /* Link styling with flexbox layout for proper icon alignment */
 a {
