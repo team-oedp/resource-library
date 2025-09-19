@@ -159,6 +159,349 @@ body.graph-fullscreen-active .filetree-sidebar {
   display: none !important;
 }
 
+// Mobile Graph Components - Only visible on mobile and tablet
+.mobile-graph-fab {
+  display: none !important; // Hidden by default (desktop)
+  
+  @media (max-width: 1400px) {
+    display: block !important; // Show exactly when sidebar graph gets hidden
+  }
+}
+
+.mobile-graph-fab-button {
+  position: fixed;
+  top: 20px; // Default position when navbar is absolute 
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px; // Square with rounded edges
+  
+  @media (max-width: 1400px) {
+    top: 80px; // Position well below fixed navbar
+  }
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  color: var(--text-accent);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: var(--background-modifier-hover);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  i {
+    font-size: 20px;
+  }
+}
+
+.mobile-graph-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-primary);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  
+  #mobile-link-graph {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    position: relative;
+  }
+}
+
+.mobile-graph-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 100000;
+  
+  // Use exact same styling as desktop graph controls
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  // Add a spacer to push buttons right when depth control is hidden
+  .spacer {
+    flex: 1;
+  }
+}
+
+// Mobile graph controls inherit ALL desktop styling exactly
+.mobile-graph-controls {
+  // Inherit desktop styling by making the CSS selectors match exactly
+  .depth-control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    height: 100%;
+
+    label {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      height: 100%;
+      line-height: 1;
+    }
+
+    .simple-slider {
+      width: 110px; /* exact desktop width */
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%; /* ensure full height like desktop */
+      &::after {
+        content: "";
+        position: absolute;
+        left: 9px; /* $track-start-end-inset = 7px + 2px = 9px */
+        right: 9px;
+        top: 50%;
+        height: 4px; /* $track-height */
+        background: var(--interactive-normal);
+        border-radius: 2px;
+        transform: translateY(-50%);
+        z-index: -1; /* keep behind markers & thumb */
+      }
+    }
+
+    #mobile-graph-depth {
+      /* reset - exact desktop copy */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px; /* $track-height */
+      margin: 0; /* remove browser default margins that created visual gap */
+      padding: 0;
+      background: transparent; /* desktop sets this last to override */
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+      top: 0; /* align with container baseline */
+    }
+
+    #mobile-graph-depth:hover {
+      cursor: pointer;
+    }
+
+    /* remove default number/tick container in Firefox */
+    #mobile-graph-depth::-moz-focus-outer {
+      border: 0;
+    }
+
+    /* track (Chrome / Safari) */
+    #mobile-graph-depth::-webkit-slider-runnable-track {
+      height: 4px; /* $track-height */
+      background: var(--interactive-normal);
+      border-radius: 2px;
+    }
+
+    /* thumb (Chrome / Safari) */
+    #mobile-graph-depth::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px; /* $slider-thumb-diam */
+      height: 14px;
+      background: var(--interactive-accent);
+      border-radius: 50%;
+      border: none;
+      margin-top: 1px; /* Adjusted +6px from -5px to align with track visually */
+      cursor: pointer;
+      transition: background 0.15s;
+      position: relative;
+      z-index: 2; /* Above notches and track */
+    }
+    #mobile-graph-depth:hover::-webkit-slider-thumb {
+      background: var(--interactive-accent-hover);
+    }
+
+    /* track / thumb (Firefox) */
+    #mobile-graph-depth::-moz-range-track {
+      height: 4px; /* $track-height */
+      background: var(--interactive-normal);
+      border-radius: 2px;
+    }
+    #mobile-graph-depth::-moz-range-thumb {
+      width: 14px; /* $slider-thumb-diam */
+      height: 14px;
+      background: var(--interactive-accent);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.15s;
+      position: relative;
+      z-index: 2; /* Above notches and track */
+    }
+    #mobile-graph-depth:hover::-moz-range-thumb {
+      background: var(--interactive-accent-hover);
+    }
+
+    /* Hide default focus outline but provide custom */
+    #mobile-graph-depth:focus {
+      outline: none;
+    }
+    #mobile-graph-depth:focus-visible::-webkit-slider-thumb {
+      box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+    }
+    #mobile-graph-depth:focus-visible::-moz-range-thumb {
+      outline: 2px solid var(--interactive-accent-hover);
+      outline-offset: 2px;
+    }
+
+    /* Remove any pseudo-number labels that some UA styles inject (Edge legacy) */
+    #mobile-graph-depth::before,
+    #mobile-graph-depth::after {
+      content: none !important;
+    }
+
+    /* Visual notch dots for each available depth value (1-3) - exact desktop copy */
+    .simple-slider::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 4px; /* $track-height */
+      transform: translateY(-50%);
+      pointer-events: none;
+      left: -2px;
+      right: -2px;
+      z-index: 1; /* Above track and visible */
+      background: radial-gradient(
+          circle at 7px 50%,
+          var(--text-muted) 0 2px,
+          transparent 2px
+        ),
+        radial-gradient(circle at 50% 50%, var(--text-muted) 0 2px, transparent 2px),
+        radial-gradient(
+          circle at calc(100% - 7px) 50%,
+          var(--text-muted) 0 2px,
+          transparent 2px
+        );
+    }
+
+    #mobile-depth-display {
+      background-color: var(--text-accent);
+      color: white;
+      width: 1.3rem;
+      height: 1.3rem;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+  }
+
+  // Copy exact desktop ctrl-right styling
+  .ctrl-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .button-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    span {
+      background-color: var(--background-secondary);
+      border: 1px solid var(--text-muted);
+      border-radius: 6px;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+
+      &:hover {
+        border-color: var(--text-accent);
+        background-color: var(--background-primary);
+      }
+
+      svg,
+      i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// Mobile graph title positioning
+.mobile-graph-title-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 100001;
+  pointer-events: none; // Allow clicks to pass through to graph
+  
+  .graph-title {
+    background-color: var(--background-primary);
+    color: var(--text-accent);
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--background-modifier-border);
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+  }
+}
+
+// Hide mobile graph when on large desktop screens
+@media (min-width: 1401px) {
+  .mobile-graph-fab {
+    display: none !important;
+  }
+}
+
+// Prevent body scroll when mobile graph is open
+body.mobile-graph-active {
+  overflow: hidden;
+}
+
 // Tooltip styling for graph control buttons
 #graph-controls .ctrl-right .button-container span[title] {
   position: relative;
@@ -389,6 +732,13 @@ body.graph-fullscreen-active .filetree-sidebar {
     display: none;
   }
 }
+@media (max-width: 1400px) {
+  // Hide the default sidebar graph when layout changes
+  .sidebar .graph {
+    display: none !important;
+  }
+}
+
 @media (max-width: 800px) {
   .sidebar-container {
     display: flex;

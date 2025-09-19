@@ -146,8 +146,17 @@
             return;
         }
         const el = document.getElementById(id);
+        if (!el) {
+            console.warn(`Graph container element with id "${id}" not found`);
+            return;
+        }
         width = el.offsetWidth;
         height = el.offsetHeight;
+        
+        if (width === 0 || height === 0) {
+            console.warn(`Graph container ${id} has zero dimensions: ${width}x${height}`);
+            return;
+        }
         const highlightNodes = new Set();
         let hoverNode = null;
         // Use configured colors from GRAPH_COLORS object
@@ -441,9 +450,27 @@
         return swapGraph(fullGraphData, viewMode);
     }
 
+    // Mobile-specific graph rendering functions
+    function renderMobileLocalGraph(graphData, depth) {
+        const data = filterLocalGraphData(graphData, depth);
+        if(window.mobileGraph && window.mobileGraph._destructor){
+            window.mobileGraph._destructor();
+        }
+        return renderGraph(data, 'mobile-link-graph', 200, true);
+    }
+
+    function renderMobileGlobalGraph(fullGraphData) {
+        if(window.mobileGraph && window.mobileGraph._destructor){
+            window.mobileGraph._destructor();
+        }
+        return renderGraph(fullGraphData, 'mobile-link-graph', 200, true);
+    }
+
     // Expose helpers for Alpine expressions
     window.renderLocalGraph = renderLocalGraph;
     window.renderGlobalGraph = renderGlobalGraph;
+    window.renderMobileLocalGraph = renderMobileLocalGraph;
+    window.renderMobileGlobalGraph = renderMobileGlobalGraph;
 
 </script>
 <div  x-init="{graphData, fullGraphData} = await fetchGraphData();" x-data="{ graphData: null, fullGraphData: null, depth: 1, savedDepth: 1, showingGlobal: false, viewMode: 'minimized', graph: null }" x-effect="document.body.classList.toggle('graph-fullscreen-active', viewMode === 'fullscreen')" id="graph-component" x-bind:class="viewMode === 'enlarged' ? 'graph graph-fs' : viewMode === 'fullscreen' ? 'graph graph-fullscreen' : 'graph'" v-scope>
@@ -486,4 +513,125 @@
             </div>
     </div>
     <!-- Modal removed: global graph now swaps inline -->
+</div>
+
+<!-- Mobile Graph Floating Action Button -->
+<div id="mobile-graph-fab" 
+     class="mobile-graph-fab" 
+     x-data="{ 
+        mobileGraphOpen: false, 
+        mobileShowingGlobal: false, 
+        mobileDepth: 1, 
+        mobileSavedDepth: 1,
+        mobileGraphData: null,
+        mobileFullGraphData: null,
+        mobileGraph: null
+     }"
+     x-init="
+        console.log('Mobile FAB component initialized');
+        fetchGraphData().then(data => {
+            console.log('Mobile FAB data loaded:', data);
+            mobileGraphData = data.graphData;
+            mobileFullGraphData = data.fullGraphData;
+        });
+     ">
+    
+    <!-- FAB Button - Only visible on mobile -->
+    <button class="mobile-graph-fab-button" 
+            x-show="!mobileGraphOpen"
+            x-on:click="
+                mobileGraphOpen = true; 
+                document.body.classList.add('mobile-graph-active');
+                // Wait for modal to show, then render graph
+                setTimeout(() => {
+                    console.log('FAB clicked, data available:', mobileGraphData !== null, mobileFullGraphData !== null);
+                    if (mobileGraphData || mobileFullGraphData) {
+                        mobileGraph = mobileShowingGlobal ? renderMobileGlobalGraph(mobileFullGraphData) : renderMobileLocalGraph(mobileGraphData, mobileDepth);
+                    } else {
+                        console.warn('Mobile graph data not available yet');
+                        // Try to fetch data if not available
+                        fetchGraphData().then(data => {
+                            mobileGraphData = data.graphData;
+                            mobileFullGraphData = data.fullGraphData;
+                            mobileGraph = mobileShowingGlobal ? renderMobileGlobalGraph(mobileFullGraphData) : renderMobileLocalGraph(mobileGraphData, mobileDepth);
+                        });
+                    }
+                }, 400);
+            "
+            aria-label="Open Graph">
+        <i icon-name="network" aria-hidden="true"></i>
+    </button>
+    
+    <!-- Mobile Fullscreen Graph Modal -->
+    <div class="mobile-graph-modal" 
+         x-show="mobileGraphOpen"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
+        
+        <!-- Graph Container -->
+        <div id="mobile-link-graph"></div>
+        
+        <!-- Mobile Graph Controls - Identical to Desktop -->
+        <div class="mobile-graph-title-container">
+            <div class="graph-title">Knowledge Graph</div>
+        </div>
+        <div id="mobile-graph-controls" class="mobile-graph-controls">
+            <div class="depth-control" x-show="!mobileShowingGlobal">
+                <label for="mobile-graph-depth">Depth</label>
+                <div class="simple-slider">
+                    <input x-model.number="mobileDepth" 
+                           type="range" 
+                           min="1" 
+                           max="3" 
+                           step="1" 
+                           id="mobile-graph-depth"
+                           x-on:input="
+                               if (!mobileShowingGlobal && mobileGraphData) {
+                                   mobileGraph = renderMobileLocalGraph(mobileGraphData, mobileDepth);
+                               }
+                           ">
+                </div>
+                <span id="mobile-depth-display" x-text="mobileDepth"></span>
+            </div>
+            <div class="spacer" x-show="mobileShowingGlobal"></div>
+            <div class="ctrl-right">
+                <div class="button-container">
+                    <!-- Global/Local Toggle -->
+                    <span id="mobile-global-graph-btn"
+                          x-on:click="
+                             if(!mobileShowingGlobal){
+                                 mobileSavedDepth = mobileDepth;
+                                 mobileShowingGlobal = true;
+                                 // Switch to global graph
+                                 if (mobileFullGraphData) {
+                                     mobileGraph = renderMobileGlobalGraph(mobileFullGraphData);
+                                 }
+                              } else {
+                                 mobileDepth = mobileSavedDepth;
+                                 mobileShowingGlobal = false;
+                                 // Switch to local graph
+                                 if (mobileGraphData) {
+                                     mobileGraph = renderMobileLocalGraph(mobileGraphData, mobileDepth);
+                                 }
+                              }
+                          "
+                          :title="mobileShowingGlobal ? 'Return to page graph' : 'Show global graph'">
+                          <i icon-name="globe" x-show="!mobileShowingGlobal" aria-hidden="true"></i>
+                          <i icon-name="file-check" x-show="mobileShowingGlobal" aria-hidden="true"></i>
+                    </span>
+                    
+                    <!-- Close Button -->
+                    <span id="mobile-graph-close-btn"
+                          x-on:click="mobileGraphOpen = false; document.body.classList.remove('mobile-graph-active')"
+                          title="Close Graph">
+                        <i icon-name="x" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
