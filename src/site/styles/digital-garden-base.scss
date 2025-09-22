@@ -174,15 +174,15 @@ body.graph-fullscreen-active .filetree-sidebar {
   width: 40px; // Larger than control buttons but smaller than original
   height: 40px;
   border-radius: 8px; // Slightly larger radius
-  background-color: var(--background-primary); /* Light background like site */
-  border: 1px solid var(--background-modifier-border); /* Subtle border like site elements */
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd; /* Light gray border */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1000;
-  color: var(--text-primary); /* Use body text color for icon */
+  color: #333; /* Dark gray icon */
   transition: all 0.2s ease;
   
   @media (max-width: 1400px) {
@@ -190,9 +190,9 @@ body.graph-fullscreen-active .filetree-sidebar {
   }
   
   &:hover {
-    background-color: var(--text-primary); /* Dark background on hover */
-    border: 1px solid var(--text-primary); /* Dark border on hover */
-    color: var(--background-primary); /* Light icon on dark background */
+    background-color: #333; /* Dark background on hover */
+    border: 1px solid #333; /* Dark border on hover */
+    color: #fff; /* White icon on dark background */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
   }
@@ -244,7 +244,7 @@ body.graph-fullscreen-active .filetree-sidebar {
     transform: translateY(-50%);
     margin-right: 12px;
     background-color: var(--background-primary); /* Site background color */
-    color: var(--text-primary); /* Site body text color */
+    color: #333 !important; /* Dark text - force override */
     padding: 8px 12px;
     border-radius: 6px;
     font-size: 13px;
