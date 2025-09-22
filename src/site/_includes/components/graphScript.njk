@@ -1,4 +1,81 @@
 <script>
+    // Add custom tooltip styling
+    if (!document.getElementById('graph-tooltip-styles')) {
+        const style = document.createElement('style');
+        style.id = 'graph-tooltip-styles';
+        style.textContent = `
+            /* Target all possible tooltip selectors */
+            .scene-tooltip, 
+            .graph-tooltip,
+            [role="tooltip"],
+            .force-graph-container [role="tooltip"],
+            .force-graph-container .scene-tooltip {
+                background: var(--background-secondary) !important;
+                opacity: 0.9 !important;
+                color: #57120D !important;
+                font-weight: bold !important;
+                border: none !important;
+                border-radius: 4px !important;
+                padding: 6px 10px !important;
+                font-size: 12px !important;
+                font-family: Sans-Serif !important;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+                z-index: 10000 !important;
+                max-width: 200px !important;
+                word-wrap: break-word !important;
+                pointer-events: none !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // Graph Color Configuration - Uses CSS variables for consistency with theme
+    const GRAPH_CONFIG = {
+        // Choose base color source:
+        colorSource: 'graph-main',  // Options: 'text-normal', 'text-accent', 'custom', 'graph-main'
+        
+        // Custom color (only used if colorSource is 'custom'):
+        customColor: '#44CF6E',
+        
+        // Opacity levels for different states
+        fadedOpacity: 0.05,     // Much more transparent for unconnected nodes
+        connectedOpacity: 1.0,  // Full opacity for connected nodes (clear contrast)
+    };
+
+    // UX IMPROVEMENTS IMPLEMENTED:
+    // =============================
+    // 1. ZOOM-RESPONSIVE TEXT: Text opacity scales from 30% to 100% based on zoom level
+    // 2. ADAPTIVE TRUNCATION: More aggressive text truncation when zoomed out (30%-100% of max width)
+    // 3. DYNAMIC LINE LIMITS: 1-3 lines of text allowed based on zoom level
+    // 4. PROGRESSIVE DISCLOSURE: Full titles appear as user zooms in, reducing visual noise
+    // 5. ZOOM-INDEPENDENT SIZING: Text and containers scale inversely to maintain consistent visual size
+    //
+    // ADDITIONAL UX SUGGESTIONS:
+    // ==========================
+    // A. NODE CLUSTERING: At very low zoom levels, group nearby nodes to reduce density
+    // B. FADE ANIMATIONS: Smooth transitions when text opacity changes during zoom
+    // C. SMART POSITIONING: Avoid label overlaps using force-based positioning
+    // D. CONTEXTUAL ACTIONS: Right-click menu for copy title, open in new tab, etc.
+    // E. MINI-MAP: Small overview in corner showing current viewport in full graph
+    // F. SEARCH HIGHLIGHT: Visual highlighting of nodes matching search terms
+    // G. BREADCRUMB TRAIL: Show path from current page to related nodes
+    // H. TEMPORAL INDICATORS: Show recently visited or modified nodes differently
+    // I. PERFORMANCE OPTIMIZATION: Use LOD (Level of Detail) rendering for large graphs
+
+    // Simple approach - use CSS variables like main branch but with enhanced contrast
+    const GRAPH_COLORS = {
+        // Nodes
+        active: getCssVar("--graph-main"),              // Hovered nodes - green from theme
+        connected: getCssVar("--graph-main"),           // Connected nodes - same green
+        faded: 'rgba(68, 207, 110, 0.08)',             // Unconnected nodes - very faded green
+        current: getCssVar("--graph-main"),             // Current page indicator
+        
+        // Edges/Links  
+        edgeActive: 'rgba(20, 124, 131, 0.4)',         // Active edges - semi-transparent teal
+        edgeConnected: 'rgba(20, 124, 131, 0.8)',      // Connected edges - more opaque teal
+        edgeFaded: 'rgba(20, 124, 131, 0.08)'          // Faded edges - very transparent teal
+    };
+
     async function fetchGraphData() {
         const graphData = await fetch('/graph.json').then(res => res.json());
         const fullGraphData  = filterFullGraphData(graphData);
@@ -54,6 +131,7 @@
 
     function getCssVar(variable) {return getComputedStyle(document.body).getPropertyValue(variable)}
 
+
     function htmlDecode(input) {
         var doc = new DOMParser().parseFromString(input, "text/html");
         return doc.documentElement.textContent;
@@ -63,34 +141,56 @@
         if (graphData == null) {
             return;
         }
+        if (typeof ForceGraph === 'undefined') {
+            console.warn('ForceGraph library not loaded yet');
+            return;
+        }
         const el = document.getElementById(id);
+        if (!el) {
+            console.warn(`Graph container element with id "${id}" not found`);
+            return;
+        }
         width = el.offsetWidth;
         height = el.offsetHeight;
+        
+        if (width === 0 || height === 0) {
+            console.warn(`Graph container ${id} has zero dimensions: ${width}x${height}`);
+            return;
+        }
         const highlightNodes = new Set();
         let hoverNode = null;
-        const color = getCssVar("--graph-main");
-        const mutedColor = getCssVar("--graph-muted");
+        // Use configured colors from GRAPH_COLORS object
         let Graph = ForceGraph()
         (el)
             .graphData(graphData)
             .nodeId('id')
-            .nodeLabel('title')
+            .nodeLabel(fullScreen ? '' : (node) => htmlDecode(node.title))
             .linkSource('source')
             .linkTarget('target')
             .d3AlphaDecay(0.10)
             .width(width)
             .height(height)
-            .linkDirectionalArrowLength(2)
+            .linkDirectionalArrowLength(4)     // Increased from 2 for better visibility
             .linkDirectionalArrowRelPos(0.5)
+            .linkDirectionalArrowColor((link) => {
+                if (hoverNode == null) {
+                    return 'rgba(20, 124, 131, 0.6)'; // Default semi-transparent arrow
+                }
+                if (link.source.id == hoverNode.id || link.target.id == hoverNode.id) {
+                    return 'rgba(20, 124, 131, 0.8)'; // Connected arrows - more opaque
+                } else {
+                    return 'rgba(20, 124, 131, 0.15)'; // Unconnected arrows - very transparent
+                }
+            })
             .autoPauseRedraw(false)
             .linkColor((link) => {
                 if (hoverNode == null) {
-                    return color;
+                    return GRAPH_COLORS.edgeActive;
                 }
                 if (link.source.id == hoverNode.id || link.target.id == hoverNode.id) {
-                    return color;
+                    return GRAPH_COLORS.edgeConnected;
                 } else {
-                    return mutedColor;
+                    return GRAPH_COLORS.edgeFaded;
                 }
                 
             })
@@ -101,12 +201,17 @@
                 ctx.beginPath();
                 ctx.arc(node.x, node.y, nodeR, 0, 2 * Math.PI, false);
                 if (hoverNode == null) {
-                    ctx.fillStyle = color;
+                    ctx.fillStyle = GRAPH_COLORS.active;
                 } else {
-                    if (node == hoverNode || highlightNodes.has(node.url)) {
-                        ctx.fillStyle = color;
+                    if (node == hoverNode) {
+                        // Hovered node gets the strongest color
+                        ctx.fillStyle = GRAPH_COLORS.active;
+                    } else if (highlightNodes.has(node.url)) {
+                        // Connected nodes get the connected color
+                        ctx.fillStyle = GRAPH_COLORS.connected;
                     } else {
-                        ctx.fillStyle = mutedColor;
+                        // Unconnected nodes are very faded
+                        ctx.fillStyle = GRAPH_COLORS.faded;
                     }
                 }
                  
@@ -116,17 +221,127 @@
                     ctx.beginPath();
                     ctx.arc(node.x, node.y, nodeR + 1, 0, 2 * Math.PI, false);
                     ctx.lineWidth = 0.5;
-                    ctx.strokeStyle = color;
+                    ctx.strokeStyle = GRAPH_COLORS.current;
                     ctx.stroke();
                 }
 
-                const label = htmlDecode(node.title)
-                const fontSize = 3.5;
-                ctx.font = `${fontSize}px Sans-Serif`;
-
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'top';
-                ctx.fillText(label, node.x, node.y + nodeR + 2);
+                // Only show labels when enlarged or fullscreen (not minimized)  
+                if (fullScreen) {
+                    // Determine if this label should be shown
+                    let showLabel = true;
+                    if (hoverNode != null) {
+                        // When hovering, only show labels for hovered and connected nodes
+                        showLabel = (node == hoverNode || highlightNodes.has(node.url));
+                    }
+                    
+                    if (showLabel) {
+                        const label = htmlDecode(node.title);
+                        // Get current zoom level and adjust font size - mostly stable but slightly grows with zoom
+                        const zoomLevel = Graph.zoom();
+                        const baseFontSize = 10; // Increased for better readability
+                        // Instead of fully inverse scaling, use a gentler approach that allows more noticeable growth
+                        const zoomGrowthFactor = 1 + (Math.log(zoomLevel + 1) * 0.25); // Increased multiplier for more noticeable growth
+                        const fontSize = (baseFontSize / Math.max(zoomLevel, 0.5)) * zoomGrowthFactor;
+                        ctx.font = `bold ${fontSize}px Sans-Serif`;
+                        
+                        // Calculate text opacity based on zoom level (0.3 to 1.0) - starts transparency at higher zoom
+                        const minOpacity = 0.3;
+                        const maxOpacity = 1.0;
+                        const minZoom = 1.5; // Further increased - transparency starts when zoomed in more
+                        const maxZoom = 4.0; // Further increased - full opacity at even higher zoom
+                        let textOpacity = Math.min(maxOpacity, Math.max(minOpacity, 
+                            minOpacity + (maxOpacity - minOpacity) * ((zoomLevel - minZoom) / (maxZoom - minZoom))
+                        ));
+                        
+                        // Override opacity for hovered node and connected nodes - always full opacity
+                        if (node == hoverNode || (hoverNode && highlightNodes.has(node.url))) {
+                            textOpacity = 1.0;
+                        }
+                        
+                        // Dynamic width and truncation based on zoom
+                        const baseMaxWidth = 100;
+                        const maxWidth = baseMaxWidth / Math.max(zoomLevel, 0.5);
+                        
+                        // More aggressive truncation when zoomed out, but show full titles for hovered/connected nodes
+                        let truncationFactor = Math.min(1.0, Math.max(0.3, zoomLevel / 1.5));
+                        
+                        // Override truncation for hovered and connected nodes - show full title
+                        if (node == hoverNode || (hoverNode && highlightNodes.has(node.url))) {
+                            truncationFactor = 2.0; // Allow much wider text for full titles
+                        }
+                        
+                        const adjustedMaxWidth = maxWidth * truncationFactor;
+                        
+                        const lineHeight = fontSize * 1.2; // Line spacing
+                        
+                        // Split text into multiple lines based on adjusted max width
+                        const words = label.split(' ');
+                        const lines = [];
+                        let currentLine = '';
+                        
+                        // Limit number of lines when zoomed out (1-3 lines based on zoom)
+                        let maxLines = Math.max(1, Math.min(3, Math.floor(zoomLevel * 2)));
+                        
+                        // Allow more lines for hovered and connected nodes to show full titles
+                        if (node == hoverNode || (hoverNode && highlightNodes.has(node.url))) {
+                            maxLines = 5; // Allow up to 5 lines for full titles
+                        }
+                        
+                        for (const word of words) {
+                            if (lines.length >= maxLines - 1 && currentLine) {
+                                // If we're at max lines, truncate and add ellipsis
+                                const testLine = currentLine ? `${currentLine} ${word}...` : `${word}...`;
+                                const testWidth = ctx.measureText(testLine).width;
+                                if (testWidth <= adjustedMaxWidth) {
+                                    currentLine = testLine;
+                                } else {
+                                    currentLine += '...';
+                                }
+                                break;
+                            }
+                            
+                            const testLine = currentLine ? `${currentLine} ${word}` : word;
+                            const testWidth = ctx.measureText(testLine).width;
+                            
+                            if (testWidth <= adjustedMaxWidth) {
+                                currentLine = testLine;
+                            } else {
+                                if (currentLine) {
+                                    lines.push(currentLine);
+                                    currentLine = word;
+                                } else {
+                                    // Single word is too long, truncate it
+                                    let truncated = word;
+                                    while (ctx.measureText(truncated + '...').width > adjustedMaxWidth && truncated.length > 0) {
+                                        truncated = truncated.slice(0, -1);
+                                    }
+                                    lines.push(truncated + '...');
+                                    break;
+                                }
+                            }
+                        }
+                        if (currentLine && lines.length < maxLines) {
+                            lines.push(currentLine);
+                        }
+                        
+                        // Position label at bottom right of node
+                        const labelX = node.x + nodeR + 2; // 2px offset from node edge
+                        const labelY = node.y + nodeR - 2; // Slightly above bottom edge
+                        
+                        // Draw multi-line label text without background
+                        ctx.textAlign = 'left';
+                        ctx.textBaseline = 'bottom';
+                        
+                        // Apply opacity to text color
+                        const baseColor = '#57120D';
+                        ctx.fillStyle = `rgba(87, 18, 13, ${textOpacity})`; // Text color with opacity
+                        
+                        lines.forEach((line, index) => {
+                            const currentY = labelY + (index * lineHeight);
+                            ctx.fillText(line, labelX, currentY);
+                        });
+                    }
+                }
             })
             .onNodeClick(node => {
                 window.location = node.url;
@@ -140,20 +355,82 @@
                 hoverNode = node || null;
                 
             });
-            if (fullScreen || (delay != null && graphData.nodes.length > 4)) {
+
+            // Configure force simulation for better node spacing (especially for global graph)
+            if (graphData.nodes.length > 20) {
+                // For larger graphs (global), much tighter spacing and stronger centering
+                Graph.d3Force('link').distance(50); // Further reduced from 65
+                Graph.d3Force('charge').strength(-100); // Further reduced from -150
+                Graph.d3Force('center').strength(1.2); // Keep strong centering to pull isolated nodes closer
+            } else {
+                // For smaller graphs (local), moderate spacing
+                Graph.d3Force('link').distance(60);
+                Graph.d3Force('charge').strength(-120);
+                Graph.d3Force('center').strength(0.5);
+            }
+            
+            if (fullScreen || (delay != null && graphData.nodes.length > 1)) {
                 setTimeout(() => {
                     Graph.zoomToFit(5, 75);
                 }, delay || 200);
             }
+
+            // Apply custom tooltip styling for minimized mode
+            if (!fullScreen) {
+                // Set up a mutation observer to catch dynamically created tooltips
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        mutation.addedNodes.forEach((node) => {
+                            if (node.nodeType === Node.ELEMENT_NODE) {
+                                // Check if this node or its children contain tooltips
+                                const tooltips = node.querySelectorAll ? 
+                                    [node, ...node.querySelectorAll('*')].filter(el => 
+                                        el.style && el.style.position === 'absolute' && 
+                                        (el.textContent || el.getAttribute('role') === 'tooltip')
+                                    ) : [];
+                                
+                                tooltips.forEach(tooltip => {
+                                    tooltip.style.setProperty('background', 'var(--background-secondary)', 'important');
+                                    tooltip.style.setProperty('color', '#57120D', 'important');
+                                    tooltip.style.setProperty('font-weight', 'bold', 'important');
+                                    tooltip.style.setProperty('opacity', '0.9', 'important');
+                                    tooltip.style.setProperty('border-radius', '4px', 'important');
+                                    tooltip.style.setProperty('padding', '6px 10px', 'important');
+                                    tooltip.style.setProperty('font-size', '12px', 'important');
+                                    tooltip.style.setProperty('z-index', '10000', 'important');
+                                });
+                            }
+                        });
+                    });
+                });
+                
+                observer.observe(document.body, { childList: true, subtree: true });
+                
+                // Cleanup observer when graph is destroyed
+                Graph._customObserver = observer;
+            }
+
         return Graph;
     }
 
-    function renderLocalGraph(graphData, depth, fullScreen) {
-        if (window.graph){
+    // Shared helper: dispose current graph then render new data into same canvas
+    function swapGraph(data, viewMode){
+        if(window.graph && window.graph._destructor){
+            // Clean up custom observer if it exists
+            if(window.graph._customObserver){
+                window.graph._customObserver.disconnect();
+            }
             window.graph._destructor();
         }
+        const isFullscreen = viewMode === 'fullscreen';
+        const enlarged = viewMode === 'enlarged' || isFullscreen;
+        const delay = enlarged ? 200 : null; // auto-fit when enlarged/fullscreen
+        return renderGraph(data, 'link-graph', delay, enlarged);
+    }
+
+    function renderLocalGraph(graphData, depth, viewMode) {
         const data = filterLocalGraphData(graphData, depth);
-        return renderGraph(data, 'link-graph', null, fullScreen);
+        return swapGraph(data, viewMode);
     }
 
     function filterFullGraphData(graphData) {
@@ -169,46 +446,190 @@
         return data
     }
 
-    function openFullGraph(fullGraphData) {
-        lucide.createIcons({
-                attrs: {
-                    class: ["svg-icon"]
-                }
-            });
-        return renderGraph(fullGraphData, "full-graph-container", 200, false);;
+    function renderGlobalGraph(fullGraphData, viewMode) {
+        return swapGraph(fullGraphData, viewMode);
     }
 
-    function closefullGraph(fullGraph) {
-        if (fullGraph) {
-            fullGraph._destructor();
+    // Mobile-specific graph rendering functions
+    function renderMobileLocalGraph(graphData, depth) {
+        const data = filterLocalGraphData(graphData, depth);
+        if(window.mobileGraph && window.mobileGraph._destructor){
+            window.mobileGraph._destructor();
         }
-        return null;
+        return renderGraph(data, 'mobile-link-graph', 200, true);
     }
+
+    function renderMobileGlobalGraph(fullGraphData) {
+        if(window.mobileGraph && window.mobileGraph._destructor){
+            window.mobileGraph._destructor();
+        }
+        return renderGraph(fullGraphData, 'mobile-link-graph', 200, true);
+    }
+
+    // Expose helpers for Alpine expressions
+    window.renderLocalGraph = renderLocalGraph;
+    window.renderGlobalGraph = renderGlobalGraph;
+    window.renderMobileLocalGraph = renderMobileLocalGraph;
+    window.renderMobileGlobalGraph = renderMobileGlobalGraph;
+
 </script>
-<div  x-init="{graphData, fullGraphData} = await fetchGraphData();" x-data="{ graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null}" id="graph-component" x-bind:class="fullScreen ? 'graph graph-fs' : 'graph'" v-scope>
+<div  x-init="{graphData, fullGraphData} = await fetchGraphData();" x-data="{ graphData: null, fullGraphData: null, depth: 1, savedDepth: 1, showingGlobal: false, viewMode: 'minimized', graph: null }" x-effect="document.body.classList.toggle('graph-fullscreen-active', viewMode === 'fullscreen')" id="graph-component" x-bind:class="viewMode === 'enlarged' ? 'graph graph-fs' : viewMode === 'fullscreen' ? 'graph graph-fullscreen' : 'graph'" v-scope>
     <div class="graph-title-container">
         <div class="graph-title">Knowledge Graph</div>
-        <div id="graph-controls">
-                <div class="depth-control">
-                    <label for="graph-depth">Depth</label>
-                    <div class="slider">
-                            <input x-model.number="depth" name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth"/>
-                    <datalist id="depthmarkers">
-                            <option value="1" label="1"></option>
-                            <option value="2" label="2"></option>
-                            <option value="3" label="3"></option>
-                    </datalist>
-                    </div>
-                    <span id="depth-display" x-text="depth"></span>
-                </div>
-                <div class="ctrl-right">
-                    <span id="global-graph-btn" x-on:click="showFullGraph = true; setTimeout(() => {fullGraph = openFullGraph(fullGraphData)}, 100)"><i  icon-name="globe" aria-hidden="true"></i></span>
-                    <span  id="graph-fs-btn"  x-on:click="fullScreen = !fullScreen"><i  icon-name="expand" aria-hidden="true"></i></span>
-                </div>
-        </div>
     </div>
-    <div x-effect="window.graph = renderLocalGraph(graphData, depth, fullScreen)" id="link-graph" ></div>
-    <div x-show="showFullGraph" id="full-graph" class="show" style="display: none;">
-        <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
+    <div id="link-graph" x-effect="window.graph = showingGlobal ? renderGlobalGraph(fullGraphData, viewMode) : renderLocalGraph(graphData, depth, viewMode)"></div>
+    <div id="graph-controls">
+            <div class="depth-control" x-show="!showingGlobal">
+                <label for="graph-depth">Depth</label>
+                <div class="simple-slider">
+                    <input x-model.number="depth" type="range" min="1" max="3" step="1" id="graph-depth">
+                </div>
+                <span id="depth-display" x-text="depth"></span>
+            </div>
+            <div class="spacer" x-show="showingGlobal"></div>
+            <div class="ctrl-right">
+                <div class="button-container">
+                    <span id="global-graph-btn"
+                          x-on:click="
+                             if(!showingGlobal){
+                                 savedDepth = depth;
+                                 showingGlobal = true;
+                                 document.getElementById('graph-depth').disabled = true;
+                                 
+                              } else {
+                                 depth = savedDepth;
+                                 showingGlobal = false;
+                                 document.getElementById('graph-depth').disabled = false;
+                              }
+                          "
+                          :title="showingGlobal ? 'Return to page graph' : 'Show global graph'">
+                          <i icon-name="globe" x-show="!showingGlobal" aria-hidden="true"></i>
+                          <i icon-name="file-check" x-show="showingGlobal" aria-hidden="true"></i>
+                    </span>
+                    <span x-show="viewMode === 'minimized'" id="graph-enlarge-btn" x-on:click="viewMode = 'enlarged'" title="Enlarge graph"><i icon-name="expand" aria-hidden="true"></i></span>
+                    <span x-show="viewMode === 'enlarged'" id="graph-fullscreen-btn" x-on:click="viewMode = 'fullscreen'" title="Enter fullscreen"><i icon-name="fullscreen" aria-hidden="true"></i></span>
+                    <span x-show="viewMode === 'enlarged'" id="graph-minimize-btn" x-on:click="viewMode = 'minimized'" title="Minimize graph"><i icon-name="minimize-2" aria-hidden="true"></i></span>
+                    <span x-show="viewMode === 'fullscreen'" id="graph-close-btn" x-on:click="viewMode = 'minimized'" title="Exit fullscreen"><i icon-name="x" aria-hidden="true"></i></span>
+                </div>
+            </div>
+            <div class="spacer" x-show="showingGlobal"></div>
+    </div>
+    <!-- Modal removed: global graph now swaps inline -->
+</div>
+
+<!-- Mobile Graph Floating Action Button -->
+<div id="mobile-graph-fab" 
+     class="mobile-graph-fab" 
+     x-data="{ 
+        mobileGraphOpen: false, 
+        mobileShowingGlobal: false, 
+        mobileDepth: 1, 
+        mobileSavedDepth: 1,
+        mobileGraphData: null,
+        mobileFullGraphData: null,
+        mobileGraph: null
+     }"
+     x-init="
+        fetchGraphData().then(data => {
+            mobileGraphData = data.graphData;
+            mobileFullGraphData = data.fullGraphData;
+        });
+     ">
+    
+    <!-- FAB Button - Only visible on mobile -->
+    <button class="mobile-graph-fab-button" 
+            x-show="!mobileGraphOpen"
+            x-on:click="
+                mobileGraphOpen = true; 
+                document.body.classList.add('mobile-graph-active');
+                // Wait for modal to show, then render graph
+                setTimeout(() => {
+                    if (mobileGraphData || mobileFullGraphData) {
+                        mobileGraph = mobileShowingGlobal ? renderMobileGlobalGraph(mobileFullGraphData) : renderMobileLocalGraph(mobileGraphData, mobileDepth);
+                    } else {
+                        // Try to fetch data if not available
+                        fetchGraphData().then(data => {
+                            mobileGraphData = data.graphData;
+                            mobileFullGraphData = data.fullGraphData;
+                            mobileGraph = mobileShowingGlobal ? renderMobileGlobalGraph(mobileFullGraphData) : renderMobileLocalGraph(mobileGraphData, mobileDepth);
+                        });
+                    }
+                }, 400);
+            "
+            aria-label="Open Graph">
+        <i icon-name="chart-network" aria-hidden="true"></i>
+    </button>
+    
+    <!-- Mobile Fullscreen Graph Modal -->
+    <div class="mobile-graph-modal" 
+         x-show="mobileGraphOpen"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0">
+        
+        <!-- Graph Container -->
+        <div id="mobile-link-graph"></div>
+        
+        <!-- Mobile Graph Controls - Identical to Desktop -->
+        <div class="mobile-graph-title-container">
+            <div class="graph-title">Knowledge Graph</div>
+        </div>
+        <div id="mobile-graph-controls" class="mobile-graph-controls">
+            <div class="depth-control" x-show="!mobileShowingGlobal">
+                <label for="mobile-graph-depth">Depth</label>
+                <div class="simple-slider">
+                    <input x-model.number="mobileDepth" 
+                           type="range" 
+                           min="1" 
+                           max="3" 
+                           step="1" 
+                           id="mobile-graph-depth"
+                           x-on:input="
+                               if (!mobileShowingGlobal && mobileGraphData) {
+                                   mobileGraph = renderMobileLocalGraph(mobileGraphData, mobileDepth);
+                               }
+                           ">
+                </div>
+                <span id="mobile-depth-display" x-text="mobileDepth"></span>
+            </div>
+            <div class="spacer" x-show="mobileShowingGlobal"></div>
+            <div class="ctrl-right">
+                <div class="button-container">
+                    <!-- Global/Local Toggle -->
+                    <span id="mobile-global-graph-btn"
+                          x-on:click="
+                             if(!mobileShowingGlobal){
+                                 mobileSavedDepth = mobileDepth;
+                                 mobileShowingGlobal = true;
+                                 // Switch to global graph
+                                 if (mobileFullGraphData) {
+                                     mobileGraph = renderMobileGlobalGraph(mobileFullGraphData);
+                                 }
+                              } else {
+                                 mobileDepth = mobileSavedDepth;
+                                 mobileShowingGlobal = false;
+                                 // Switch to local graph
+                                 if (mobileGraphData) {
+                                     mobileGraph = renderMobileLocalGraph(mobileGraphData, mobileDepth);
+                                 }
+                              }
+                          "
+                          :title="mobileShowingGlobal ? 'Return to page graph' : 'Show global graph'">
+                          <i icon-name="globe" x-show="!mobileShowingGlobal" aria-hidden="true"></i>
+                          <i icon-name="file-check" x-show="mobileShowingGlobal" aria-hidden="true"></i>
+                    </span>
+                    
+                    <!-- Close Button -->
+                    <span id="mobile-graph-close-btn"
+                          x-on:click="mobileGraphOpen = false; document.body.classList.remove('mobile-graph-active')"
+                          title="Close Graph">
+                        <i icon-name="x" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

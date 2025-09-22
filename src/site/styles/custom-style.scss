@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /* CRITICAL: Hide filetree sticky note icons immediately - must be first */
 .filetree-sidebar i[icon-name="sticky-note"] {
   display: none !important;
@@ -39,7 +41,6 @@
   visibility: hidden !important;
   opacity: 0 !important;
 }
-
 body {
   --cards-min-width: 180px;
   --cards-max-width: 1fr;
@@ -50,8 +51,12 @@ body {
   --cards-background: transparent;
   --cards-border-width: 1px;
   --cards-aspect-ratio: auto;
-  --cards-columns: repeat(auto-fit, minmax(var(--cards-min-width), var(--cards-max-width)));
-  padding-block: 0; }
+  --cards-columns: repeat(
+    auto-fit,
+    minmax(var(--cards-min-width), var(--cards-max-width))
+  );
+  padding-block: 0;
+}
 
 /* Force body padding with higher specificity */
 body.theme-light,
@@ -62,85 +67,347 @@ body {
 
 @media (max-width: 400pt) {
   body {
-    --cards-min-width:var(--cards-mobile-width); } }
+    --cards-min-width: var(--cards-mobile-width);
+  }
+}
 .cards.table-100 table.dataview tbody,
 .table-100 .cards table.dataview tbody {
-  padding: 0.25rem 0.75rem; }
+  padding: 0.25rem 0.75rem;
+}
 
 .cards table.dataview {
   --table-width: 100%;
-  --table-edge-cell-padding-first: calc(var(--cards-padding)/2);
-  --table-edge-cell-padding-last: calc(var(--cards-padding)/2);
-  --table-cell-padding: calc(var(--cards-padding)/3) calc(var(--cards-padding)/2);
-  line-height: 1.3; }
-  .cards table.dataview tbody {
-    clear: both;
-    padding: 0.5rem 0;
-    display: grid;
-    grid-template-columns: var(--cards-columns);
-    grid-column-gap: 0.75rem;
-    grid-row-gap: 0.75rem; }
-  .cards table.dataview > tbody > tr {
-    background-color: var(--cards-background);
-    border: var(--cards-border-width) solid var(--background-modifier-border);
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0 0 calc(var(--cards-padding)/3) 0;
-    border-radius: 6px;
-    overflow: hidden;
-    transition: box-shadow 0.15s linear;
-    max-width: var(--cards-max-width);
-    height: auto; }
-  .cards table.dataview > tbody > tr:hover {
-    border: var(--cards-border-width) solid var(--background-modifier-border-hover);
-    box-shadow: 0 4px 6px 0px rgba(0, 0, 0, 0.05), 0 1px 3px 1px rgba(0, 0, 0, 0.025);
-    transition: box-shadow 0.15s linear; }
-    .cards table.dataview tbody > tr > td:first-child {
-      font-weight: var(--bold-weight);
-      border: none; }
-    .cards table.dataview tbody > tr > td:first-child a {
-      display: block; }
-    .cards table.dataview tbody > tr > td:last-child {
-      border: none; }
-    .cards table.dataview tbody > tr > td:not(:first-child) {
-      font-size: calc(var(--table-text-size) * .9);
-      color: var(--text-muted); }
-    .cards table.dataview tbody > tr > td > * {
-      padding: calc(var(--cards-padding)/3) 0; }
-    .cards table.dataview tbody > tr > td:not(:last-child):not(:first-child) {
-      padding: 4px 0;
-      border-bottom: 1px solid var(--background-modifier-border);
-      width: calc(100% - var(--cards-padding));
-      margin: 0 calc(var(--cards-padding)/2); }
-    .cards table.dataview tbody > tr > td a {
-      text-decoration: none; }
-    .cards table.dataview tbody > tr > td > button {
-      width: 100%;
-      margin: calc(var(--cards-padding)/2) 0; }
-    .cards table.dataview tbody > tr > td:last-child > button {
-      margin-bottom: calc(var(--cards-padding)/6); }
-    .cards table.dataview tbody > tr > td > ul {
-      width: 100%;
-      padding: 0.25em 0 !important;
-      margin: 0 auto !important; }
-    .cards table.dataview tbody > tr > td:has(img) {
-      padding: 0 !important;
-      background-color: var(--background-secondary);
-      display: block;
-      margin: 0;
-      width: 100%; }
-    .cards table.dataview tbody > tr > td img {
-      aspect-ratio: var(--cards-aspect-ratio);
-      width: 100%;
-      object-fit: var(--cards-image-fit);
-      max-height: var(--cards-image-height);
-      background-color: var(--background-secondary);
-      vertical-align: bottom; }
+  --table-edge-cell-padding-first: calc(var(--cards-padding) / 2);
+  --table-edge-cell-padding-last: calc(var(--cards-padding) / 2);
+  --table-cell-padding: calc(var(--cards-padding) / 3)
+    calc(var(--cards-padding) / 2);
+  line-height: 1.3;
+}
+.cards table.dataview tbody {
+  clear: both;
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: var(--cards-columns);
+  grid-column-gap: 0.75rem;
+  grid-row-gap: 0.75rem;
+}
+.cards table.dataview > tbody > tr {
+  background-color: var(--cards-background);
+  border: var(--cards-border-width) solid var(--background-modifier-border);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 0 calc(var(--cards-padding) / 3) 0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.15s linear;
+  max-width: var(--cards-max-width);
+  height: auto;
+}
+.cards table.dataview > tbody > tr:hover {
+  border: var(--cards-border-width) solid
+    var(--background-modifier-border-hover);
+  box-shadow: 0 4px 6px 0px rgba(0, 0, 0, 0.05),
+    0 1px 3px 1px rgba(0, 0, 0, 0.025);
+  transition: box-shadow 0.15s linear;
+}
+.cards table.dataview tbody > tr > td {
+  /* Paragraphs */
+  /* Links */
+  /* Buttons */
+  /* Lists */
+  /* Images */
+}
+.cards table.dataview tbody > tr > td:first-child {
+  font-weight: var(--bold-weight);
+  border: none;
+}
+.cards table.dataview tbody > tr > td:first-child a {
+  display: block;
+}
+.cards table.dataview tbody > tr > td:last-child {
+  border: none;
+}
+.cards table.dataview tbody > tr > td:not(:first-child) {
+  font-size: calc(var(--table-text-size) * 0.9);
+  color: var(--text-muted);
+}
+.cards table.dataview tbody > tr > td > * {
+  padding: calc(var(--cards-padding) / 3) 0;
+}
+.cards table.dataview tbody > tr > td:not(:last-child):not(:first-child) {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+  width: calc(100% - var(--cards-padding));
+  margin: 0 calc(var(--cards-padding) / 2);
+}
+.cards table.dataview tbody > tr > td a {
+  text-decoration: none;
+}
+.cards table.dataview tbody > tr > td > button {
+  width: 100%;
+  margin: calc(var(--cards-padding) / 2) 0;
+}
+.cards table.dataview tbody > tr > td:last-child > button {
+  margin-bottom: calc(var(--cards-padding) / 6);
+}
+.cards table.dataview tbody > tr > td > ul {
+  width: 100%;
+  padding: 0.25em 0 !important;
+  margin: 0 auto !important;
+}
+.cards table.dataview tbody > tr > td:has(img) {
+  padding: 0 !important;
+  background-color: var(--background-secondary);
+  display: block;
+  margin: 0;
+  width: 100%;
+}
+.cards table.dataview tbody > tr > td img {
+  aspect-ratio: var(--cards-aspect-ratio);
+  width: 100%;
+  object-fit: var(--cards-image-fit);
+  max-height: var(--cards-image-height);
+  background-color: var(--background-secondary);
+  vertical-align: bottom;
+}
 
-.markdown-source-view.mod-cm6.cards .dataview.table-view-table > tbody > tr > td,
+.markdown-source-view.mod-cm6.cards
+  .dataview.table-view-table
+  > tbody
+  > tr
+  > td,
 .trim-cols .cards table.dataview tbody > tr > td {
-  white-space: normal; }
+  white-space: normal;
+}
+
+/* Override Knowledge Graph range slider to hide default numeric labels */
+#graph-controls {
+  .simple-slider {
+    input[type="range"] {
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      appearance: none !important;
+      width: 100% !important;
+      height: 4px !important;
+      background: var(--interactive-normal) !important;
+      outline: none !important;
+      border-radius: 2px !important;
+      border: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      box-shadow: none !important;
+
+      /* track */
+      &::-webkit-slider-runnable-track {
+        background: var(--interactive-normal) !important;
+        height: 4px !important;
+        border-radius: 2px !important;
+      }
+      &::-moz-range-track {
+        background: var(--interactive-normal) !important;
+        height: 4px !important;
+        border-radius: 2px !important;
+      }
+
+      /* thumb */
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none !important;
+        width: 16px !important;
+        height: 16px !important;
+        background: var(--interactive-accent) !important;
+        border-radius: 50%;
+        margin-top: -6px !important;
+        cursor: pointer;
+      }
+      &::-moz-range-thumb {
+        width: 16px !important;
+        height: 16px !important;
+        background: var(--interactive-accent) !important;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none !important;
+      }
+    }
+  }
+}
+
+/* === Depth slider variables === */
+$slider-thumb-diam: 14px !default;
+$slider-thumb-radius: math.div($slider-thumb-diam, 2);
+$marker-radius: 2px;
+$track-height: 4px;
+$track-start-end-inset: $slider-thumb-radius + $marker-radius;
+
+/* ------------------------------------------------------------------
+   Knowledge-Graph Depth Slider – simplified, single-track version
+   ------------------------------------------------------------------
+   HTML we are targeting (from graphScript.njk):
+   <div class="depth-control">
+      <label for="graph-depth">Depth</label>
+      <div class="simple-slider">
+         <input id="graph-depth" type="range" min="1" max="3" step="1">
+      </div>
+      <span id="depth-display"></span>
+   </div>
+
+   Selectors in use:
+   .depth-control           – flex container for label+slider+badge
+   .simple-slider           – wrapper around the <input>
+   #graph-depth             – actual <input type="range">
+   #depth-display           – circular badge showing current depth
+
+   JavaScript (Alpine.js) only binds value changes; no appearance logic.
+
+   Issues observed:
+   • Browsers render default numeric labels ("1" & "3") at both ends.
+   • Legacy CSS produced two overlapping slider tracks (webkit + moz rules duplicated).
+   • Extra margins caused track to appear shorter than wrapper.
+
+   Fix / simplification:
+   1. Force-remove all default UA decorations: appearance, track, tick-marks.
+   2. Provide a single custom track + thumb implementation that works in WebKit, Blink & Gecko.
+   3. Zero-out margins so track spans the full 100 % of the wrapper.
+------------------------------------------------------------------- */
+#graph-controls .simple-slider {
+  width: 110px; /* small but clear */
+  position: relative;
+  display: flex;
+  align-items: center;
+  &::after {
+    content: "";
+    position: absolute;
+    left: $track-start-end-inset;
+    right: $track-start-end-inset;
+    top: 50%;
+    height: $track-height;
+    background: var(--interactive-normal);
+    border-radius: 2px;
+    transform: translateY(-50%);
+    z-index: -1; // keep behind markers & thumb
+  }
+}
+
+#graph-depth {
+  /* reset */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: $track-height;
+  margin: 0; /* remove browser default margins that created visual gap */
+  padding: 0;
+  background: var(--interactive-normal);
+  border-radius: 2px;
+  cursor: pointer;
+  background: transparent;
+}
+/* remove default number/tick container in Firefox */
+#graph-depth::-moz-focus-outer {
+  border: 0;
+}
+
+/* track (Chrome / Safari) */
+#graph-depth::-webkit-slider-runnable-track {
+  height: $track-height;
+  background: var(--interactive-normal);
+  border-radius: 2px;
+}
+
+/* thumb (Chrome / Safari) */
+#graph-depth::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: $slider-thumb-diam;
+  height: $slider-thumb-diam;
+  background: var(--interactive-accent);
+  border-radius: 50%;
+  border: none;
+  margin-top: -($slider-thumb-radius - 2px);
+  transition: background 0.15s;
+}
+#graph-depth:hover::-webkit-slider-thumb {
+  background: var(--interactive-accent-hover);
+}
+
+/* track / thumb (Firefox) */
+#graph-depth::-moz-range-track {
+  height: $track-height;
+  background: var(--interactive-normal);
+  border-radius: 2px;
+}
+#graph-depth::-moz-range-thumb {
+  width: $slider-thumb-diam;
+  height: $slider-thumb-diam;
+  background: var(--interactive-accent);
+  border: none;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+#graph-depth:hover::-moz-range-thumb {
+  background: var(--interactive-accent-hover);
+}
+
+/* Hide default focus outline but provide custom */
+#graph-depth:focus {
+  outline: none;
+}
+#graph-depth:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+}
+#graph-depth:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--interactive-accent-hover);
+  outline-offset: 2px;
+}
+
+/* Remove any pseudo-number labels that some UA styles inject (Edge legacy) */
+#graph-depth::before,
+#graph-depth::after {
+  content: none !important;
+}
+
+/* Visual notch dots for each available depth value (1-3) */
+#graph-controls .simple-slider::before {
+  content: ""; /* ensure pseudo renders */
+  position: absolute;
+  top: 50%;
+  height: $track-height;
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* expand edges */
+  left: -2px;
+  right: -2px;
+  /* colour matches title */
+  background: radial-gradient(
+      circle at 7px 50%,
+      var(--text-muted) 0 2px,
+      transparent 2px
+    ),
+    radial-gradient(circle at 50% 50%, var(--text-muted) 0 2px, transparent 2px),
+    radial-gradient(
+      circle at calc(100% - 7px) 50%,
+      var(--text-muted) 0 2px,
+      transparent 2px
+    );
+}
+
+/* Recompute dot positions using radius variable */
+#graph-controls .simple-slider::before {
+  background: radial-gradient(
+      circle at #{$slider-thumb-radius} 50%,
+      var(--text-muted) 0 2px,
+      transparent 2px
+    ),
+    radial-gradient(circle at 50% 50%, var(--text-muted) 0 2px, transparent 2px),
+    radial-gradient(
+      circle at calc(100% - #{$slider-thumb-radius}) 50%,
+      var(--text-muted) 0 2px,
+      transparent 2px
+    );
+}
 
 /* Typography overrides to enforce unified system */
 
