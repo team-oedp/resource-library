@@ -200,7 +200,7 @@ body.graph-fullscreen-active .filetree-sidebar {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
   
-  // Style both i elements and direct SVG children
+  // Style both i elements and direct SVG children with high specificity
   i {
     display: flex;
     align-items: center;
@@ -221,35 +221,39 @@ body.graph-fullscreen-active .filetree-sidebar {
     }
   }
   
-  // Direct SVG child styling
-  > svg,
-  > .svg-icon,
-  > .lucide {
+  // Direct SVG child styling with maximum specificity
+  svg,
+  .svg-icon,
+  .lucide {
     width: 18px !important;
     height: 18px !important;
     margin: 0 !important;
     padding: 0 !important;
     stroke-width: 2 !important;
+    flex-shrink: 0 !important;
   }
 
-  /* Tooltip positioned to the left */
+  /* Tooltip positioned to the left with better visibility */
   &:hover::before {
     content: "Open Knowledge Graph";
     position: absolute;
     right: 100%;
     top: 50%;
     transform: translateY(-50%);
-    margin-right: 8px;
+    margin-right: 12px;
     background-color: var(--background-primary);
     color: var(--text-primary);
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
     white-space: nowrap;
-    z-index: 1001;
-    border: 1px solid var(--text-muted);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10001; /* Higher z-index */
+    border: 1px solid var(--background-modifier-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     pointer-events: none;
+    opacity: 1;
+    display: block;
   }
 
 }
