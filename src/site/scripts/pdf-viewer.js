@@ -53,6 +53,7 @@
   function showModal (src) {
     var modal = qs('#pdf-viewer-modal')
     var iframe = qs('#pdf-viewer-iframe', modal)
+    var errorDiv = qs('#pdf-viewer-error', modal)
 
     if (!modal) {
       console.error('PDF viewer modal not found')
@@ -62,7 +63,13 @@
       console.error('PDF viewer iframe not found')
       return
     }
+    if (!errorDiv) {
+      console.error('PDF viewer error div not found')
+      return
+    }
 
+    // Hide error and show iframe
+    errorDiv.style.display = 'none'
     iframe.removeAttribute('src')
     modal.setAttribute('aria-hidden', 'false')
     modal.classList.add('active')
@@ -71,12 +78,42 @@
     document.body.style.overflow = 'hidden'
   }
 
+  function showErrorModal () {
+    var modal = qs('#pdf-viewer-modal')
+    var iframe = qs('#pdf-viewer-iframe', modal)
+    var errorDiv = qs('#pdf-viewer-error', modal)
+
+    if (!modal) {
+      console.error('PDF viewer modal not found')
+      return
+    }
+    if (!iframe) {
+      console.error('PDF viewer iframe not found')
+      return
+    }
+    if (!errorDiv) {
+      console.error('PDF viewer error div not found')
+      return
+    }
+
+    // Hide iframe and show error
+    iframe.removeAttribute('src')
+    errorDiv.style.display = 'flex'
+    modal.setAttribute('aria-hidden', 'false')
+    modal.classList.add('active')
+    document.body.style.overflow = 'hidden'
+  }
+
   function hideModal () {
     var modal = qs('#pdf-viewer-modal')
     var iframe = qs('#pdf-viewer-iframe', modal)
+    var errorDiv = qs('#pdf-viewer-error', modal)
     modal.classList.remove('active')
     modal.setAttribute('aria-hidden', 'true')
     iframe.removeAttribute('src')
+    if (errorDiv) {
+      errorDiv.style.display = 'none'
+    }
     document.body.style.overflow = ''
   }
 
@@ -111,14 +148,12 @@
         return
       }
       
-      // If no local file mapping found, construct Zenodo URL and open externally
-      var zenodoUrl = 'https://zenodo.org/records/' + recordId
-      // No local file found, opening external link
-      window.open(zenodoUrl, '_blank')
+      // If no local file mapping found, show error modal
+      // No local file found, showing error modal
+      showErrorModal()
     } catch (err) {
       console.error('PDF viewer error:', err)
-      var zenodoUrl = 'https://zenodo.org/records/' + recordId
-      window.open(zenodoUrl, '_blank')
+      showErrorModal()
     }
   }
 
@@ -138,8 +173,10 @@
         // Creating custom button for record ID
         var btn = createReaderButtonForId(recordId, customText)
         el.parentNode.replaceChild(btn, el)
-      } else {
-        console.warn('PDF viewer: No local file found for record ID:', recordId)
+      } else if (recordId) {
+        console.log('PDF viewer: Creating button that will show error modal for record ID:', recordId)
+        var btn = createReaderButtonForId(recordId, customText)
+        el.parentNode.replaceChild(btn, el)
       }
     })
     
@@ -151,7 +188,7 @@
       var recordId = el.getAttribute('data-pdf-viewer')
       var customText = el.getAttribute('data-pdf-text')
       
-      if (recordId && LOCAL_PDF_MAP[recordId]) {
+      if (recordId) {
         // Converting element to PDF viewer for record ID
         el.style.cursor = 'pointer'
         el.addEventListener('click', function (e) {
@@ -161,8 +198,6 @@
         if (customText) {
           el.textContent = customText
         }
-      } else {
-        console.warn('PDF viewer: No local file found for record ID:', recordId)
       }
     })
   }

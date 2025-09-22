@@ -16,7 +16,7 @@ The Advisory Group is working alongside the OEDP team as we ground our work in e
 The Community Data Hubs prototype will model a networked infrastructure for sharing community-generated environmental and climate data between communities, government, and researchers. This is the main term for the project and prototype.  
 
 **Design Workshop**
-These workshops will focus on creating 1) an articulation of community needs and priorities around environmental governance and data stewardship, 2) data scenarios and user archetypes for a CDH, and 3) design considerations and possible specifications as they relate to [[data privacy and security\|data privacy and security]], #usability, #findability, facilitation of governance feedback loops, and guidance. 
+These workshops will focus on creating 1) an articulation of community needs and priorities around environmental governance and data stewardship, 2) data scenarios and user archetypes for a CDH, and 3) design considerations and possible specifications as they relate to [[Decoders/Data Privacy & Security\|data privacy and security]], #usability, #findability, facilitation of governance feedback loops, and guidance. 
 
 **Design Articulation / Playbook**
 The design articulation / playbook will include the outputs from the design workshops, including use cases and design considerations, multimedia #documentation of the design process, and the beginning of a Resource Library for community data governance. 
