@@ -869,6 +869,12 @@ body.mobile-graph-active {
       font-size: 18px !important;
     }
   }
+  
+  @media (max-width: 510px) {
+    h1 {
+      font-size: 14px !important; /* Smaller text for very narrow screens */
+    }
+  }
 
   .navbar-inner {
     display: flex;
