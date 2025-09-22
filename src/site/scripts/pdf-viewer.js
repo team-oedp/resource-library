@@ -86,7 +86,7 @@
       console.error('PDF viewer: Modal not found when wiring close events')
       return
     }
-    console.log('PDF viewer: Modal found, wiring close events')
+    // Modal found, wiring close events
     qsa('[data-pdf-close]', modal).forEach(function (el) {
       el.addEventListener('click', hideModal)
     })
@@ -102,18 +102,18 @@
 
   function openPdfById (recordId) {
     try {
-      console.log('PDF viewer: Opening PDF by ID:', recordId)
+      // Opening PDF by ID: recordId
       
       // Use local files when available
       if (recordId && LOCAL_PDF_MAP[recordId]) {
-        console.log('PDF viewer: Using local file', LOCAL_PDF_MAP[recordId])
+        // Using local file
         showModal(buildViewerSrc(LOCAL_PDF_MAP[recordId]))
         return
       }
       
       // If no local file mapping found, construct Zenodo URL and open externally
       var zenodoUrl = 'https://zenodo.org/records/' + recordId
-      console.log('PDF viewer: No local file found, opening external link:', zenodoUrl)
+      // No local file found, opening external link
       window.open(zenodoUrl, '_blank')
     } catch (err) {
       console.error('PDF viewer error:', err)
@@ -124,18 +124,18 @@
 
   function processManualPdfViewers () {
     var content = qs('main.content') || document
-    console.log('PDF viewer: Processing manual PDF viewer elements')
+    // Processing manual PDF viewer elements
     
     // Process custom <pdf-viewer-button> elements
     var customButtons = qsa('pdf-viewer-button[data-zenodo-id]', content)
-    console.log('PDF viewer: Found', customButtons.length, 'custom PDF viewer button elements')
+    // Found custom PDF viewer button elements
     
     customButtons.forEach(function (el) {
       var recordId = el.getAttribute('data-zenodo-id')
       var customText = el.textContent.trim() || el.getAttribute('data-text')
       
       if (recordId && LOCAL_PDF_MAP[recordId]) {
-        console.log('PDF viewer: Creating custom button for record ID:', recordId)
+        // Creating custom button for record ID
         var btn = createReaderButtonForId(recordId, customText)
         el.parentNode.replaceChild(btn, el)
       } else {
@@ -145,14 +145,14 @@
     
     // Process elements with data-pdf-viewer attribute
     var dataPdfElements = qsa('[data-pdf-viewer]', content)
-    console.log('PDF viewer: Found', dataPdfElements.length, 'elements with data-pdf-viewer attribute')
+    // Found elements with data-pdf-viewer attribute
     
     dataPdfElements.forEach(function (el) {
       var recordId = el.getAttribute('data-pdf-viewer')
       var customText = el.getAttribute('data-pdf-text')
       
       if (recordId && LOCAL_PDF_MAP[recordId]) {
-        console.log('PDF viewer: Converting element to PDF viewer for record ID:', recordId)
+        // Converting element to PDF viewer for record ID
         el.style.cursor = 'pointer'
         el.addEventListener('click', function (e) {
           e.preventDefault()

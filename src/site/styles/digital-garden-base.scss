@@ -722,7 +722,7 @@ body.mobile-graph-active {
 }
 
 .graph {
-  border: 1px solid var(--background-primary);
+  border: 1px solid #ddd; /* Light grey border matching mobile FAB button */
   border-radius: 8px;
   background-color: var(--background-secondary);
   overflow: visible;

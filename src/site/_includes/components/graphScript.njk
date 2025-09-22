@@ -530,9 +530,7 @@
         mobileGraph: null
      }"
      x-init="
-        console.log('Mobile FAB component initialized');
         fetchGraphData().then(data => {
-            console.log('Mobile FAB data loaded:', data);
             mobileGraphData = data.graphData;
             mobileFullGraphData = data.fullGraphData;
         });
@@ -546,11 +544,9 @@
                 document.body.classList.add('mobile-graph-active');
                 // Wait for modal to show, then render graph
                 setTimeout(() => {
-                    console.log('FAB clicked, data available:', mobileGraphData !== null, mobileFullGraphData !== null);
                     if (mobileGraphData || mobileFullGraphData) {
                         mobileGraph = mobileShowingGlobal ? renderMobileGlobalGraph(mobileFullGraphData) : renderMobileLocalGraph(mobileGraphData, mobileDepth);
                     } else {
-                        console.warn('Mobile graph data not available yet');
                         // Try to fetch data if not available
                         fetchGraphData().then(data => {
                             mobileGraphData = data.graphData;
