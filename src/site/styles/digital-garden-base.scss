@@ -191,10 +191,6 @@ button.mobile-graph-fab-button {
     top: 80px !important; // Position well below fixed navbar
   }
   
-  @media (max-width: 665px) {
-    top: 100px !important; // Extra 20px down when navbar gets taller
-  }
-  
   &:hover {
     background-color: var(--oedp-blue) !important; /* Blue background on hover */
     border: 1px solid var(--oedp-blue) !important; /* Blue border on hover */
@@ -739,7 +735,7 @@ body.mobile-graph-active {
   .graph-title {
     background-color: var(--background-primary);
     border: 1px solid var(--background-modifier-border);
-    border-radius: 8px 8px 12px 12px;
+    border-radius: 8px;
     padding: 4px 12px;
     font-size: 0.9rem !important;
     color: var(--text-muted);
