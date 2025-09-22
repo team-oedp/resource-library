@@ -231,17 +231,24 @@ module.exports = function (eleventyConfig) {
         const [fileName, ...widthAndMetaData] = imageName.split("|");
         const lastValue = widthAndMetaData[widthAndMetaData.length - 1];
         const lastValueIsNumber = !isNaN(lastValue);
+        
+        // Check for width keywords
+        const widthKeywords = ['full', 'half', 'small'];
+        const isWidthKeyword = widthKeywords.includes(lastValue?.toLowerCase());
+        
         const width = lastValueIsNumber ? lastValue : null;
+        const widthKeyword = isWidthKeyword ? lastValue.toLowerCase() : null;
 
         let metaData = "";
         if (widthAndMetaData.length > 1) {
           metaData = widthAndMetaData.slice(0, widthAndMetaData.length - 1).join(" ");
         }
 
-        if (!lastValueIsNumber) {
+        if (!lastValueIsNumber && !isWidthKeyword) {
           metaData += ` ${lastValue}`;
         }
 
+        // Apply pixel width for numeric values
         if (width) {
           const widthIndex = tokens[idx].attrIndex("width");
           const widthAttr = `${width}px`;
@@ -249,6 +256,18 @@ module.exports = function (eleventyConfig) {
             tokens[idx].attrPush(["width", widthAttr]);
           } else {
             tokens[idx].attrs[widthIndex][1] = widthAttr;
+          }
+        }
+
+        // Apply CSS class for width keywords
+        if (widthKeyword) {
+          const classIndex = tokens[idx].attrIndex("class");
+          const widthClass = `img-${widthKeyword}`;
+          if (classIndex < 0) {
+            tokens[idx].attrPush(["class", widthClass]);
+          } else {
+            const existingClasses = tokens[idx].attrs[classIndex][1];
+            tokens[idx].attrs[classIndex][1] = `${existingClasses} ${widthClass}`.trim();
           }
         }
 
@@ -263,21 +282,35 @@ module.exports = function (eleventyConfig) {
       md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
         const aIndex = tokens[idx].attrIndex("target");
         const classIndex = tokens[idx].attrIndex("class");
-
-        if (aIndex < 0) {
-          tokens[idx].attrPush(["target", "_blank"]);
-        } else {
-          tokens[idx].attrs[aIndex][1] = "_blank";
+        const hrefIndex = tokens[idx].attrIndex("href");
+        
+        // Get the href value to determine if it's external
+        let href = "";
+        if (hrefIndex >= 0) {
+          href = tokens[idx].attrs[hrefIndex][1];
         }
 
-        if (classIndex < 0) {
-          tokens[idx].attrPush(["class", "external-link"]);
-        } else {
-          tokens[idx].attrs[classIndex][1] = "external-link";
+        // Check if this is an external URL (starts with http:// or https://)
+        const isExternalUrl = href && (href.startsWith("http://") || href.startsWith("https://"));
+
+        if (isExternalUrl) {
+          // Only add target="_blank" and external-link class for actual external URLs
+          if (aIndex < 0) {
+            tokens[idx].attrPush(["target", "_blank"]);
+          } else {
+            tokens[idx].attrs[aIndex][1] = "_blank";
+          }
+
+          if (classIndex < 0) {
+            tokens[idx].attrPush(["class", "external-link"]);
+          } else {
+            tokens[idx].attrs[classIndex][1] = "external-link";
+          }
         }
 
         return defaultLinkRule(tokens, idx, options, env, self);
       };
+
     })
     .use(userMarkdownSetup);
 
@@ -537,6 +570,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/site/img");
   eleventyConfig.addPassthroughCopy("src/site/scripts");
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
+  eleventyConfig.addPassthroughCopy({ "node_modules/pdfjs-dist/web": "pdfjs/web" });
+  eleventyConfig.addPassthroughCopy({ "node_modules/pdfjs-dist/build": "pdfjs/build" });
+  eleventyConfig.addPassthroughCopy("src/site/pdfjs");
+  eleventyConfig.addPassthroughCopy("src/site/files");
   eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
   eleventyConfig.addPlugin(tocPlugin, {
     ul: true,

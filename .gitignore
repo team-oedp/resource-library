@@ -13,3 +13,5 @@ CLAUDE.md
 _site/
 **/.DS_Store
 .suggestions/
+.cursor
+.vscode/

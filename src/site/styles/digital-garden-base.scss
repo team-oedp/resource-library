@@ -33,8 +33,7 @@ img {
 .external-link {
   background-position: center right;
   background-repeat: no-repeat;
-  background-image: linear-gradient(transparent, transparent),
-    url("/img/outgoing.svg");
+  background-image: linear-gradient(transparent, transparent), url("/img/external.svg");
   background-size: 13px;
   padding-right: 16px;
   background-position-y: 4px;
@@ -859,6 +858,7 @@ body.mobile-graph-active {
       margin: 10px 25px 10px 25px;
     }
   }
+  }
 
   .search-text {
     display: flex;
@@ -866,6 +866,7 @@ body.mobile-graph-active {
     @media (max-width: 800px) {
       display: none;
     }
+  }
   }
 }
 
@@ -1020,6 +1021,65 @@ body.mobile-graph-active {
   .search-icon {
     display: flex;
   }
+}
+
+/* Navbar search button styles for mobile/tablet - aligned with filetree breakpoint */
+.navbar .search-button {
+    @media (max-width: 1400px) {
+        background-color: white !important;
+        border-radius: 8px !important;
+        border: 1px solid var(--background-modifier-border) !important;
+        padding: 10px 12px !important;
+        line-height: 1.1 !important;
+        min-height: 40px !important;
+        justify-content: space-between !important;
+        min-width: 180px;
+        margin: 10px 25px 10px 25px;
+        width: auto;
+    }
+    
+    @media (max-width: 425px) {
+        display: none !important;
+    }
+}
+
+/* Navbar search text styles for mobile/tablet - aligned with filetree breakpoint */
+.navbar .search-text {
+    @media (max-width: 1400px) {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        margin-left: 6px !important;
+        margin-right: 6px !important;
+        
+        span:first-child {
+            font-size: inherit !important;
+        }
+    }
+    
+    @media (max-width: 425px) {
+        display: none !important;
+    }
+}
+
+/* Fix search keys spacing and alignment in navbar */
+.navbar .search-keys {
+    @media (max-width: 1400px) {
+        padding: 0 !important;
+        margin-left: 12px !important;
+        transform: none !important;
+        text-align: center !important;
+        font-size: inherit !important;
+        
+        .shortcut-text {
+            font-size: inherit !important;
+        }
+    }
+    
+    @media (max-width: 425px) {
+        display: none !important;
+    }
 }
 
 .search-keys {

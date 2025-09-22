@@ -95,10 +95,11 @@
     };
 
     function setCorrectShortcut() {
+        const shortcutElements = document.querySelectorAll(".shortcut-text");
         if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
-            document
-                .querySelectorAll(".search-keys")
-                .forEach(x => x.innerHTML = "⌘ + K");
+            shortcutElements.forEach(x => x.textContent = "⌘ + K");
+        } else {
+            shortcutElements.forEach(x => x.textContent = "CTRL + K");
         }
     }
 
@@ -275,8 +276,11 @@
         let search = field
             .value
             .trim();
-        if (!search) 
+        if (!search) {
+            // Restore empty state when search is cleared
+            resultsDiv.innerHTML = '<div class="search-empty-state"><p>Start typing to search the resource library</p></div>';
             return;
+        }
         if (search == lastSearch) 
             return;
         console.log(`search for ${search}`);
@@ -288,13 +292,11 @@
         let results = offlineSearch(search);
         let resultsHTML = '';
         if (!results.length) {
-            let resultParagraph = document.createElement("p");
-            resultParagraph.innerText = `No results for "${search}"`;
-            resultsDiv.innerHTML = '';
-            resultsDiv.appendChild(resultParagraph);
+            resultsDiv.innerHTML = `<div class="search-empty-state"><p>No results for "${search}"</p></div>`;
             return;
         }
-        resultsHTML += '<div style="max-width:100%;">';
+        // Add minimal inline top padding so first result clears the input
+        resultsHTML += '<div style="max-width:100%; padding-top: 8px;">';
         // we need to add title, url from ref
         results.forEach(r => {
             if(r.tags && r.tags.length > 0){

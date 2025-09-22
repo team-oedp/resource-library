@@ -59,7 +59,7 @@
         "src/site/_includes/components/timestamps.njk",
         "src/site/_data/meta.js",
         "src/site/_data/dynamics.js",
-        "src/site/img/outgoing.svg",
+        "src/site/img/external.svg",
         "src/helpers/constants.js",
         "src/helpers/utils.js",
         "src/helpers/filetreeUtils.js",
