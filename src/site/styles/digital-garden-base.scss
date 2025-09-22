@@ -167,39 +167,41 @@ body.graph-fullscreen-active .filetree-sidebar {
   }
 }
 
-.mobile-graph-fab-button {
-  position: fixed;
-  top: 20px; // Default position when navbar is absolute 
-  right: 20px;
-  width: 40px; // Larger than control buttons but smaller than original
-  height: 40px;
-  border-radius: 8px; // Slightly larger radius
-  background-color: #fff; /* White background */
-  border: 1px solid #ddd; /* Light gray border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1000;
-  color: #333; /* Dark gray icon */
-  transition: all 0.2s ease;
+// Override OEDP theme button styles with higher specificity and !important
+button.mobile-graph-fab-button {
+  position: fixed !important;
+  top: 20px !important; // Default position when navbar is absolute 
+  right: 20px !important;
+  width: 40px !important; // Larger than control buttons but smaller than original
+  height: 40px !important;
+  border-radius: 8px !important; // Slightly larger radius
+  background-color: #fff !important; /* White background - override OEDP slate */
+  border: 1px solid #ddd !important; /* Light gray border - override OEDP slate */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 1000 !important;
+  color: #333 !important; /* Dark gray icon - override OEDP white */
+  transition: all 0.2s ease !important;
+  padding: 0 !important; /* Remove OEDP padding */
   
   @media (max-width: 1400px) {
-    top: 80px; // Position well below fixed navbar
+    top: 80px !important; // Position well below fixed navbar
   }
   
   &:hover {
-    background-color: #333; /* Dark background on hover */
-    border: 1px solid #333; /* Dark border on hover */
-    color: #fff; /* White icon on dark background */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
+    background-color: #333 !important; /* Dark background on hover */
+    border: 1px solid #333 !important; /* Dark border on hover */
+    color: #fff !important; /* White icon on dark background */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-2px) !important;
   }
   
   &:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
   }
   
   // Style both i elements and direct SVG children with high specificity
