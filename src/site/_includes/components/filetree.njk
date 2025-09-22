@@ -22,9 +22,9 @@
         {%endif%}
     {% endmacro %}
     
-    <div x-init="isDesktop = (window.innerWidth>=1400) ? true: false;" 
-            x-on:resize.window="isDesktop = (window.innerWidth>=1400) ? true : false;" 
-            x-data="{isDesktop: true, showFilesMobile: false}">
+    <div x-init="isDesktop = (window.innerWidth>=1400); isSmallScreen = (window.innerWidth<=425);" 
+            x-on:resize.window="isDesktop = (window.innerWidth>=1400); isSmallScreen = (window.innerWidth<=425);" 
+            x-data="{isDesktop: true, isSmallScreen:false, showFilesMobile: false}">
 
         <div x-show.important="!isDesktop" style="display: none;">
             {%include "components/filetreeNavbar.njk"%}
@@ -45,7 +45,7 @@
                 {% include imp %}
             {% endfor %}
             {% if settings.dgEnableSearch === true%}
-                <div class="search-button-container">
+                <div class="search-button-container" x-show.important="isDesktop || isSmallScreen">
                     {% include "components/searchButton.njk" %}
                 </div>
             {%endif%}
