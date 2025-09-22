@@ -175,14 +175,14 @@ body.graph-fullscreen-active .filetree-sidebar {
   height: 40px;
   border-radius: 8px; // Slightly larger radius
   background-color: var(--background-primary);
-  border: 1px solid var(--background-modifier-border);
+  border: 1px solid var(--text-accent); /* Border matches the old icon color */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1000;
-  color: var(--text-accent);
+  color: var(--text-accent); /* Icon now uses the accent color */
   transition: all 0.2s ease;
   
   @media (max-width: 1400px) {
@@ -190,7 +190,9 @@ body.graph-fullscreen-active .filetree-sidebar {
   }
   
   &:hover {
-    background-color: var(--background-modifier-hover);
+    background-color: var(--background-primary); /* Keep same background */
+    border: 1px solid var(--text-accent); /* Keep same border */
+    color: var(--text-accent); /* Keep same icon color */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
   }
@@ -241,16 +243,16 @@ body.graph-fullscreen-active .filetree-sidebar {
     top: 50%;
     transform: translateY(-50%);
     margin-right: 12px;
-    background-color: var(--background-primary);
-    color: var(--text-primary);
+    background-color: #000 !important; /* Dark background for contrast */
+    color: #fff !important; /* White text for contrast */
     padding: 8px 12px;
     border-radius: 6px;
     font-size: 13px;
     font-weight: 500;
     white-space: nowrap;
     z-index: 10001; /* Higher z-index */
-    border: 1px solid var(--background-modifier-border);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border: 1px solid #333 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     pointer-events: none;
     opacity: 1;
     display: block;
