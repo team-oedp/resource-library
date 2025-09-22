@@ -1186,6 +1186,11 @@ body.mobile-graph-active {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+
+  // Add a spacer element to maintain equal spacing when depth control is hidden
+  .spacer {
+    flex: 1;
+  }
   color: var(--text-accent);
   z-index: 20;
   min-height: 32px;
