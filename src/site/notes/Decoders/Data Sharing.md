@@ -27,7 +27,7 @@ While there are benefits to sharing, there are also risks: environmental data ca
 
 
 > [!How-To Guide]
-> > For a more detailed exploration of how to consider data sharing with your team, see our zine: **[[How-To Guides & Zines/Zine - The Data We Own\|Zine - The Data We Own]]: A How-To Guide for Environmental Data Sharing.**
+> For a more detailed exploration of how to consider data sharing with your team, see our zine: **[[How-To Guides & Zines/The Data We Own\|The Data We Own]] — A How-To Guide for Environmental Data Sharing.**
 
   
 

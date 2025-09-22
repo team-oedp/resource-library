@@ -16,7 +16,7 @@ When creating a data sharing agreement, key elements to incorporate, include:
 
 
 > [!How-to Guide]
-> For a more detailed exploration of building a data sharing agreement with your team, see our zine: **[[How-To Guides & Zines/Zine - The Data We Own\|Zine - The Data We Own]]: A How-To Guide for Environmental Data Sharing.**
+> For a more detailed exploration of building a data sharing agreement with your team, see our zine: **[[How-To Guides & Zines/The Data We Own\|The Data We Own]]: A How-To Guide for Environmental Data Sharing.**
 
 
 There are many data sharing agreement templates tailored to [[Decoders/Environmental Data\|environmental data]] available for adaptation and use:

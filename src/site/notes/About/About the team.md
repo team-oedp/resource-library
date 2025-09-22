@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/about/about-the-team/"}
+{"dg-publish":true,"permalink":"/about/about-the-team/","title":"About the Team"}
 ---
 
 

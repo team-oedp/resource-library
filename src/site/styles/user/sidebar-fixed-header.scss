@@ -6,6 +6,8 @@
 	flex-direction: column !important;
 	/* Remove top padding while keeping other padding */
 	padding-top: 0 !important;
+	/* Smooth scrolling for the main sidebar scroll container */
+	scroll-behavior: smooth;
 	
 	/* Header section - contains title and search, stays fixed */
 	.sidebar-header {
@@ -23,6 +25,8 @@
 		flex: 1 !important;
 		overflow: visible !important;
 		padding-top: 0 !important;
+		/* Smooth scrolling when programmatically bringing active items into view */
+		scroll-behavior: smooth;
 	}
 	
 	/* Ensure the sidebar title stays in the header */

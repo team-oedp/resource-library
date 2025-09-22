@@ -29,4 +29,4 @@ We’ve created templates so you can begin implementing a standardized structure
 *Takeaway:* [[Decoders/Data Ownership\|Data ownership]] in practice has material requirements—somewhere to house the data and someone to maintain it.
 Many organizations that collect environmental data do so because they have questions that demand answers; by collecting their own data, using their own hardware and methods, they can create their own data-informed knowledge and evidence. The concept of [[Decoders/Data Ownership\|data ownership]] recognizes this #knowledge creation, and underscores who has authority to use that data and in what ways. This concept is powerful, but it loses its potential without the infrastructure to store, manage, and maintain that data. While open source solutions have become more available, each of the plays below either document easy-to-implement methods to retain data ownership and store data, or present opportunities to support data stewards in finding solutions.
 
-*Source:* Community Data Playbook ([[Community Data Playbook/Full report\|Full report]])
+*Source:* Community Data Playbook ([[Community Data Playbook/Full Report\|Full report]])

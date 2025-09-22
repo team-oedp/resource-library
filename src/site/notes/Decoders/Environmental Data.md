@@ -30,11 +30,11 @@ Communities around the world are collecting, using, and interacting with these t
 
 ### **Why does it matter?**
 
-Environmental data is instrumental to people who are trying to understand the world around them, teach others, and take action. It can be useful to researchers, as well as government agencies and staff. It supports advocacy groups in providing evidence for claims of pollution or climate change, providing information that can hold both industry and government accountable. 
+Environmental data is instrumental to people who are trying to understand the world around them, teach others, and take action. It can be useful to researchers, as well as government agencies and staff. It supports advocacy groups in providing evidence for claims of pollution or climate change, providing information that can hold both industry and government accountable.
 
-Yet oftentimes, it is difficult for this data to be used in ways that unlock its vast benefits. Current incentives, standards, rules, and regulations related to environmental data are not always workable for communities collecting and using data, nor for government actors who could use this data to better inform policy and decision making. 
+Yet oftentimes, it is difficult for this data to be used in ways that unlock its vast benefits. Current incentives, standards, rules, and regulations related to environmental data are not always workable for communities collecting and using data, nor for government actors who could use this data to better inform policy and decision making.
 
-Communities can use different types of tools to reach their goals with environmental data in responsible and effective ways. [[Decoders/Data Governance\|Data governance]] can support responsible decision making, management, and sharing of data, while [[data visualizations\|data visualizations]] can support clear communication in advocacy efforts. 
+Communities can use different types of tools to reach their goals with environmental data in responsible and effective ways. [[Decoders/Data Governance\|Data governance]] can support responsible decision making, management, and sharing of data, while [[Decoders/Data Visualization\|data visualizations]] can support clear communication in advocacy efforts. 
 
 
 ### **Mentioned and additional resources:**
