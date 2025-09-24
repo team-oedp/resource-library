@@ -7,6 +7,9 @@ The Community Data Playbook is a compilation of case studies and strategies rela
 
 #### Access the full report in [English](https://zenodo.org/records/15285124) or [Spanish.](https://zenodo.org/records/15483728)
 
+<pdf-viewer-button data-zenodo-id="15285124">Open English PDF in Viewer</pdf-viewer-button><br/>
+<pdf-viewer-button data-zenodo-id="15483728">Open Spanish PDF in Viewer</pdf-viewer-button>
+
 Readers interested in explorations of organizations working through data governance and stewardship challenges and building processes and tools, see Section 1: Community Case Studies. This section includes a discussion of the environmental justice (EJ) concerns in each area, the data each partner collects, and their current governance and management systems. It also includes our workshop process and major takeaways from each case. The case studies are also documented in [[Case Studies/About the Case Studies\|About the Case Studies]].
 
 Readers interested in data governance and stewardship templates, see our Appendix. Throughout our workshop process, we derived landscape-level takeaways and created resources that can be adapted and used by others collecting and using community environmental data. These resources can be found in [[Tools and Templates/About Tools and Templates|About Tools and Templates]].
