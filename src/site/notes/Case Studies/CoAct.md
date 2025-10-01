@@ -47,9 +47,10 @@ Our workshop covered two modules: 1) mapping CoACT’s current data governance f
 
 #### **Module One: Mapping CoAct’s current data governance framework**
 The first module reflected CoAct’s desire to 1) engage with community actors through data governance, and 2) understand in which aspects of governance they might be interested in participating (and how). We focused on how members of CoAct currently understand their governance, who is involved, and which aspects of data governance were a priority for the project. We started this conversation by asking what data governance meant to their project team. Notable responses from the team coalesced around common themes:
-- Who makes decisions about data and how 
+
+- Who makes decisions about data and how
 - The importance of community involvement
-- Data use rules and the process to set those rules 
+- Data use rules and the process to set those rules
 - Data #management systems and how they apply rules determined by the group
 - Forms and processes for adding and managing data
 
@@ -57,11 +58,11 @@ It was evident that a data governance framework for CoAct should explicitly outl
 
 ![Fig-9.jpg](/img/user/Photos%20for%20Resource%20Library/Fig-9.jpg)
 
-Building on this session, we led a conversation around who was significantly involved in the project, who was involved occasionally, who CoAct might want to bring into the work in the future, and who was considered a community actor. This session surfaced details on the project’s partnerships, and which groups might be prioritized for engagement. An important specification arose during the conversation: CoAct should determine who needed to know about data governance, and who needed to participate in data governance, as this would inform CoAct’s plans to engage them. The CoAct team identified teachers, environmental leaders at the provincial level, and community libraries as the primary actors for participation in governance; meanwhile, educational inspectors or administrators and students might not participate in the governance but should be kept informed of processes. For a comprehensive view of all current and future actors, see Figure 10. 
+Building on this session, we led a conversation around who was significantly involved in the project, who was involved occasionally, who CoAct might want to bring into the work in the future, and who was considered a community actor. This session surfaced details on the project’s partnerships, and which groups might be prioritized for engagement. An important specification arose during the conversation: CoAct should determine who needed to know about data governance, and who needed to participate in data governance, as this would inform CoAct’s plans to engage them. The CoAct team identified teachers, environmental leaders at the provincial level, and community libraries as the primary actors for participation in governance; meanwhile, educational inspectors or administrators and students might not participate in the governance but should be kept informed of processes. For a comprehensive view of all current and future actors, see Figure 10.
 
 ![Fig-10.jpg](/img/user/Photos%20for%20Resource%20Library/Fig-10.jpg)
 
-We asked five questions for each priority actor group: 
+We asked five questions for each priority actor group:
 - What are their goals within the project?
 - What is their current level of governance awareness?
 - What is their #capacity for engagement?
@@ -86,6 +87,7 @@ A shared definition of data governance and thorough data governance documentatio
 The second module explored how to best engage with the priority community actors identified in the first module, focusing on their ideal roles, and how CoAct could communicate about data governance with them and collaborate on aspects of QPR’s data governance. For this session, we focused on the community library staff. Because they had previously been workshop organizers with CoAct, they had experience being users of the data platform and could build the skills and capacity to fill a more intermediary role such as data curators or community liaisons.
 
 We had two guiding questions for this module:
+
 - What training, agreements, or guides might help engage those users (community library staff)?
 - What policies, tools, or data practices are needed to better integrate those users into data governance processes?
 
@@ -97,12 +99,13 @@ We came to the conclusion that CoAct could take a few different next steps to bu
 
 
 ##### Takeaway 9: Truly participatory data governance requires deep understanding of each collaborator or actor, including their values, incentives, and capacity.
+
 Data governance can seem like a difficult or nebulous concept—many approach the topic unsure of its meaning or purpose, or assuming data science understanding is needed to interact with its practices or frameworks. This is why it’s critical to have clearly defined pathways or roles for community actors to fit into; creating those pathways and roles requires a thorough understanding of how a community actor may or may not want to participate. Creating user personas or interviewing interested actors to understand their values, incentives, and capacity can ensure that engagement can be productive for both the project and community actors. Ultimately, expanding governance to community actors allows for greater representation in decision-making, and can create greater wells of interest and awareness outside of the main project team.
 
 
 ### **Resources created, next steps, and outcomes**
-After the workshop, we created a synthesis of next steps for CoAct to consider. With each community partner, we held check-ins at the three and six month marks after our official collaboration ended. In these meetings, the CENIT team shared their progress in creating a project-wide governance document that provides clear definitions of the data, their existing governance and decision-making processes, and issues to be resolved. They also shared that they have held a workshop with FARN to discuss this document, and both reported that they are still in discussions to collaboratively finalize it.
 
+After the workshop, we created a synthesis of next steps for CoAct to consider. With each community partner, we held check-ins at the three and six month marks after our official collaboration ended. In these meetings, the CENIT team shared their progress in creating a project-wide governance document that provides clear definitions of the data, their existing governance and decision-making processes, and issues to be resolved. They also shared that they have held a workshop with FARN to discuss this document, and both reported that they are still in discussions to collaboratively finalize it.
 
 
 [^1]: CoAct defines citizen social science in this way: “Citizen social science combines equal collaboration between citizen groups (co-researchers) that are sharing a social concern and academic researchers. Such an approach enables [us] to address pressing social issues from the bottom up, embedded in their social contexts, with robust research methods.” Access more on their approaches and practices [here](https://coactproject.eu/what-is-coact/).
