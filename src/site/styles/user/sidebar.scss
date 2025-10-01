@@ -155,14 +155,37 @@ aside {
   text-decoration: none !important;
 }
 
-/* Remove sidebar navigation icons */
-body.filetree-note-icon .filename[data-note-icon]::before {
+/* Remove sidebar navigation icons - comprehensive suppression */
+body.filetree-note-icon .filename[data-note-icon]::before,
+body.filetree-note-icon .notelink[data-note-icon]::before,
+body.filetree-note-icon .nav-file-title[data-note-icon]::before,
+body.filetree-note-icon .nav-folder-title[data-note-icon]::before,
+body.filetree-note-icon .filetree-sidebar .notelink i[icon-name="sticky-note"],
+body.filetree-note-icon .filetree-sidebar i[icon-name="sticky-note"] {
   display: none !important;
+  content: none !important;
+  background-image: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Prevent FOUC for note icons - hide immediately */
-.filename[data-note-icon]::before {
+/* Prevent FOUC for note icons - hide immediately with highest specificity */
+.filetree-sidebar .filename[data-note-icon]::before,
+.filetree-sidebar .notelink[data-note-icon]::before,
+.filetree-sidebar .nav-file-title[data-note-icon]::before,
+.filetree-sidebar .nav-folder-title[data-note-icon]::before,
+.filetree-sidebar a[data-note-icon]::before,
+.filetree-sidebar .notelink i[icon-name="sticky-note"],
+.filetree-sidebar i[icon-name="sticky-note"] {
   display: none !important;
+  content: none !important;
+  background-image: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .nav-file-icon,
@@ -195,9 +218,9 @@ body.filetree-note-icon .filename[data-note-icon]::before {
 
 .filetree-sidebar .search-text {
   text-align: left !important;
-  margin-left: 6px !important;
+  margin-left: 0 !important;
   display: flex !important;
-  align-items: baseline !important;
+  align-items: center !important;
   flex: 1 !important;
   font-size: inherit !important;
 }
@@ -210,6 +233,7 @@ body.filetree-note-icon .filename[data-note-icon]::before {
 .filetree-sidebar .search-keys {
   text-align: right !important;
   margin-left: auto !important;
+  margin-right: 12px !important;
   font-size: inherit !important;
   transform: none !important;
   padding: 0 !important;
@@ -218,7 +242,15 @@ body.filetree-note-icon .filename[data-note-icon]::before {
 
 .filetree-sidebar .search-icon {
   margin-right: 8px !important;
-  margin-left: 8px !important;
+  margin-left: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.filetree-sidebar .search-icon img {
+  width: 14px !important;
+  height: 14px !important;
+  vertical-align: middle !important;
 }
 
 .filetree-sidebar .shortcut-text {
@@ -258,5 +290,84 @@ body.filetree-note-icon .filename[data-note-icon]::before {
 /* Prevent FOUC for Alpine.js x-show directives */
 [x-cloak] {
   display: none !important;
+}
+
+/* Hide search button in navbar below 768px */
+@media (max-width: 768px) {
+  .navbar .search-button {
+    display: none !important;
+  }
+}
+
+/* Medium mobile search modal adjustments */
+@media (max-width: 640px) and (min-width: 481px) {
+  .search-box input {
+    font-size: 1.25rem !important; /* 20px - slightly smaller than desktop */
+    padding: 11px 13px !important;
+  }
+  
+  .searchresult {
+    font-size: 0.9375rem !important; /* 15px - smaller than desktop */
+    padding: 12px 14px !important;
+    margin: 0 14px 10px 14px !important;
+  }
+  
+  .search-box {
+    max-width: 90% !important;
+  }
+  
+  .search-box-footer {
+    min-height: 40px !important; /* Maintain footer height consistency */
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+/* Mobile search modal text sizing */
+@media (max-width: 480px) {
+  .search-box input {
+    font-size: 1.125rem !important; /* 18px - much smaller for mobile */
+    padding: 10px 12px !important; /* Slightly reduced padding */
+  }
+  
+  .searchresult {
+    font-size: 0.875rem !important; /* 14px - smaller result text */
+    padding: 10px 12px !important; /* Reduced padding */
+    margin: 0 12px 8px 12px !important; /* Tighter margins */
+  }
+  
+  .search-box {
+    max-width: 95% !important; /* Use more screen width on mobile */
+    margin: 20px auto !important; /* Center with smaller margins */
+    min-height: 250px !important; /* Reduced minimum height */
+  }
+  
+  .search-box-footer {
+    padding: 8px 12px !important; /* Reduced footer padding */
+    min-height: 40px !important; /* Maintain footer height even when content is hidden */
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .search-box-footer .navigation-hint {
+    font-size: 0.75rem !important; /* 12px - smaller hint text */
+  }
+  
+  /* Make search results more compact on mobile */
+  #search-results {
+    padding: 8px 0 0 0 !important; /* Reduced top padding */
+  }
+  
+  #search-results > div {
+    padding-top: 16px !important; /* Reduced padding for result wrapper */
+  }
+  
+  /* Ensure hashtags and tags are readable but not too large */
+  .searchresult .tag,
+  .searchresult .hashtag {
+    font-size: 0.75rem !important; /* 12px for tags */
+    padding: 2px 6px !important; /* Smaller tag padding */
+    margin: 2px !important; /* Smaller tag margins */
+  }
 }
 

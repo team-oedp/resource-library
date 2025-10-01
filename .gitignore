@@ -8,9 +8,10 @@ src/site/styles/_theme.*.css
 .netlify
 .idea/
 .vercel
+CLAUDE.md
 .cache
 _site/
 **/.DS_Store
+.suggestions/
 .cursor
-CLAUDE.md
 .vscode/

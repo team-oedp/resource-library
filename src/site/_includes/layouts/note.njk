@@ -77,7 +77,10 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
       {% endfor %}
     </main>
 
-    {% if settings.dgShowBacklinks === true or settings.dgShowLocalGraph === true or settings.dgShowToc === true%}
+    {% set tocHtml= (content and (content|toc)) %}
+    {% set headingCount = (content and (content|countHeadings)) or 0 %}
+    {% set showToc = settings.dgShowToc === true and tocHtml and headingCount > 1 %}
+    {% if settings.dgShowBacklinks === true or settings.dgShowLocalGraph === true or showToc %}
       {%include "components/sidebar.njk"%}
     {% endif %}
 
