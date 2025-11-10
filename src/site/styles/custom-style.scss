@@ -901,6 +901,31 @@ a {
 }
 
 /* ================================================
+   ENABLE TEXT SELECTION - OVERRIDE GENERATED STYLES
+   ================================================ */
+
+/* Override generated body rule to enable text selection */
+body {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* Ensure markdown content is selectable */
+.markdown-rendered,
+.markdown-preview-view,
+.content,
+main.content {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* Mobile markdown content should also be selectable */
+body.is-mobile .markdown-rendered {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* ================================================
    RESET TEXT SELECTION TO BROWSER DEFAULT
    ================================================ */
 
